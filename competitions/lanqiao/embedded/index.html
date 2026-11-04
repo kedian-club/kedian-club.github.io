@@ -1,0 +1,2397 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="科电社团的学习资料、竞赛经验与共同积累。">
+      
+      
+      
+        <link rel="canonical" href="https://kedian-club.github.io/competitions/lanqiao/embedded/">
+      
+      
+        <link rel="prev" href="../mcu/">
+      
+      
+        <link rel="next" href="../eda/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/branding/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>嵌入式赛道 - 科电俱乐部</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="科电俱乐部" class="md-header__button md-logo" aria-label="科电俱乐部" data-md-component="logo">
+      
+  <img src="../../../assets/branding/club-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            科电俱乐部
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              嵌入式赛道
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../welcome/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  给新生一封信
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../learning/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  学习路线推荐
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  竞赛经验分享
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../everyday/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  日常经验分享
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../resources/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  社团资源
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../contribute/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  贡献
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+  
+  
+  <div class="kd-day-background" aria-hidden="true">
+    <video muted loop playsinline preload="none" poster="../../../assets/media/reading-background-light-pexels.jpg" data-light-poster="../../../assets/media/reading-background-light-pexels.jpg" data-src="../../../assets/media/reading-background-light-pexels.mp4" data-dark-src="../../../assets/media/reading-background.mp4" tabindex="-1"></video>
+  </div>
+  
+  <button class="kd-background-toggle" type="button" hidden>暂停背景</button>
+
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="科电俱乐部" class="md-nav__button md-logo" aria-label="科电俱乐部" data-md-component="logo">
+      
+  <img src="../../../assets/branding/club-logo.png" alt="logo">
+
+    </a>
+    科电俱乐部
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../welcome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    给新生一封信
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../learning/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习路线推荐
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    学习路线推荐
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learning/competition-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    竞赛路线原文
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    竞赛经验分享
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    竞赛经验分享
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    蓝桥杯
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    蓝桥杯
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    单片机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    嵌入式
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    嵌入式
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stm32hal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        快速入门STM32HAL库&amp;&amp;蓝桥杯嵌入式笔记
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="快速入门STM32HAL库&amp;&amp;蓝桥杯嵌入式笔记">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        代码区域：
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        点点点：操作
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpioled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPIO、LED
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        按键：
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LCD：
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pscarrccr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        定时器的一些参数及其关系（定时器时钟、PSC、ARR、CCR）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        定时器：
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pwm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PWM：
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IC（输入捕获）：
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADC测量：
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stm32-hal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STM32 HAL库核心概念：句柄与指针规则
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        串口：（推荐使用DMA）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eepromat24c02" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        eeprom—AT24C02
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rtc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RTC实时时钟
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完结撒花！！！ ❀ ❀ ❀
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EDA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fpga/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FPGA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../electronics/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    电子设计竞赛
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    电子设计竞赛
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../smartcar/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    智能车
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    智能车
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smartcar/basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    智能车基础篇
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../everyday/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日常经验分享
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    社团资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contribute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    贡献
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stm32hal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        快速入门STM32HAL库&amp;&amp;蓝桥杯嵌入式笔记
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="快速入门STM32HAL库&amp;&amp;蓝桥杯嵌入式笔记">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        代码区域：
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        点点点：操作
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpioled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPIO、LED
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        按键：
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LCD：
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pscarrccr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        定时器的一些参数及其关系（定时器时钟、PSC、ARR、CCR）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        定时器：
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pwm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PWM：
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IC（输入捕获）：
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADC测量：
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stm32-hal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STM32 HAL库核心概念：句柄与指针规则
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        串口：（推荐使用DMA）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eepromat24c02" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        eeprom—AT24C02
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rtc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RTC实时时钟
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完结撒花！！！ ❀ ❀ ❀
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+  
+                  
+
+
+
+<h1 id="_1">嵌入式赛道<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cm">/*</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cm"> * @Author: 24级智官超 (Loren_zzi)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cm"> * @Date: 2026-04-02</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cm"> * @Description:快速入门STM32HAL库&amp;&amp;蓝桥杯嵌入式</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="cm"> */</span>
+</code></pre></div>
+<p><strong>标准学习路线：</strong>
+具体时间大二同学自行掌握：
+首先学完stm32标准库，依旧是权威江协【STM32入门教程-2023版 细致讲解 中文字幕】 <a href="https://www.bilibili.com/video/BV1th411z7sn/?share_source=copy_web&amp;vd_source=172fb8291dc4a2ef1ce47ef40f1be99d">https://www.bilibili.com/video/BV1th411z7sn/?share_source=copy_web&amp;vd_source=172fb8291dc4a2ef1ce47ef40f1be99d</a> （学到第十一章SPI就已经很够用了）
+之后看up：我的代码没问题，快速入门hal库和蓝桥杯板子，嵌入式赛道使用以 <strong>STM32G431RBT6</strong> 为主控芯片的 <strong>CT117E-M4 竞赛开发板</strong>。【蓝桥杯嵌入式省赛快速入门教程（诚心分享+全程干货+免费无套路）】 <a href="https://www.bilibili.com/video/BV1uH4y1E7G4/?share_source=copy_web&amp;vd_source=172fb8291dc4a2ef1ce47ef40f1be99d">https://www.bilibili.com/video/BV1uH4y1E7G4/?share_source=copy_web&amp;vd_source=172fb8291dc4a2ef1ce47ef40f1be99d</a> （这个视频完全够用夯爆了！）（串口的地方可以优化很多，可以看看我下面的文章）
+（同样也可以参考我的笔记和代码模板，笔者自认为还算是简洁明了）
+这里是我仓库的地址： <a href="https://github.com/Loren-zzi/Lanqiao-Cup-Embedded-2026.git">https://github.com/Loren-zzi/Lanqiao-Cup-Embedded-2026.git</a></p>
+<hr />
+<h2 id="stm32hal">快速入门STM32HAL库&amp;&amp;蓝桥杯嵌入式笔记<a class="headerlink" href="#stm32hal" title="Permanent link">&para;</a></h2>
+<p>鸣谢B站UP：我的代码没问题</p>
+<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cm">/*</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cm"> * @Author: 洛 (Loren_zzi)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="cm"> * @Date: 2026-04-02</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="cm"> * @Description:快速入门STM32HAL库&amp;&amp;蓝桥杯嵌入式</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="cm"> */</span>
+</code></pre></div>
+<h3 id="_2">代码区域：<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>因为 CubeMX 是一个图形化配置工具，当你修改了引脚配置并点击“Generate Code”时，它会重新生成 <code>main.c</code>。<strong>在 CubeMX 生成的文件中，自定义代码应放在原有的 <code>USER CODE BEGIN/END</code> 区域，并勾选 <code>Keep User Code when re-generating</code>，否则重新生成时可能被覆盖。</strong>自己创建且不由 CubeMX 生成的 .c/.h 文件不受这些标记限制。
+<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cm">/* Private typedef -----------------------------------------------------------*/</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="cm">/* USER CODE BEGIN PTD */</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">PTD</span><span class="p">(</span><span class="n">Private</span><span class="w"> </span><span class="n">Typedef</span><span class="p">)</span><span class="w"> </span><span class="err">——</span><span class="w"> </span><span class="n">私有类型定义</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="cm">/* USER CODE END PTD */</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="cm">/* Private define ------------------------------------------------------------*/</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="cm">/* USER CODE BEGIN PD */</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="err">`</span><span class="n">PD</span><span class="err">`</span><span class="w"> </span><span class="p">(</span><span class="n">Private</span><span class="w"> </span><span class="n">Define</span><span class="p">)</span><span class="w"> </span><span class="err">——</span><span class="w"> </span><span class="n">私有宏定义</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="cm">/* USER CODE END PD */</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="cm">/* Private macro -------------------------------------------------------------*/</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="cm">/* USER CODE BEGIN PM */</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="err">`</span><span class="n">PM</span><span class="err">`</span><span class="w"> </span><span class="p">(</span><span class="n">Private</span><span class="w"> </span><span class="n">Macro</span><span class="p">)</span><span class="w"> </span><span class="err">——</span><span class="w"> </span><span class="n">私有宏函数</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="cm">/* USER CODE END PM */</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="cm">/* Private variables ---------------------------------------------------------*/</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="cm">/* USER CODE BEGIN PV */</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="err">`</span><span class="n">PV</span><span class="err">`</span><span class="w"> </span><span class="p">(</span><span class="n">Private</span><span class="w"> </span><span class="n">Variables</span><span class="p">)</span><span class="w"> </span><span class="err">——</span><span class="w"> </span><span class="n">私有变量</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="cm">/* USER CODE END PV */</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="cm">/* Private function prototypes -----------------------------------------------*/</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="kt">void</span><span class="w"> </span><span class="n">SystemClock_Config</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="cm">/* USER CODE BEGIN PFP */</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="p">(</span><span class="n">Private</span><span class="w"> </span><span class="n">Function</span><span class="w"> </span><span class="n">Prototypes</span><span class="err">）</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="cm">/* USER CODE END PFP */</span>
+</code></pre></div></p>
+<hr />
+<h3 id="_3">点点点：操作<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li>（RCC）：外部时钟使能外部高速时钟</li>
+<li>（SYS）：Debug 选择 Serial Wire（SWD 调试接口，不是 UART 串口）。</li>
+<li>系统时钟配置：
+<img alt="Pasted image 20260330185239.png" src="../../../assets/images/Pasted%20image%2020260330185239.png" width="562" /></li>
+<li><img alt="Pasted image 20260330185535.png" src="../../../assets/images/Pasted%20image%2020260330185535.png" width="634" />
+并且注意：在Code Generator选择生成.c.h文件</li>
+<li>魔术棒 debug选择Reset and Run</li>
+<li>增加code分组，也要在魔术棒里添加路径</li>
+</ol>
+<h3 id="gpioled">GPIO、LED<a class="headerlink" href="#gpioled" title="Permanent link">&para;</a></h3>
+<p><img alt="Pasted image 20260329194458.png" src="../../../assets/images/Pasted%20image%2020260329194458.png" /></p>
+<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">show_led</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">led</span><span class="p">,</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">state</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="n">HAL_GPIO_WritePin</span><span class="p">(</span><span class="n">GPIOD</span><span class="p">,</span><span class="n">GPIO_PIN_2</span><span class="p">,</span><span class="n">GPIO_PIN_SET</span><span class="p">);</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">state</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="n">HAL_GPIO_WritePin</span><span class="p">(</span><span class="n">GPIOC</span><span class="p">,</span><span class="mh">0x0080</span><span class="o">&lt;&lt;</span><span class="n">led</span><span class="p">,</span><span class="n">GPIO_PIN_RESET</span><span class="p">);</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="k">else</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">        </span><span class="n">HAL_GPIO_WritePin</span><span class="p">(</span><span class="n">GPIOC</span><span class="p">,</span><span class="mh">0x0080</span><span class="o">&lt;&lt;</span><span class="n">led</span><span class="p">,</span><span class="n">GPIO_PIN_SET</span><span class="p">);</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="n">HAL_GPIO_WritePin</span><span class="p">(</span><span class="n">GPIOD</span><span class="p">,</span><span class="n">GPIO_PIN_2</span><span class="p">,</span><span class="n">GPIO_PIN_RESET</span><span class="p">);</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>初始化</strong>：PC8-PC15 高电平、推挽输出，LED 为低电平点亮。74HC573 是锁存器，不是译码器；PD2 为高电平时输出跟随输入，为低电平时保持锁存数据。为避免与 LCD 共用引脚时相互影响，GPIO 初始化时先将 PD2 设为低电平。
+<img alt="Pasted image 20260330190358.png" src="../../../assets/images/Pasted%20image%2020260330190358.png" width="588" />
+<strong>PD2 的角色：</strong> 它连接到 74HC573 的 <strong>LE (LATCH ENABLE)</strong> 引脚，即“锁存使能端”。
+如果不及时拉低 PD2（锁存数据），当调用 LCD 刷新函数时，LCD 的数据信号会传到 GPIOC，由于锁存器还是打开的，你的 <strong>LED 就会跟着 LCD 的数据乱闪</strong>。<strong><em>！！所以每次操作完LED就要立即将PD2拉低！</em></strong></p>
+<hr />
+<h3 id="_4">按键：<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><img alt="Pasted image 20260329194517.png" src="../../../assets/images/Pasted%20image%2020260329194517.png" />
+<strong>初始化</strong>：PB0、1、2、PA0为上拉输入模式
+当HAL_GPIO_ReadPin读到为0时，说明按键按下
+<img alt="Pasted image 20260330201053.png" src="../../../assets/images/Pasted%20image%2020260330201053.png" width="516" />
+下面介绍一种非阻塞式的写法：
+状态机逻辑本质是检测按下是否达到长按键阈值、否则是短按键
+<em>中断修改、主循环读取的状态变量应加 <code>volatile</code>，避免编译器优化掉必要的访问；但它不保证“读取后清零”等多步操作的原子性。</em>
+<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">/////////////////////////////////////////在key.c中</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1">//=============================key</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">// 定义全局变量时加上 volatile</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1">//在中断和主循环中共同访问的变量，必须加 `volatile` 防止被编译器优化掉</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">volatile</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">key_short</span><span class="p">;</span><span class="w">   </span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">volatile</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">key_long</span><span class="p">;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="k">static</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">key_time</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="k">static</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">long_state</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="nf">key_state</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="p">{</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">HAL_GPIO_ReadPin</span><span class="p">(</span><span class="n">GPIOB</span><span class="p">,</span><span class="n">GPIO_PIN_0</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">HAL_GPIO_ReadPin</span><span class="p">(</span><span class="n">GPIOB</span><span class="p">,</span><span class="n">GPIO_PIN_1</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">HAL_GPIO_ReadPin</span><span class="p">(</span><span class="n">GPIOB</span><span class="p">,</span><span class="n">GPIO_PIN_2</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">HAL_GPIO_ReadPin</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span><span class="n">GPIO_PIN_0</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="p">}</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="kt">void</span><span class="w"> </span><span class="nf">key_loop</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="p">{</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">last_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">now_state</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">    </span><span class="n">last_state</span><span class="o">=</span><span class="n">now_state</span><span class="p">;</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">    </span><span class="n">now_state</span><span class="o">=</span><span class="n">key_state</span><span class="p">();</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="mi">4</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">last_state</span><span class="o">==</span><span class="mi">0</span><span class="o">&amp;&amp;</span><span class="n">now_state</span><span class="o">==</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w">            </span><span class="n">key_time</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="w">            </span><span class="n">long_state</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//重置长按标志位</span>
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">last_state</span><span class="o">==</span><span class="n">i</span><span class="o">&amp;&amp;</span><span class="n">now_state</span><span class="o">==</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="o">++</span><span class="n">key_time</span><span class="o">==</span><span class="mi">40</span><span class="o">&amp;&amp;</span><span class="n">long_state</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a><span class="w">            </span><span class="p">{</span>
+<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a><span class="w">                </span><span class="n">key_long</span><span class="o">=</span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a><span class="w">                </span><span class="n">long_state</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a><span class="w">            </span><span class="p">}</span><span class="w">   </span>
+<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a>
+<a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">last_state</span><span class="o">==</span><span class="n">i</span><span class="o">&amp;&amp;</span><span class="n">now_state</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">long_state</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a><span class="w">            </span><span class="p">{</span>
+<a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a><span class="w">                </span><span class="n">key_short</span><span class="o">=</span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-4-52" name="__codelineno-4-52" href="#__codelineno-4-52"></a><span class="w">            </span><span class="k">else</span>
+<a id="__codelineno-4-53" name="__codelineno-4-53" href="#__codelineno-4-53"></a><span class="w">            </span><span class="p">{</span>
+<a id="__codelineno-4-54" name="__codelineno-4-54" href="#__codelineno-4-54"></a><span class="w">                </span><span class="n">long_state</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-4-55" name="__codelineno-4-55" href="#__codelineno-4-55"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-4-56" name="__codelineno-4-56" href="#__codelineno-4-56"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-4-57" name="__codelineno-4-57" href="#__codelineno-4-57"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-58" name="__codelineno-4-58" href="#__codelineno-4-58"></a>
+<a id="__codelineno-4-59" name="__codelineno-4-59" href="#__codelineno-4-59"></a>
+<a id="__codelineno-4-60" name="__codelineno-4-60" href="#__codelineno-4-60"></a><span class="p">}</span>
+<a id="__codelineno-4-61" name="__codelineno-4-61" href="#__codelineno-4-61"></a><span class="c1">///////////////////////////////在定时器中每20ms刷新一次函数key_loop</span>
+<a id="__codelineno-4-62" name="__codelineno-4-62" href="#__codelineno-4-62"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="n">led7_state</span><span class="p">;</span>
+<a id="__codelineno-4-63" name="__codelineno-4-63" href="#__codelineno-4-63"></a><span class="kt">void</span><span class="w"> </span><span class="nf">HAL_TIM_PeriodElapsedCallback</span><span class="p">(</span><span class="n">TIM_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">htim</span><span class="p">)</span>
+<a id="__codelineno-4-64" name="__codelineno-4-64" href="#__codelineno-4-64"></a><span class="p">{</span>
+<a id="__codelineno-4-65" name="__codelineno-4-65" href="#__codelineno-4-65"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">count_1s</span><span class="p">,</span><span class="n">count_20ms</span><span class="p">;</span>
+<a id="__codelineno-4-66" name="__codelineno-4-66" href="#__codelineno-4-66"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">htim</span><span class="o">-&gt;</span><span class="n">Instance</span><span class="o">==</span><span class="n">TIM3</span><span class="p">)</span><span class="w">  </span><span class="c1">//10ms</span>
+<a id="__codelineno-4-67" name="__codelineno-4-67" href="#__codelineno-4-67"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-4-68" name="__codelineno-4-68" href="#__codelineno-4-68"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="o">++</span><span class="n">count_1s</span><span class="o">==</span><span class="mi">100</span><span class="p">)</span>
+<a id="__codelineno-4-69" name="__codelineno-4-69" href="#__codelineno-4-69"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-4-70" name="__codelineno-4-70" href="#__codelineno-4-70"></a><span class="w">            </span><span class="n">count_1s</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-4-71" name="__codelineno-4-71" href="#__codelineno-4-71"></a><span class="w">            </span><span class="n">led7_state</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-4-72" name="__codelineno-4-72" href="#__codelineno-4-72"></a><span class="w">            </span><span class="n">led7_state</span><span class="o">=</span><span class="n">led7_state</span><span class="o">%</span><span class="mi">2</span><span class="p">;</span>
+<a id="__codelineno-4-73" name="__codelineno-4-73" href="#__codelineno-4-73"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-4-74" name="__codelineno-4-74" href="#__codelineno-4-74"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="o">++</span><span class="n">count_20ms</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-4-75" name="__codelineno-4-75" href="#__codelineno-4-75"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-4-76" name="__codelineno-4-76" href="#__codelineno-4-76"></a><span class="w">            </span><span class="n">count_20ms</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-4-77" name="__codelineno-4-77" href="#__codelineno-4-77"></a><span class="w">            </span><span class="n">key_loop</span><span class="p">();</span>
+<a id="__codelineno-4-78" name="__codelineno-4-78" href="#__codelineno-4-78"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-4-79" name="__codelineno-4-79" href="#__codelineno-4-79"></a>
+<a id="__codelineno-4-80" name="__codelineno-4-80" href="#__codelineno-4-80"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-81" name="__codelineno-4-81" href="#__codelineno-4-81"></a>
+<a id="__codelineno-4-82" name="__codelineno-4-82" href="#__codelineno-4-82"></a><span class="p">}</span>
+<a id="__codelineno-4-83" name="__codelineno-4-83" href="#__codelineno-4-83"></a><span class="c1">//////////////////////////////////////在主函数while里调用：</span>
+<a id="__codelineno-4-84" name="__codelineno-4-84" href="#__codelineno-4-84"></a><span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">key_short</span><span class="p">)</span>
+<a id="__codelineno-4-85" name="__codelineno-4-85" href="#__codelineno-4-85"></a><span class="w">      </span><span class="p">{</span>
+<a id="__codelineno-4-86" name="__codelineno-4-86" href="#__codelineno-4-86"></a><span class="w">        </span><span class="k">switch</span><span class="p">(</span><span class="n">key_short</span><span class="p">)</span>
+<a id="__codelineno-4-87" name="__codelineno-4-87" href="#__codelineno-4-87"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-4-88" name="__codelineno-4-88" href="#__codelineno-4-88"></a><span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-4-89" name="__codelineno-4-89" href="#__codelineno-4-89"></a><span class="w">            </span><span class="p">{</span>
+<a id="__codelineno-4-90" name="__codelineno-4-90" href="#__codelineno-4-90"></a><span class="w">                </span><span class="n">count1</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-4-91" name="__codelineno-4-91" href="#__codelineno-4-91"></a><span class="w">            </span><span class="p">}</span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-4-92" name="__codelineno-4-92" href="#__codelineno-4-92"></a>
+<a id="__codelineno-4-93" name="__codelineno-4-93" href="#__codelineno-4-93"></a><span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span>
+<a id="__codelineno-4-94" name="__codelineno-4-94" href="#__codelineno-4-94"></a><span class="w">            </span><span class="p">{</span>
+<a id="__codelineno-4-95" name="__codelineno-4-95" href="#__codelineno-4-95"></a><span class="w">                </span><span class="n">led2_state</span><span class="o">=</span><span class="p">(</span><span class="o">++</span><span class="n">led2_state</span><span class="p">)</span><span class="o">%</span><span class="mi">2</span><span class="p">;</span>
+<a id="__codelineno-4-96" name="__codelineno-4-96" href="#__codelineno-4-96"></a><span class="w">                </span><span class="n">show_led</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">led2_state</span><span class="p">);</span>
+<a id="__codelineno-4-97" name="__codelineno-4-97" href="#__codelineno-4-97"></a><span class="w">            </span><span class="p">}</span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-4-98" name="__codelineno-4-98" href="#__codelineno-4-98"></a>
+<a id="__codelineno-4-99" name="__codelineno-4-99" href="#__codelineno-4-99"></a><span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">4</span><span class="p">:</span>
+<a id="__codelineno-4-100" name="__codelineno-4-100" href="#__codelineno-4-100"></a><span class="w">            </span><span class="p">{</span>
+<a id="__codelineno-4-101" name="__codelineno-4-101" href="#__codelineno-4-101"></a><span class="w">                </span><span class="n">count2</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-4-102" name="__codelineno-4-102" href="#__codelineno-4-102"></a><span class="w">            </span><span class="p">}</span><span class="k">break</span><span class="p">;</span><span class="w">     </span>
+<a id="__codelineno-4-103" name="__codelineno-4-103" href="#__codelineno-4-103"></a>
+<a id="__codelineno-4-104" name="__codelineno-4-104" href="#__codelineno-4-104"></a><span class="w">        </span><span class="p">}</span><span class="n">key_short</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-4-105" name="__codelineno-4-105" href="#__codelineno-4-105"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-4-106" name="__codelineno-4-106" href="#__codelineno-4-106"></a>
+<a id="__codelineno-4-107" name="__codelineno-4-107" href="#__codelineno-4-107"></a><span class="w">          </span><span class="k">if</span><span class="p">(</span><span class="n">key_long</span><span class="p">)</span>
+<a id="__codelineno-4-108" name="__codelineno-4-108" href="#__codelineno-4-108"></a><span class="w">      </span><span class="p">{</span>
+<a id="__codelineno-4-109" name="__codelineno-4-109" href="#__codelineno-4-109"></a><span class="w">        </span><span class="k">switch</span><span class="p">(</span><span class="n">key_long</span><span class="p">)</span>
+<a id="__codelineno-4-110" name="__codelineno-4-110" href="#__codelineno-4-110"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-4-111" name="__codelineno-4-111" href="#__codelineno-4-111"></a><span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-4-112" name="__codelineno-4-112" href="#__codelineno-4-112"></a><span class="w">            </span><span class="p">{</span>
+<a id="__codelineno-4-113" name="__codelineno-4-113" href="#__codelineno-4-113"></a><span class="w">                </span><span class="n">count1</span><span class="o">--</span><span class="p">;</span>
+<a id="__codelineno-4-114" name="__codelineno-4-114" href="#__codelineno-4-114"></a><span class="w">            </span><span class="p">}</span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-4-115" name="__codelineno-4-115" href="#__codelineno-4-115"></a>
+<a id="__codelineno-4-116" name="__codelineno-4-116" href="#__codelineno-4-116"></a><span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">4</span><span class="p">:</span>
+<a id="__codelineno-4-117" name="__codelineno-4-117" href="#__codelineno-4-117"></a><span class="w">            </span><span class="p">{</span>
+<a id="__codelineno-4-118" name="__codelineno-4-118" href="#__codelineno-4-118"></a><span class="w">                </span><span class="n">count2</span><span class="o">--</span><span class="p">;</span>
+<a id="__codelineno-4-119" name="__codelineno-4-119" href="#__codelineno-4-119"></a><span class="w">            </span><span class="p">}</span><span class="k">break</span><span class="p">;</span><span class="w">     </span>
+<a id="__codelineno-4-120" name="__codelineno-4-120" href="#__codelineno-4-120"></a>
+<a id="__codelineno-4-121" name="__codelineno-4-121" href="#__codelineno-4-121"></a><span class="w">        </span><span class="p">}</span><span class="n">key_long</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-4-122" name="__codelineno-4-122" href="#__codelineno-4-122"></a><span class="w">      </span><span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<h3 id="lcd">LCD：<a class="headerlink" href="#lcd" title="Permanent link">&para;</a></h3>
+<p><img alt="Pasted image 20260329194525.png" src="../../../assets/images/Pasted%20image%2020260329194525.png" />
+<strong>初始化：</strong>
+<em>将Src中lcd.c、Inc中fonts.h 还有 lcd.h文件复制到我们工程code里面</em>
+在官方给的LCD.c文件里已经帮你初始化过，无需再手动配置
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>  LCD_Init();
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>  LCD_Clear(Black);
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>  LCD_SetBackColor(Black);
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>  LCD_SetTextColor(White);
+</code></pre></div>
+每一行最多显示 20 个字符；若字符串实际长度为 20，数组至少需要 21 字节，额外一字节用于结束符 <code>\0</code>。下面的 <code>text[20]</code> 只适用于实际字符串长度不超过 19 的情况。
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>char text[20];
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>void show_lcd(void)
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>{
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    sprintf(text,"       text:");
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    LCD_DisplayStringLine(Line0,(u8 *)text);
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    sprintf(text,"    count:  %-3d",count);
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    LCD_DisplayStringLine(Line1,(u8 *)text);    
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>}
+</code></pre></div>
+关于<strong>残余字符</strong>：%3d 或 %-3d 只是数字的最小字段宽度，超过三位仍会完整输出，也不会自动擦掉整行。显示内容变短时，需要补足空格或清行；整行高亮也需要把整行重新绘制。
+<strong>为什么一个text变量就能显示、这是人眼视觉残留效应吗？</strong>
+答：不是，是利用了 LCD 硬件自带的“显存”功能</p>
+<h4 id="_5">某一行高亮：<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p><code>LCD_SetBackColor</code> 确实是设置一个全局变量（通常叫 <code>BackColor</code>），但它<strong>不会立刻把已经画在屏幕上的东西变色</strong>。它影响的是<strong>在这行代码之后</strong>执行的“打印”动作。
+<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">show_lcd</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">{</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="c1">// 第一步：Line0</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="n">LCD_SetBackColor</span><span class="p">(</span><span class="n">highlight_line</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">Yellow</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Black</span><span class="p">);</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="n">sprintf</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="s">"   hello,world!   "</span><span class="p">);</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="n">LCD_DisplayStringLine</span><span class="p">(</span><span class="n">Line0</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">u8</span><span class="o">*</span><span class="p">)</span><span class="n">text</span><span class="p">);</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="c1">// 第二步：Line1</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">    </span><span class="n">LCD_SetBackColor</span><span class="p">(</span><span class="n">highlight_line</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">Yellow</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Black</span><span class="p">);</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="n">sprintf</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="s">"    count1:  %-3d"</span><span class="p">,</span><span class="w"> </span><span class="n">count1</span><span class="p">);</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">    </span><span class="n">LCD_DisplayStringLine</span><span class="p">(</span><span class="n">Line1</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">u8</span><span class="o">*</span><span class="p">)</span><span class="n">text</span><span class="p">);</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">    </span><span class="c1">// 第三步：Line2</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">    </span><span class="n">LCD_SetBackColor</span><span class="p">(</span><span class="n">highlight_line</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">Yellow</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Black</span><span class="p">);</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">    </span><span class="n">sprintf</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="s">"    count2:  %-3d"</span><span class="p">,</span><span class="w"> </span><span class="n">count2</span><span class="p">);</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">    </span><span class="n">LCD_DisplayStringLine</span><span class="p">(</span><span class="n">Line2</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">u8</span><span class="o">*</span><span class="p">)</span><span class="n">text</span><span class="p">);</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">    </span><span class="c1">// 最后记得切回黑色，防止影响其他地方</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">    </span><span class="n">LCD_SetBackColor</span><span class="p">(</span><span class="n">Black</span><span class="p">);</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="p">}</span>
+</code></pre></div></p>
+<h4 id="ledlcd">关于LED和LCD共用引脚冲突问题：<a class="headerlink" href="#ledlcd" title="Permanent link">&para;</a></h4>
+<ol>
+<li>GPIO 初始化时建议将 PD2 设为低电平；若按下面的代码在初始化后手动拉低，必须在 LCD 初始化和刷新之前完成。
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>  MX_GPIO_Init();
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>  /* USER CODE BEGIN 2 */
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>  HAL_GPIO_WritePin(GPIOD,GPIO_PIN_2,GPIO_PIN_RESET);
+</code></pre></div></li>
+<li>在每一个关于LCD的函数内加上代码：
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>u16 temp = GPIOC-&gt;ODR; // 进门前：把 GPIOC 现在的状态（包含 LED 的亮灭情况）拍个照存下来
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>// ... 中间任由 LCD 驱动怎么折腾 GPIOC 都没关系 ...
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>GPIOC-&gt;ODR = temp;     // 出门前：按照刚才拍的照片，把 GPIOC 恢复原样
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>例如初始化：
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>void LCD_Init(void)
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>{
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    u16 temp=GPIOC-&gt;ODR;
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    LCD_CtrlLinesConfig();
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    dummy = LCD_ReadReg(0);
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    if(dummy == 0x8230)
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>    {
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>        REG_8230_Init();
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>    }
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>    else
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>    {
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>        REG_932X_Init();
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>    }
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>    dummy = LCD_ReadReg(0);
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>    GPIOC-&gt;ODR=temp;
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>}
+</code></pre></div></li>
+<li>再加上你在调用 LCD 前，通过 <code>HAL_GPIO_WritePin(GPIOD,GPIO_PIN_2,GPIO_PIN_RESET);</code> 把锁存器关死了。这样 LCD 刷屏幕的时候，数据进不到 LED 里；等屏幕刷完，你又把 <code>GPIOC</code> 恢复到了刷屏幕前的状态。在 LED 和 LCD 不并发操作相关引脚的前提下，这样可以实现<strong>分时复用</strong>。 </li>
+</ol>
+<hr />
+<h3 id="pscarrccr">定时器的一些参数及其关系（定时器时钟、PSC、ARR、CCR）<a class="headerlink" href="#pscarrccr" title="Permanent link">&para;</a></h3>
+<p>要把定时器（Timer）玩透，理解这四个参数之间的“级联”关系是基本功。我们可以把定时器想象成一个<strong>“往木桶里自动注水”</strong>的过程。</p>
+<h4 id="1">1. 核心成员介绍<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
+<p>在 STM32 中，定时器的核心是由一个 <strong>16位/32位计数器（CNT）</strong> 驱动的。</p>
+<table>
+<thead>
+<tr>
+<th><strong>参数名称</strong></th>
+<th><strong>全称</strong></th>
+<th><strong>形象比喻</strong></th>
+<th><strong>作用</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><span class="arithmatex">\(f_{TIM}\)</span></strong></td>
+<td><strong>定时器输入时钟 (Timer Clock)</strong></td>
+<td>水流的速度</td>
+<td>分频前的定时器时钟，不一定等于系统主频。</td>
+</tr>
+<tr>
+<td><strong>PSC</strong></td>
+<td><strong>预分频器 (Prescaler)</strong></td>
+<td>水龙头开关（减速器）</td>
+<td>决定计数器“跳动”一次需要多少时间。</td>
+</tr>
+<tr>
+<td><strong>ARR</strong></td>
+<td><strong>自动重装载寄存器 (Auto-Reload)</strong></td>
+<td>木桶的高度</td>
+<td>决定计数器数到多少就“溢出”重启，即<strong>周期</strong>。</td>
+</tr>
+<tr>
+<td><strong>CCR</strong></td>
+<td><strong>捕获/比较寄存器 (Capture/Compare)</strong></td>
+<td>水桶里的浮标（阈值）</td>
+<td>决定 PWM 的<strong>占空比</strong>或记录<strong>捕获时刻</strong>。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2">2. 它们之间的级联逻辑<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
+<h5 id="f_tim-to-psc">第一步：分频 (<span class="arithmatex">\(f_{TIM} \to PSC\)</span>)<a class="headerlink" href="#f_tim-to-psc" title="Permanent link">&para;</a></h5>
+<p>定时器输入时钟较快时（比如 80MHz），可以用 PSC 降低计数频率。下面的 <code>f_TIM</code> 应从 CubeMX 时钟树中该定时器对应的 APB Timer Clock 读取，不能一律用系统主频代替；STM32G431 的 APB 分频为 1 时，定时器时钟等于对应 PCLK，APB 分频大于 1 时通常为对应 PCLK 的 2 倍。</p>
+<ul>
+<li>
+<p><strong>频率计算</strong>：计数器频率 <span class="arithmatex">\(f_{CNT} = \frac{f_{TIM}}{PSC + 1}\)</span>。</p>
+</li>
+<li>
+<p><strong>物理意义</strong>：这就是你之前问的 <span class="arithmatex">\(80-1\)</span> 的由来。设为 79，则 <span class="arithmatex">\(f_{CNT} = 1\text{MHz}\)</span>，意味着计数器每 <span class="arithmatex">\(1\mu s\)</span> 加 1。</p>
+</li>
+</ul>
+<h5 id="psc-to-arr">第二步：决定周期 (<span class="arithmatex">\(PSC \to ARR\)</span>)<a class="headerlink" href="#psc-to-arr" title="Permanent link">&para;</a></h5>
+<p>计数器从 0 数到 ARR（含 ARR），下一计数节拍才回到 0，共 ARR+1 个节拍。以下公式适用于向上计数、边沿对齐，且没有重复计数器等额外分频的情况。</p>
+<ul>
+<li>
+<p><strong>溢出频率</strong>：<span class="arithmatex">\(f_{overflow} = \frac{f_{CNT}}{ARR + 1} = \frac{f_{TIM}}{(PSC+1)(ARR+1)}\)</span>。</p>
+</li>
+<li>
+<p><strong>应用</strong>：这就是你输出 PWM 波形的频率，或者是定时器中断（如你的 <code>htim3</code>）触发的频率。</p>
+</li>
+</ul>
+<h5 id="arr-to-ccr">第三步：决定占空比 (<span class="arithmatex">\(ARR \to CCR\)</span>)<a class="headerlink" href="#arr-to-ccr" title="Permanent link">&para;</a></h5>
+<p><em>这是在 <strong>PWM 模式</strong>下最常用的逻辑。计数器 CNT 在从 0 到 ARR 增长的过程中，会不断和 CCR 比较。</em></p>
+<ul>
+<li>
+<p><strong>逻辑</strong>：当 <span class="arithmatex">\(CNT &lt; CCR\)</span> 时，引脚输出高电平；当 <span class="arithmatex">\(CNT \ge CCR\)</span> 时，引脚输出低电平（假设为 PWM mode 1、输出极性 High、向上计数且边沿对齐）。</p>
+</li>
+<li>
+<p><strong>占空比 (Duty Cycle)</strong>：<span class="arithmatex">\(Duty = \frac{CCR}{ARR + 1}\)</span>。</p>
+</li>
+</ul>
+<div class="arithmatex">\[
+f_{PWM} = \frac{f_{TIM}}{(PSC + 1) \times (ARR + 1)}
+\]</div>
+<div class="arithmatex">\[
+Duty = \frac{CCR}{ARR + 1} \times 100\%
+\]</div>
+<hr />
+<h3 id="_6">定时器：<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>以下数值例子假设该定时器的输入时钟为 80MHz，时钟不同需要重新计算。</p>
+<div class="arithmatex">\[
+f=80 000 000/(psc+1)/(arr+1)
+\]</div>
+<p>所以周期就是：
+   <span class="arithmatex">\(T = \frac{(psc+1) \times (arr+1)}{80\,000\,000}\)</span></p>
+<p>一般配置10ms就够用了：
+10ms        psc=80-1      arr=10000-1
+1ms:         psc=80-1      arr=1000-1
+配图为 1ms 配置，记住打开内部时钟和中断。但下方回调按 10ms 写：如果照图设成 1ms，<code>count_1s</code> 的阈值应为 1000、<code>count_20ms</code> 应为 20；使用原代码的 100 和 2 时，定时器必须配置为 10ms。
+<img alt="Pasted image 20260330211210.png" src="../../../assets/images/Pasted%20image%2020260330211210.png" width="506" />
+初始化使能
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>HAL_TIM_Base_Start_IT(&amp;htim3);
+</code></pre></div>
+使用回调函数：
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>{
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    static uint16_t count_1s,count_20ms;
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    if(htim-&gt;Instance==TIM3)  //10ms
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    {
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>        if(++count_1s==100)
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>        {
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>            count_1s=0;
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>            led7_state++;
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>            led7_state=led7_state%2;
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>        }
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>        if(++count_20ms==2)
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>        {
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>            count_20ms=0;
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>            key_loop();
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>        }
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>    }
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>}
+</code></pre></div></p>
+<hr />
+<h3 id="pwm">PWM：<a class="headerlink" href="#pwm" title="Permanent link">&para;</a></h3>
+<p>频率：</p>
+<div class="arithmatex">\[
+f = \frac{f_{TIM}}{(ARR+1)(PSC+1)}
+\]</div>
+<p>CCR - 输出比较寄存器</p>
+<p>周期：</p>
+<div class="arithmatex">\[
+T = \frac{1}{f} = \frac{(ARR+1)(PSC+1)}{f_{TIM}}
+\]</div>
+<p>占空比：</p>
+<div class="arithmatex">\[
+\frac{CCR}{ARR+1}
+\]</div>
+<p>如果：让PA1输出频率为1000Hz，占空比为50%的方波
+假设 TIM2 输入时钟为 80MHz，将 PA1 配置为 TIM2_CH2，PSC=800-1、ARR=100-1，输出频率就是 1000Hz；占空比计算按 PWM mode 1、极性 High、向上计数且边沿对齐。
+<img alt="Pasted image 20260331194850.png" src="../../../assets/images/Pasted%20image%2020260331194850.png" width="528" />
+main初始化中：设置占空比为百分之五十
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>  HAL_TIM_PWM_Start(&amp;htim2,TIM_CHANNEL_2);
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>  TIM2-&gt;CCR2=50;
+</code></pre></div></p>
+<hr />
+<h3 id="ic">IC（输入捕获）：<a class="headerlink" href="#ic" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code>                          $f_{CNT} = \frac{f_{TIM}}{PSC + 1}$
+</code></pre></div>
+<div class="arithmatex">\[
+T = t_0 \cdot \text{capture\_value}
+\]</div>
+<div class="arithmatex">\[
+f = \frac{1}{T} = \frac{f_{TIM}}{(PSC + 1) \cdot \text{capture\_value}}
+\]</div>
+<h4 id="pwm_1">输入捕获引脚PWM频率：<a class="headerlink" href="#pwm_1" title="Permanent link">&para;</a></h4>
+<p>利用PA7输入捕获上面的PA1输出的PWM：
+1. cubemx配置PA7为TIM17定时器，记得要中断使能
+PSC 决定 CNT 的计数频率，ARR 决定计数回绕范围，也必须配置；若两次边沿之间发生未处理的溢出，测得的周期就会错误。
+    <img alt="Pasted image 20260401114529.png" src="../../../assets/images/Pasted%20image%2020260401114529.png" width="511" />
+2，IC中断使能启动：
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a> HAL_TIM_IC_Start_IT(&amp;htim17,TIM_CHANNEL_1);
+</code></pre></div>
+3，中断读取 CCR 赋值给 capture，并计算。下面清零 CNT 的写法是入门近似，会包含中断延迟误差；第一次捕获不能直接当成完整周期，capture 为 0 时也不能直接做除法。公式中的 capture_value 应代表一个周期的有效计数节拍数。
+<strong><em>当外部信号的上升沿触发时，硬件会自动把那一瞬间计数器 <code>CNT</code> 的数值“锁存”到 <code>CCR1</code> 中</em></strong>
+<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kt">uint32_t</span><span class="w"> </span><span class="n">fre</span><span class="p">,</span><span class="n">capture_val</span><span class="p">;</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">HAL_TIM_IC_CaptureCallback</span><span class="p">(</span><span class="n">TIM_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">htim</span><span class="p">)</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="p">{</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">htim</span><span class="o">-&gt;</span><span class="n">Instance</span><span class="o">==</span><span class="n">TIM17</span><span class="p">)</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">        </span><span class="n">capture_val</span><span class="o">=</span><span class="n">TIM17</span><span class="o">-&gt;</span><span class="n">CCR1</span><span class="p">;</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">        </span><span class="c1">//capture_val=HAL_TIM_ReadCapturedValue(htim,TIM_CHANNEL_1);</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">        </span><span class="n">TIM17</span><span class="o">-&gt;</span><span class="n">CNT</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">        </span><span class="n">fre</span><span class="o">=</span><span class="mi">80000000</span><span class="o">/</span><span class="p">(</span><span class="mi">80</span><span class="o">*</span><span class="n">capture_val</span><span class="p">);</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="p">}</span>
+</code></pre></div></p>
+<h4 id="555pwm">输入捕获555定时器产生的PWM波形<a class="headerlink" href="#555pwm" title="Permanent link">&para;</a></h4>
+<p><img alt="Pasted image 20260401115924.png" src="../../../assets/images/Pasted%20image%2020260401115924.png" /></p>
+<p>555定时器通过R40变阻器产生不同频率的PWM，可用内部的PA15引脚来输入捕获
+原理和上面一样
+<img alt="Pasted image 20260401121219.png" src="../../../assets/images/Pasted%20image%2020260401121219.png" width="588" />
+<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">HAL_TIM_IC_Start_IT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">htim8</span><span class="p">,</span><span class="n">TIM_CHANNEL_1</span><span class="p">);</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">htim</span><span class="o">-&gt;</span><span class="n">Instance</span><span class="o">==</span><span class="n">TIM8</span><span class="p">)</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">        </span><span class="c1">//capture_val=HAL_TIM_ReadCapturedValue(htim,TIM_CHANNEL_1);</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">        </span><span class="n">capture_val2</span><span class="o">=</span><span class="n">TIM8</span><span class="o">-&gt;</span><span class="n">CCR1</span><span class="p">;</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">        </span><span class="n">TIM8</span><span class="o">-&gt;</span><span class="n">CNT</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">        </span><span class="n">Fre_NE555</span><span class="o">=</span><span class="mi">80000000</span><span class="o">/</span><span class="p">(</span><span class="mi">80</span><span class="o">*</span><span class="n">capture_val2</span><span class="p">);</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">    </span><span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<h3 id="adc">ADC测量：<a class="headerlink" href="#adc" title="Permanent link">&para;</a></h3>
+<p><img alt="Pasted image 20260329194543.png" src="../../../assets/images/Pasted%20image%2020260329194543.png" />
+配图电位器接的是 PB12，不是 PB2。STM32G431 上将 PB12 配置为 ADC1_IN11，选择 IN11 Single-ended 模式（单端采样以模拟地为参考；差分采样测量指定正、负输入端的电压差）。
+<img alt="Pasted image 20260401145538.png" src="../../../assets/images/Pasted%20image%2020260401145538.png" width="498" />
+在 CubeMX 配置完成后会生成一个adc文件，编译一下，将这个adc.h文件放在我们headfile.h里面
+在 LCD 里面启动、获取、刷新：
+<strong>注意</strong>：下面的入门示例省略了等待步骤。轮询采样应在 <code>HAL_ADC_Start</code> 后等待 <code>HAL_ADC_PollForConversion</code> 成功，再 <code>HAL_ADC_GetValue</code>；刚启动就直接读取，不能保证得到本次转换结果。
+<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="w">    </span><span class="n">HAL_ADC_Start</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hadc1</span><span class="p">);</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="n">adc_val</span><span class="o">=</span><span class="w"> </span><span class="n">HAL_ADC_GetValue</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hadc1</span><span class="p">);</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">        </span><span class="n">sprintf</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="s">"    adc_val:%5d    "</span><span class="p">,</span><span class="n">adc_val</span><span class="p">);</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">        </span><span class="n">LCD_DisplayStringLine</span><span class="p">(</span><span class="n">Line8</span><span class="p">,(</span><span class="n">u8</span><span class="o">*</span><span class="p">)</span><span class="n">text</span><span class="p">);</span>
+</code></pre></div></p>
+<h4 id="_7">获取电压：<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kt">double</span><span class="w"> </span><span class="nf">get_vol</span><span class="p">(</span><span class="n">ADC_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">hadc</span><span class="p">)</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="p">{</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="n">HAL_ADC_Start</span><span class="p">(</span><span class="n">hadc</span><span class="p">);</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="n">adc_val</span><span class="o">=</span><span class="w"> </span><span class="n">HAL_ADC_GetValue</span><span class="p">(</span><span class="n">hadc</span><span class="p">);</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mf">3.3</span><span class="o">*</span><span class="n">adc_val</span><span class="o">/</span><span class="mi">4096</span><span class="p">;</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="p">}</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="c1">//然后在LCD中直接显示</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">        </span><span class="n">sprintf</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="s">"    adc_val:%5.2f    "</span><span class="p">,</span><span class="n">get_vol</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hadc1</span><span class="p">));</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">        </span><span class="n">LCD_DisplayStringLine</span><span class="p">(</span><span class="n">Line8</span><span class="p">,(</span><span class="n">u8</span><span class="o">*</span><span class="p">)</span><span class="n">text</span><span class="p">);</span>
+</code></pre></div>
+<p>为什么是除以4096？
+<img alt="Pasted image 20260305181736.png" src="../../../assets/images/Pasted%20image%2020260305181736.png" />、
+因为这里ADC设置为12位量化
+<a href="https://blog.csdn.net/weixin_72749746/article/details/137611347">https://blog.csdn.net/weixin_72749746/article/details/137611347</a>
+ADC 校准（在初始化完成、开始采样之前进行）：
+校准用于减小 ADC 本身的误差，不能保证一定读到精确的 3.3V；电压换算还取决于实际 VREF+，3.3 只是参考电压的假设值。12 位 ADC 有 4096 个量化等级，码值为 0～4095。
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>HAL_ADCEx_Calibration_Start(&amp;hadc1,ADC_SINGLE_ENDED);
+</code></pre></div></p>
+<hr />
+<h3 id="stm32-hal">STM32 HAL库核心概念：句柄与指针规则<a class="headerlink" href="#stm32-hal" title="Permanent link">&para;</a></h3>
+<h4 id="1_1">1. 命名缩写解析<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>前缀 <code>h</code></strong>：代表 <code>Handle</code>（句柄）。<ul>
+<li><code>htim</code> = Handle of Timer（定时器句柄）</li>
+<li><code>hadc</code> = Handle of ADC（ADC句柄）</li>
+<li><code>huart</code> = Handle of UART（串口句柄）</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-handle">2. 什么是“句柄 (Handle)”？<a class="headerlink" href="#2-handle" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>代码本质</strong>：句柄是一个<strong>结构体变量</strong>（例如 <code>TIM_HandleTypeDef htim2;</code>），内部包含了该外设的：<ol>
+<li>物理寄存器基地址指针（<code>.Instance</code>）</li>
+<li>初始化配置参数（<code>.Init</code>）</li>
+<li>当前工作状态（Ready / Busy / Error 等）</li>
+</ol>
+</li>
+<li><strong>作用</strong>：HAL库函数通过接收不同外设的句柄，实现对不同硬件的统一化操作管理。</li>
+</ul>
+<h4 id="3-htim2-vs-tim2">3. 句柄 (<code>htim2</code>) vs 底层寄存器 (<code>TIM2</code>)<a class="headerlink" href="#3-htim2-vs-tim2" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">名称格式</th>
+<th style="text-align: left;">例子</th>
+<th style="text-align: left;">属性</th>
+<th style="text-align: left;">作用与用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>小写带 <code>h</code></strong></td>
+<td style="text-align: left;"><code>htim2</code></td>
+<td style="text-align: left;"><strong>软件结构体变量</strong></td>
+<td style="text-align: left;">用于接收该外设句柄指针的 HAL 函数。<br>例: <code>HAL_TIM_PWM_Start(&amp;htim2, ...);</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>全大写无 <code>h</code></strong></td>
+<td style="text-align: left;"><code>TIM2</code></td>
+<td style="text-align: left;"><strong>物理寄存器基地址</strong></td>
+<td style="text-align: left;">用于直接操作底层寄存器，执行速度极快。<br>例: <code>TIM2-&gt;CCR2 = 50;</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>关联关系</em></td>
+<td style="text-align: left;"><code>htim2.Instance == TIM2</code></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="4">4. <code>&amp;</code> (取地址符) 的使用铁律<a class="headerlink" href="#4" title="Permanent link">&para;</a></h4>
+<p>HAL 库的操作函数形参通常要求传入<strong>结构体的指针</strong>。是否加 <code>&amp;</code> 取决于当前变量的类型：</p>
+<h5 id="a">情况 A：必须加 <code>&amp;</code> (取地址)<a class="headerlink" href="#a" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>场景</strong>：变量是全局定义的<strong>结构体实体</strong>（如在 main.c 中定义的 <code>TIM_HandleTypeDef htim2;</code>）。</li>
+<li><strong>原因</strong>：函数需要指针，而你手里是实体，必须用 <code>&amp;</code> 取出它的内存地址。</li>
+<li><strong>示例</strong>：
+    <div class="language-c highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">HAL_TIM_PWM_Start</span><span class="p">(</span><span class="o">&amp;</span><span class="n">htim2</span><span class="p">,</span><span class="w"> </span><span class="n">TIM_CHANNEL_2</span><span class="p">);</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="n">HAL_ADC_Start</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hadc1</span><span class="p">);</span>
+</code></pre></div></li>
+</ul>
+<h5 id="b">情况 B：坚决不能加 <code>&amp;</code><a class="headerlink" href="#b" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>场景</strong>：变量本身<strong>已经是一个指针</strong>（常见于回调函数或自定义函数的形参）。</li>
+<li><strong>原因</strong>：它已经是地址了，再取地址就变成了“指针的指针”，会与函数形参类型不匹配，编译器通常给出诊断；若忽略诊断或强制转换，可能错误访问内存甚至触发 HardFault，并非必然直接崩溃。</li>
+<li><strong>示例</strong>：
+    <div class="language-c highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1">// 形参 htim 带有 *，说明它已经是指针</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">HAL_TIM_IC_CaptureCallback</span><span class="p">(</span><span class="n">TIM_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">htim</span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="p">{</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="c1">// 1. 调用HAL函数直接传指针变量名</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">    </span><span class="n">HAL_TIM_ReadCapturedValue</span><span class="p">(</span><span class="n">htim</span><span class="p">,</span><span class="w"> </span><span class="n">TIM_CHANNEL_1</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">    </span><span class="c1">// 2. 访问内部成员必须用 -&gt; 符号</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">htim</span><span class="o">-&gt;</span><span class="n">Instance</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">TIM8</span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="p">}</span>
+</code></pre></div></li>
+</ul>
+<hr />
+<h3 id="dma">串口：（推荐使用DMA）<a class="headerlink" href="#dma" title="Permanent link">&para;</a></h3>
+<p><img alt="Pasted image 20260329194702.png" src="../../../assets/images/Pasted%20image%2020260329194702.png" />
+STM32G431 使用 USART1 时，此处应将 PA9 配置为 USART1_TX、PA10 配置为 USART1_RX，不是 PA10/PA11；Mode 选择 Asynchronous 异步通信，记得使能中断。
+<img alt="Pasted image 20260401154241.png" src="../../../assets/images/Pasted%20image%2020260401154241.png" width="514" /></p>
+<h4 id="_8">发送字符串：<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p>发送有效的、以 <code>\0</code> 结束的字符串时，HAL_UART_Transmit 的第三个参数可用函数 strlen，计算实际字符数、不含结束符；sizeof 得到对象的字节数（数组容量或指针大小）。二进制数据应传明确长度，不能一律使用 strlen。
+<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="w">      </span><span class="kt">char</span><span class="w"> </span><span class="n">text01</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">      </span><span class="n">sprintf</span><span class="p">(</span><span class="n">text01</span><span class="p">,</span><span class="s">"hello world</span><span class="se">\r\n</span><span class="s">"</span><span class="p">);</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">      </span><span class="n">HAL_UART_Transmit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">text01</span><span class="p">,</span><span class="n">strlen</span><span class="p">(</span><span class="n">text01</span><span class="p">),</span><span class="mi">50</span><span class="p">);</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">      </span><span class="n">HAL_Delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="c1">//会阻塞</span>
+</code></pre></div></p>
+<h4 id="_9">接收一个字符：<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<p>下面是在中断中回显的入门示例；阻塞发送会延长中断处理时间。如果计时用的 SysTick 无法抢占，注释中的 50ms 超时也不能保证按时退出。
+<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1">///////////初始化中：</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="n">HAL_UART_Receive_IT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span><span class="o">&amp;</span><span class="n">rec_date</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="c1">//相当于串口使能</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">  </span><span class="c1">///////////中断中</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">  </span><span class="kt">uint8_t</span><span class="w">  </span><span class="n">rec_date</span><span class="p">;</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">HAL_UART_RxCpltCallback</span><span class="p">(</span><span class="n">UART_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">huart</span><span class="p">)</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="p">{</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">huart</span><span class="o">-&gt;</span><span class="n">Instance</span><span class="o">==</span><span class="n">USART1</span><span class="p">)</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="w">        </span><span class="n">HAL_UART_Transmit</span><span class="p">(</span><span class="n">huart</span><span class="p">,</span><span class="o">&amp;</span><span class="n">rec_date</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">);</span><span class="c1">//最后的50是超时机制，最多等50ms就会跳出去</span>
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="w">        </span><span class="n">HAL_UART_Receive_IT</span><span class="p">(</span><span class="n">huart</span><span class="p">,</span><span class="o">&amp;</span><span class="n">rec_date</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="p">}</span>
+</code></pre></div></p>
+<h4 id="sprintf">sprintf到底是什么<a class="headerlink" href="#sprintf" title="Permanent link">&para;</a></h4>
+<p>全称是 <strong>string print formatted</strong> 核心作用就是将这些数值<strong>格式化</strong>成我们可以阅读的<strong>字符串</strong></p>
+<h4 id="hal_uart_receive_it">回调函数：为什么要反复调用 <code>HAL_UART_Receive_IT</code>？<a class="headerlink" href="#hal_uart_receive_it" title="Permanent link">&para;</a></h4>
+<p>你在 <code>HAL_UART_RxCpltCallback</code> 中重复调用
+： <code>HAL_UART_Receive_IT(huart, &amp;rec_date, 1);</code></p>
+<ul>
+<li>
+<p><strong>单次触发属性</strong>：HAL 库的中断接收是“一次性”的。当它收完你指定的长度（比如 1 个字节）并触发回调函数后，HAL 会结束本次接收并关闭相关接收中断，不是关闭所有串口中断。</p>
+</li>
+<li>
+<p><strong>接力赛机制</strong>：为了能持续接收后续数据，你必须在处理完当前字节后，立刻“重新布防”，告诉硬件：“请继续盯着，收完下一个再叫我”。</p>
+</li>
+</ul>
+<h4 id="_10">使用定时器接收字符串：<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<p><img alt="Pasted image 20260329194713.png" src="../../../assets/images/Pasted%20image%2020260329194713.png" />
+<strong><em>思路：以 8N1 为例，每个字符共 10bit，9600 波特率时约花费 1.04ms，不是 1.04s。超时判帧需要双方约定：每收到一个字节就清零计数，超过约定的空闲阈值后才认为一帧结束，不能仅因间隔超过 1.04ms 就认定字符串结束。下面 CNT&gt;=20 的实际时间取决于 TIM4 的计数频率，并且需要先启动定时器；配图串口为 115200，不能与 9600 的计算混用。</em></strong></p>
+<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="n">rec_data</span><span class="p">,</span><span class="n">count0</span><span class="p">;</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="n">rec_flag</span><span class="p">;</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="n">rec_buff</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="kt">char</span><span class="w"> </span><span class="n">send_buff</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="kt">void</span><span class="w"> </span><span class="nf">HAL_UART_RxCpltCallback</span><span class="p">(</span><span class="n">UART_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">huart</span><span class="p">)</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="p">{</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">huart</span><span class="o">-&gt;</span><span class="n">Instance</span><span class="o">==</span><span class="n">USART1</span><span class="p">)</span>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="w">        </span><span class="n">TIM4</span><span class="o">-&gt;</span><span class="n">CNT</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="w">        </span><span class="c1">//HAL_UART_Transmit(huart,&amp;rec_data,1,50);</span>
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="w">        </span><span class="n">rec_flag</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="w">        </span><span class="n">rec_buff</span><span class="p">[</span><span class="n">count0</span><span class="o">++</span><span class="p">]</span><span class="o">=</span><span class="n">rec_data</span><span class="p">;</span>
+<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="w">        </span><span class="n">HAL_UART_Receive_IT</span><span class="p">(</span><span class="n">huart</span><span class="p">,</span><span class="o">&amp;</span><span class="n">rec_data</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w">     </span>
+<a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a><span class="p">}</span>
+<a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a>
+<a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a><span class="kt">void</span><span class="w"> </span><span class="nf">uart_date_rec</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a><span class="p">{</span>
+<a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">rec_flag</span><span class="p">)</span>
+<a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">TIM4</span><span class="o">-&gt;</span><span class="n">CNT</span><span class="o">&gt;=</span><span class="mi">20</span><span class="p">)</span>
+<a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">rec_buff</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="sc">'a'</span><span class="o">&amp;&amp;</span><span class="n">rec_buff</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="sc">'b'</span><span class="p">)</span>
+<a id="__codelineno-23-25" name="__codelineno-23-25" href="#__codelineno-23-25"></a><span class="w">            </span><span class="p">{</span>
+<a id="__codelineno-23-26" name="__codelineno-23-26" href="#__codelineno-23-26"></a><span class="w">                </span><span class="n">sprintf</span><span class="p">(</span><span class="n">send_buff</span><span class="p">,</span><span class="s">"abc"</span><span class="p">);</span>
+<a id="__codelineno-23-27" name="__codelineno-23-27" href="#__codelineno-23-27"></a><span class="w">                </span><span class="n">HAL_UART_Transmit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">send_buff</span><span class="p">,</span><span class="n">strlen</span><span class="p">(</span><span class="n">send_buff</span><span class="p">),</span><span class="mi">50</span><span class="p">);</span>
+<a id="__codelineno-23-28" name="__codelineno-23-28" href="#__codelineno-23-28"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-23-29" name="__codelineno-23-29" href="#__codelineno-23-29"></a><span class="w">            </span><span class="k">else</span>
+<a id="__codelineno-23-30" name="__codelineno-23-30" href="#__codelineno-23-30"></a><span class="w">            </span><span class="p">{</span>
+<a id="__codelineno-23-31" name="__codelineno-23-31" href="#__codelineno-23-31"></a><span class="w">                </span><span class="n">sprintf</span><span class="p">(</span><span class="n">send_buff</span><span class="p">,</span><span class="s">"error"</span><span class="p">);</span>
+<a id="__codelineno-23-32" name="__codelineno-23-32" href="#__codelineno-23-32"></a><span class="w">                </span><span class="n">HAL_UART_Transmit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">send_buff</span><span class="p">,</span><span class="n">strlen</span><span class="p">(</span><span class="n">send_buff</span><span class="p">),</span><span class="mi">50</span><span class="p">);</span>
+<a id="__codelineno-23-33" name="__codelineno-23-33" href="#__codelineno-23-33"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-23-34" name="__codelineno-23-34" href="#__codelineno-23-34"></a><span class="w">              </span><span class="c1">// --- 核心清零操作 ---</span>
+<a id="__codelineno-23-35" name="__codelineno-23-35" href="#__codelineno-23-35"></a><span class="w">            </span><span class="c1">// 重置状态</span>
+<a id="__codelineno-23-36" name="__codelineno-23-36" href="#__codelineno-23-36"></a><span class="w">            </span><span class="n">rec_flag</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-23-37" name="__codelineno-23-37" href="#__codelineno-23-37"></a><span class="w">            </span><span class="n">count0</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-23-38" name="__codelineno-23-38" href="#__codelineno-23-38"></a><span class="w">            </span><span class="n">memset</span><span class="p">(</span><span class="n">rec_buff</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">rec_buff</span><span class="p">));</span><span class="w"> </span>
+<a id="__codelineno-23-39" name="__codelineno-23-39" href="#__codelineno-23-39"></a>
+<a id="__codelineno-23-40" name="__codelineno-23-40" href="#__codelineno-23-40"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-23-41" name="__codelineno-23-41" href="#__codelineno-23-41"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-23-42" name="__codelineno-23-42" href="#__codelineno-23-42"></a><span class="p">}</span>
+</code></pre></div>
+<p>这里有一个注意点：LCD 刷新耗时可能让主循环来不及判断帧结束。下面的固定缓冲区示例没有长度保护，接收超过 20 字节会越界；中断接收与主循环清零也可能互相打断，不能把这个入门示例直接当作可靠的连续收包方案。
+除了这种定时器超时法，实际工程中更常使用的是 <strong>串口空闲中断 (IDLE) + DMA</strong>
+<a href="https://blog.csdn.net/your_songs/article/details/136542524">【蓝桥杯嵌入式】串口DMA模式及不定长数据收发_嵌入式蓝桥杯dma-CSDN博客</a>
+<strong><em>！！！使用DMA会更简单更好用！！！</em></strong></p>
+<hr />
+<h3 id="eepromat24c02">eeprom—AT24C02<a class="headerlink" href="#eepromat24c02" title="Permanent link">&para;</a></h3>
+<p><img alt="Pasted image 20260329194722.png" src="../../../assets/images/Pasted%20image%2020260329194722.png" />
+<img alt="Pasted image 20260329194729.png" src="../../../assets/images/Pasted%20image%2020260329194729.png" />
+AT24C02 的 7 位地址格式为 1010 A2 A1 A0，再加最低位读写位（读 1、写 0）。A2/A1/A0 全接地时，7 位地址是 0x50（1010000），总线上发送的写/读地址字节是 0xA0/0xA1；原来的 0101000 位序有误。
+<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1">//1是读取 0是写</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">eeprom_write</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">addr</span><span class="p">,</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">dat</span><span class="p">)</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="p">{</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">    </span><span class="n">I2CStart</span><span class="p">();</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">    </span><span class="n">I2CSendByte</span><span class="p">(</span><span class="mh">0xa0</span><span class="p">);</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">    </span><span class="n">I2CWaitAck</span><span class="p">();</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="w">    </span><span class="n">I2CSendByte</span><span class="p">(</span><span class="n">addr</span><span class="p">);</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="w">    </span><span class="n">I2CWaitAck</span><span class="p">();</span>
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="w">    </span><span class="n">I2CSendByte</span><span class="p">(</span><span class="n">dat</span><span class="p">);</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="w">    </span><span class="n">I2CWaitAck</span><span class="p">();</span>
+<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="w">    </span><span class="n">I2CStop</span><span class="p">();</span>
+<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>
+<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="w">    </span><span class="n">HAL_Delay</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+<a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a><span class="p">}</span>
+<a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a>
+<a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a>
+<a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="nf">eeprom_read</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">addr</span><span class="p">)</span>
+<a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a><span class="p">{</span>
+<a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a><span class="c1">//第一步将AT24C02内部指针对准要读取的位置</span>
+<a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a><span class="w">    </span><span class="n">I2CStart</span><span class="p">();</span>
+<a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a><span class="w">    </span><span class="n">I2CSendByte</span><span class="p">(</span><span class="mh">0xa0</span><span class="p">);</span>
+<a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a><span class="w">    </span><span class="n">I2CWaitAck</span><span class="p">();</span>
+<a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a><span class="w">    </span><span class="n">I2CSendByte</span><span class="p">(</span><span class="n">addr</span><span class="p">);</span>
+<a id="__codelineno-24-24" name="__codelineno-24-24" href="#__codelineno-24-24"></a><span class="w">    </span><span class="n">I2CWaitAck</span><span class="p">();</span>
+<a id="__codelineno-24-25" name="__codelineno-24-25" href="#__codelineno-24-25"></a><span class="w">    </span><span class="n">I2CStop</span><span class="p">();</span>
+<a id="__codelineno-24-26" name="__codelineno-24-26" href="#__codelineno-24-26"></a>
+<a id="__codelineno-24-27" name="__codelineno-24-27" href="#__codelineno-24-27"></a><span class="c1">//正式开始读数据   </span>
+<a id="__codelineno-24-28" name="__codelineno-24-28" href="#__codelineno-24-28"></a><span class="w">    </span><span class="n">I2CStart</span><span class="p">();</span>
+<a id="__codelineno-24-29" name="__codelineno-24-29" href="#__codelineno-24-29"></a><span class="w">    </span><span class="n">I2CSendByte</span><span class="p">(</span><span class="mh">0xa1</span><span class="p">);</span>
+<a id="__codelineno-24-30" name="__codelineno-24-30" href="#__codelineno-24-30"></a><span class="w">    </span><span class="n">I2CWaitAck</span><span class="p">();</span>
+<a id="__codelineno-24-31" name="__codelineno-24-31" href="#__codelineno-24-31"></a><span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">dat</span><span class="o">=</span><span class="n">I2CReceiveByte</span><span class="p">();</span>
+<a id="__codelineno-24-32" name="__codelineno-24-32" href="#__codelineno-24-32"></a><span class="w">    </span><span class="n">I2CSendNotAck</span><span class="p">();</span>
+<a id="__codelineno-24-33" name="__codelineno-24-33" href="#__codelineno-24-33"></a><span class="w">    </span><span class="n">I2CStop</span><span class="p">();</span>
+<a id="__codelineno-24-34" name="__codelineno-24-34" href="#__codelineno-24-34"></a>
+<a id="__codelineno-24-35" name="__codelineno-24-35" href="#__codelineno-24-35"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">dat</span><span class="p">;</span>
+<a id="__codelineno-24-36" name="__codelineno-24-36" href="#__codelineno-24-36"></a><span class="p">}</span>
+</code></pre></div>
+在初始化中：
+<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">I2CInit</span><span class="p">();</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="n">eeprom_write</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="n">dat</span><span class="o">=</span><span class="n">eeprom_read</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</code></pre></div></p>
+<hr />
+<h3 id="rtc">RTC实时时钟<a class="headerlink" href="#rtc" title="Permanent link">&para;</a></h3>
+<p>比较简单这里就水了，当达到闹钟时 led8 就会亮（需先配置闹钟 A 并使能闹钟中断，仅定义回调不会自动触发）。
+<strong>日期字段注意</strong>：下方原示例的 <code>sDate.WeekDay</code> 是星期，不是月内日期；显示年月日应使用 <code>sDate.Date</code>。<code>sDate.Year</code> 为两位年份，显示完整年份时还需按使用的世纪换算。</p>
+<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">text</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">  </span><span class="n">RTC_TimeTypeDef</span><span class="w"> </span><span class="n">sTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">  </span><span class="n">RTC_DateTypeDef</span><span class="w"> </span><span class="n">sDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">led8state</span><span class="p">;</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="kt">void</span><span class="w"> </span><span class="nf">show_lcd</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="p">{</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="w">      </span><span class="n">HAL_RTC_GetTime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hrtc</span><span class="p">,</span><span class="o">&amp;</span><span class="n">sTime</span><span class="p">,</span><span class="n">RTC_FORMAT_BIN</span><span class="p">);</span>
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="w">      </span><span class="n">HAL_RTC_GetDate</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hrtc</span><span class="p">,</span><span class="o">&amp;</span><span class="n">sDate</span><span class="p">,</span><span class="n">RTC_FORMAT_BIN</span><span class="p">);</span>
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="w">    </span><span class="n">sprintf</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="s">"  Hello,World!"</span><span class="p">);</span>
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="w">    </span><span class="n">LCD_DisplayStringLine</span><span class="p">(</span><span class="n">Line0</span><span class="p">,(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">text</span><span class="p">);</span>
+<a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="w">    </span><span class="n">sprintf</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="s">"  %2d:%2d:%2d    "</span><span class="p">,</span><span class="n">sTime</span><span class="p">.</span><span class="n">Hours</span><span class="p">,</span><span class="n">sTime</span><span class="p">.</span><span class="n">Minutes</span><span class="p">,</span><span class="n">sTime</span><span class="p">.</span><span class="n">Seconds</span><span class="p">);</span>
+<a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a><span class="w">    </span><span class="n">LCD_DisplayStringLine</span><span class="p">(</span><span class="n">Line1</span><span class="p">,(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">text</span><span class="p">);</span>
+<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a><span class="w">    </span><span class="n">sprintf</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="s">"  %d-%d-%d      "</span><span class="p">,</span><span class="n">sDate</span><span class="p">.</span><span class="n">Year</span><span class="p">,</span><span class="n">sDate</span><span class="p">.</span><span class="n">Month</span><span class="p">,</span><span class="n">sDate</span><span class="p">.</span><span class="n">WeekDay</span><span class="p">);</span>
+<a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a><span class="w">    </span><span class="n">LCD_DisplayStringLine</span><span class="p">(</span><span class="n">Line2</span><span class="p">,(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">text</span><span class="p">);</span>
+<a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a>
+<a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a><span class="w">    </span><span class="n">show_led</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="n">led8state</span><span class="p">);</span>
+<a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a><span class="p">}</span>
+<a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a><span class="kt">void</span><span class="w"> </span><span class="nf">HAL_RTC_AlarmAEventCallback</span><span class="p">(</span><span class="n">RTC_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">hrtc</span><span class="p">)</span>
+<a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a><span class="p">{</span>
+<a id="__codelineno-26-20" name="__codelineno-26-20" href="#__codelineno-26-20"></a><span class="w">    </span><span class="n">led8state</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a><span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="_11">完结撒花！！！  ❀ ❀ ❀<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>希望学弟学妹们能用尽量少的时间高效备赛，在兼顾其他比赛的同时考出好成绩，也替学长弥补一下当年没能进国赛的小遗憾 (╥﹏╥)</p>
+<p>考试不难、但也补药大意，对于任何比赛、生活来讲：<strong><em><mark>心浮气躁是大忌。</mark></em></strong></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../mcu/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 单片机">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                单片机
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../eda/" class="md-footer__link md-footer__link--next" aria-label="下一页: EDA">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                EDA
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../assets/javascripts/math.js"></script>
+      
+        <script src="../../../assets/vendor/mathjax/tex-chtml.js"></script>
+      
+        <script src="../../../assets/javascripts/ui.js"></script>
+      
+    
+  </body>
+</html>
