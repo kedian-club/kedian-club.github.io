@@ -525,7 +525,7 @@ body:has(.kd-image-dialog[open]) { overflow: hidden; }
 .md-typeset .kd-contributor-profile > summary:is(:hover, :focus-visible) {
   background: var(--kd-interactive);
 }
-.md-typeset .kd-contributor-card .kd-author-avatar { width: 2.1rem; height: 2.1rem; }
+.md-typeset .kd-contributor-card .kd-author-avatar { width: 36px; height: 36px; }
 .md-typeset .kd-contributor-profile small {
   display: block;
   color: var(--md-default-fg-color--light);
