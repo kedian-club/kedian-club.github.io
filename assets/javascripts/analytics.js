@@ -20,7 +20,7 @@
     if (!values.every(node => node && /^\d+$/.test(node.textContent.trim()))) return;
     clearTimeout(timer);
     observer?.disconnect();
-    setStatus('访问数据从接入后累计，UV 为服务去重估算。');
+    setStatus('');
   };
   if (values.every(Boolean)) {
     observer = new MutationObserver(received);

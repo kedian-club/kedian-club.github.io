@@ -306,17 +306,20 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../../../resources/" class="md-tabs__link">
-        
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../resources/" class="md-tabs__link">
+          
   
   
     
   
   社团资源
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -883,6 +886,8 @@
           
         
       
+        
+      
     
     
     
@@ -915,6 +920,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
@@ -928,6 +938,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../electronics/preparation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    电赛如何准备
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -1081,9 +1119,32 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../resources/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../resources/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -1097,7 +1158,121 @@
   
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    社团资源
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    软件推荐
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    软件推荐
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/software/vscode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VS Code
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1188,6 +1363,7 @@
 
 
 <blockquote>
+<p>缺失的配图可以到飞书原文查看。<a href="https://zcnigjcrw3n6.feishu.cn/wiki/EcP7wPHDIiAw3qkyDC9cOR3unmh?create_from=upload_file_to_wiki">蓝桥杯 FPGA-X 教程原文</a></p>
 <p><strong>接入说明</strong>：本文保留原稿和未完成章节；部分原图及原文提到的代码文件夹尚未提供，缺图位置已标注。</p>
 </blockquote>
 <h1 id="fpgaxilinx-xc7s6ftgb196-1">本文章基于 蓝桥杯 FPGA（Xilinx xc7s6ftgb196-1）书写<a class="headerlink" href="#fpgaxilinx-xc7s6ftgb196-1" title="Permanent link">&para;</a></h1>
@@ -1243,19 +1419,19 @@
 <hr />
 <h1 id="_2">第一部分　写在前面<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>info</strong> 写在前面的一些话
-FPGA是一个具有挑战性的方向，如果你之前接触过C语言、单片机，这将会对你产生一定的帮助和挑战。
-在开始之前，你必须有一定的数电基础，比如进制的基础，这可以使你更容易理解一些算法；其次，你要对自己所使用的FPGA软件有一个简单的认识。本笔记不提供软件的介绍，可以参考<a href="https://www.4t.wiki/">四题科技</a>的教程，或者Bilibili up主的教程。最重要的是要有Verilog语言基础，可以参考<a href="https://www.runoob.com/w3cnote/verilog-tutorial.html">菜鸟编程</a>。不要求全部都会，但是最基础的东西你需要知道，比如时序逻辑和组合逻辑等等。
-如果要好好学建议入手野火的征途Pro开发板，配合<a href="https://www.bilibili.com/video/BV17z411i7er?vd_source=f20cebf4edc7b4ac6036cb0cd1cab841">【【野火】FPGA系列教学视频，真正的手把手教学，“波形图”教学法，现场画波形图写代码，硬件基于野火FPGA EP4CE10征途系列开发板，已完结】</a>,教程写的真的是我见过最惊艳的FPGA教程，教学也很细致，板卡也不是很贵，不过是Altera Cyclone IV 和 笔者参与的Xilinx板卡使用软件不同，笔者参加这个赛题就是为了接触新软件，尝试Vivado开发，但是学校机房电脑综合生成bit流文件很慢，建议参加还是去选Quartus II，选另一个赛道。
-- 帮助：可以让你快速理解外设，以及引脚定义
+<p><strong>info</strong> 写在前面的一些话<br />
+FPGA是一个具有挑战性的方向，如果你之前接触过C语言、单片机，这将会对你产生一定的帮助和挑战。<br />
+在开始之前，你必须有一定的数电基础，比如进制的基础，这可以使你更容易理解一些算法；其次，你要对自己所使用的FPGA软件有一个简单的认识。本笔记不提供软件的介绍，可以参考<a href="https://www.4t.wiki/">四题科技</a>的教程，或者Bilibili up主的教程。最重要的是要有Verilog语言基础，可以参考<a href="https://www.runoob.com/w3cnote/verilog-tutorial.html">菜鸟编程</a>。不要求全部都会，但是最基础的东西你需要知道，比如时序逻辑和组合逻辑等等。<br />
+如果要好好学建议入手野火的征途Pro开发板，配合<a href="https://www.bilibili.com/video/BV17z411i7er?vd_source=f20cebf4edc7b4ac6036cb0cd1cab841">【【野火】FPGA系列教学视频，真正的手把手教学，“波形图”教学法，现场画波形图写代码，硬件基于野火FPGA EP4CE10征途系列开发板，已完结】</a>,教程写的真的是我见过最惊艳的FPGA教程，教学也很细致，板卡也不是很贵，不过是Altera Cyclone IV 和 笔者参与的Xilinx板卡使用软件不同，笔者参加这个赛题就是为了接触新软件，尝试Vivado开发，但是学校机房电脑综合生成bit流文件很慢，建议参加还是去选Quartus II，选另一个赛道。<br />
+- 帮助：可以让你快速理解外设，以及引脚定义<br />
 - 挑战：C语言和嵌入式里面的串行逻辑会很大影响你在Verilog语言中的思维</p>
 </blockquote>
-<p>笔者在第十七届蓝桥杯比赛中坠机了<sub>~（蓝桥杯不是水赛吗，怎么还有九二爷）</sub>~，遗憾以省二第一完赛，当然也是笔者准备不充分，希望后来者能完成笔者的遗志，进入国赛。
+<p>笔者在第十七届蓝桥杯比赛中坠机了<sub>~（蓝桥杯不是水赛吗，怎么还有九二爷）</sub>~，遗憾以省二第一完赛，当然也是笔者准备不充分，希望后来者能完成笔者的遗志，进入国赛。<br />
 <strong>缺图待补：Pasted image 20260428170612</strong>（原引用：<code>%21%E5%9B%BE%E7%89%87/Pasted%2520image%252020260428170612.png</code>）</p>
 <h2 id="_3">介绍<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>和单片机赛道、嵌入式赛道相比，FPGA赛道要麻烦很多，因为FPGA赛道不会给你初始化自动生成代码的工具，串口等一些计时东西需要你手动编写。如果是C语言写的话，有些库可以调用比较方便，但是Verilog没有（当然IP核也很方便，但是蓝桥杯用不到），而且还需要把软件固化到FPGA中，比较折磨人。不过如果你坚持下来肯定是可以完成的，加油！
-Xilinx的型号为xc7s6ftgb196-1。
-蓝桥杯FPGA有多个模块，首先通过模块学习，实现对每个外设的基础理解和模块编写，所含有的模块包括 <a href="#_6">Key按键</a>、<a href="#_7">SEG数码管</a>、<a href="#led_1">LED</a>、<a href="#uart_tx_1">UART</a>、<a href="#eepromat24c02">AT24C02</a>、<a href="#w25q128jvs">W25Q128JVS</a>、<a href="#dacdac5571idbvr">DAC5571IDBVR</a>、<a href="#adcadc081c021">ADC081C021</a>、<a href="#ds1302">DS1302</a>、<a href="#sdram_1">SDRAM</a>。
+<p>和单片机赛道、嵌入式赛道相比，FPGA赛道要麻烦很多，因为FPGA赛道不会给你初始化自动生成代码的工具，串口等一些计时东西需要你手动编写。如果是C语言写的话，有些库可以调用比较方便，但是Verilog没有（当然IP核也很方便，但是蓝桥杯用不到），而且还需要把软件固化到FPGA中，比较折磨人。不过如果你坚持下来肯定是可以完成的，加油！<br />
+Xilinx的型号为xc7s6ftgb196-1。<br />
+蓝桥杯FPGA有多个模块，首先通过模块学习，实现对每个外设的基础理解和模块编写，所含有的模块包括 <a href="#_6">Key按键</a>、<a href="#_7">SEG数码管</a>、<a href="#led_1">LED</a>、<a href="#uart_tx_1">UART</a>、<a href="#eepromat24c02">AT24C02</a>、<a href="#w25q128jvs">W25Q128JVS</a>、<a href="#dacdac5571idbvr">DAC5571IDBVR</a>、<a href="#adcadc081c021">ADC081C021</a>、<a href="#ds1302">DS1302</a>、<a href="#sdram_1">SDRAM</a>。<br />
 当你学完一定的模块后就可以开始小项目的练习：</p>
 <h3 id="_4">综合模块使用实例<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1269,7 +1445,7 @@ Xilinx的型号为xc7s6ftgb196-1。
 <h3 id="_5">引脚定义<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>以下是引脚定义表：</p>
 <blockquote>
-<p><strong>warning</strong> 注意
+<p><strong>warning</strong> 注意<br />
 蓝桥杯 Xilinx FPGA开发板的复位信号是高电平复位，和一般开发板不同，需要注意。</p>
 </blockquote>
 <table>
@@ -1654,7 +1830,7 @@ Xilinx的型号为xc7s6ftgb196-1。
 <p>输入的是时钟信号、复位信号、未消抖的按键；输出的是消抖后的按键键值，被按下的那一位会输出高电平。</p>
 <h4 id="key_v10">key_短按V1.0<a class="headerlink" href="#key_v10" title="Permanent link">&para;</a></h4>
 <blockquote>
-<p><strong>warning</strong> 注意
+<p><strong>warning</strong> 注意<br />
 输出的结果只保留一个时钟周期。这种写法有一定的问题，但可以滤除 80% 以上的抖动。</p>
 </blockquote>
 <div class="language-verilog highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">module</span><span class="w"> </span><span class="n">key</span><span class="p">(</span>
@@ -1790,13 +1966,13 @@ Xilinx的型号为xc7s6ftgb196-1。
 <h2 id="_7">数码管<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>数码管显示采用单片机的动态扫描思想：每 1ms 选中一位进行输出，实现动态扫描；通过输入端口输入 32 位数值，即可实现对每一位数值的显示控制。</p>
 <blockquote>
-<p><strong>warning</strong> 注意
+<p><strong>warning</strong> 注意<br />
 注意引脚约束时 SEGA 为高位，即 [7] 位；可以使用官方给的那份，那份中 SEGA 为低位，笔者当时没注意去看官方给的资料。</p>
 </blockquote>
 <p>下图是官方给的数码管图：</p>
 <p><strong>缺图待补：数码管图</strong>（原引用：<code>%21%E5%9B%BE%E7%89%87/%E6%95%B0%E7%A0%81%E7%AE%A1%E5%9B%BE.png</code>）</p>
 <blockquote>
-<p><strong>引脚定义</strong> 
+<p><strong>引脚定义</strong> <br />
 disp_num 输入 32 位数字，blank_en 为灭零控制信号，piont_en 为小数点控制信号。<strong>再次强调：笔者定义的 SEG 与官方给的段码表是反的。</strong></p>
 </blockquote>
 <h3 id="_8">笔者自写版本<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
@@ -2501,7 +2677,7 @@ disp_num 输入 32 位数字，blank_en 为灭零控制信号，piont_en 为小�
 <h1 id="iic">第四部分　IIC 协议与官方驱动<a class="headerlink" href="#iic" title="Permanent link">&para;</a></h1>
 <h2 id="iic_1">官方 IIC 驱动代码<a class="headerlink" href="#iic_1" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p><strong>warning</strong> 说明
+<p><strong>warning</strong> 说明<br />
 本 IIC 文件夹中的程序全部基于这个 IIC 代码实现，这样可以在比赛中快速复用。</p>
 </blockquote>
 <p>以下是官方提供的 IIC 代码，后面的代码将基于它来写。</p>
@@ -3583,7 +3759,7 @@ disp_num 输入 32 位数字，blank_en 为灭零控制信号，piont_en 为小�
 <hr />
 <h1 id="iic-eepromadcdac">第五部分　IIC 外设：EEPROM、ADC、DAC<a class="headerlink" href="#iic-eepromadcdac" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>info</strong> 声明
+<p><strong>info</strong> 声明<br />
 本 EEPROM 代码基于官方提供的 IIC代码 实现，代码来自 4T 科技的教程，这样可以完美适配代码编写。</p>
 </blockquote>
 <h2 id="eepromat24c02">一、EEPROM（AT24C02）<a class="headerlink" href="#eepromat24c02" title="Permanent link">&para;</a></h2>
@@ -4995,7 +5171,7 @@ disp_num 输入 32 位数字，blank_en 为灭零控制信号，piont_en 为小�
 <li>加 3：5+3=8(<code>1000</code>) 左移 → <code>0001 0110</code>（16，即 1 和 6）</li>
 </ul>
 <blockquote>
-<p><strong>注意</strong> 
+<p><strong>注意</strong> <br />
 注意理解进位的含义：二进制进位是指二进制进四位，十进制的进位也是指二进制数值进位四位。</p>
 </blockquote>
 <h3 id="_30">六、最简洁的解释<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h3>
@@ -5121,8 +5297,8 @@ disp_num 输入 32 位数字，blank_en 为灭零控制信号，piont_en 为小�
 <h1 id="ledat24c02">第八部分　综合实例（一）：按键+数码管+串口+LED、按键+数码管+AT24C02<a class="headerlink" href="#ledat24c02" title="Permanent link">&para;</a></h1>
 <h2 id="led_2">按键+数码管+串口+LED<a class="headerlink" href="#led_2" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p><strong>要求</strong> 
-s1按下数值增加1，s2按下数值增加10，s3按下减1，s4按下减10；如果超出255或者小于零，所有LED双闪一次。
+<p><strong>要求</strong> <br />
+s1按下数值增加1，s2按下数值增加10，s3按下减1，s4按下减10；如果超出255或者小于零，所有LED双闪一次。<br />
 串口以115200波特率输出数值，数值结尾要以回车结尾；数码管显示数值，高位为0时要保证灭灯。</p>
 </blockquote>
 <p>这个练习是笔者自己写的，难度较大；耐心做完会深刻理解上述四个模块的写法，很利于巩固和综合。模块可以复用，因为现在刚开始，等后面做题熟练之后就可以自己写了。</p>
@@ -5858,15 +6034,15 @@ s1按下数值增加1，s2按下数值增加10，s3按下减1，s4按下减10；
 </code></pre></div>
 <h3 id="_35">总结<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p><strong>一些想说的</strong> 
+<p><strong>一些想说的</strong> <br />
 这段代码还不是很完美，比如串口输出时会夹杂高位0，这可以利用灭零逻辑里的寄存器、通过位的数值来判断；另外，按下两个按键的写法还有待优化。</p>
 </blockquote>
 <h2 id="at24c02">按键+数码管+AT24C02<a class="headerlink" href="#at24c02" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p><strong>目标</strong> 
-针对0-9的数值，实现如下功能：
-S1向地址0写入数据，S2从该地址读出数据，S3减，S4加，读数据的同时数码管要显示读出的数据
-数码管的显示格式为： <strong>加减的数值 灭 灭 灭     灭 灭 灭 读出的数值</strong>
+<p><strong>目标</strong> <br />
+针对0-9的数值，实现如下功能：<br />
+S1向地址0写入数据，S2从该地址读出数据，S3减，S4加，读数据的同时数码管要显示读出的数据<br />
+数码管的显示格式为： <strong>加减的数值 灭 灭 灭     灭 灭 灭 读出的数值</strong><br />
 <mark>本实验来自4T科技的教学视频</mark></p>
 </blockquote>
 <p>以下是top代码，底层代码不再赘述：</p>
@@ -5998,7 +6174,7 @@ S1向地址0写入数据，S2从该地址读出数据，S3减，S4加，读数�
 <h1 id="16">第九部分　综合实例（二）：16 届模拟一<a class="headerlink" href="#16" title="Permanent link">&para;</a></h1>
 <p><mark>此题比较简单，很适合用来做第一次测试、增加信心</mark></p>
 <blockquote>
-<p><strong>warning</strong> 涉及模块一栏
+<p><strong>warning</strong> 涉及模块一栏<br />
 <a href="#_6">Key_短按</a>、<a href="#_7">SEG数码管</a>、<a href="#led_1">LED</a></p>
 </blockquote>
 <h2 id="16_1">顶层文件（16 届模拟一）<a class="headerlink" href="#16_1" title="Permanent link">&para;</a></h2>
@@ -6491,7 +6667,7 @@ S1向地址0写入数据，S2从该地址读出数据，S3减，S4加，读数�
 <h1 id="16_2">第十部分　综合实例（三）：16 届模拟二<a class="headerlink" href="#16_2" title="Permanent link">&para;</a></h1>
 <p><mark>上难度了</mark></p>
 <blockquote>
-<p><strong>warning</strong> 涉及模块一栏
+<p><strong>warning</strong> 涉及模块一栏<br />
 <a href="#_6">Key_短按</a>、<a href="#_7">SEG数码管</a>、<a href="#led_1">LED</a>、<a href="#eepromat24c02">AT24C02</a></p>
 </blockquote>
 <h2 id="16_3">顶层文件（16 届模拟二）<a class="headerlink" href="#16_3" title="Permanent link">&para;</a></h2>
@@ -6914,8 +7090,8 @@ S1向地址0写入数据，S2从该地址读出数据，S3减，S4加，读数�
 <h1 id="16-adc-dac-eeprom-ds1302">第十一部分　综合实例（四）：16 省赛与 ADC + DAC + EEPROM + DS1302<a class="headerlink" href="#16-adc-dac-eeprom-ds1302" title="Permanent link">&para;</a></h1>
 <h2 id="16_4">16 省赛<a class="headerlink" href="#16_4" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p><strong>warning</strong> 注意
-感觉这个省赛题比较难，耐心做下来受益良多。IIC 模块就不再列出，依旧使用官方提供的模版进行操作。
+<p><strong>warning</strong> 注意<br />
+感觉这个省赛题比较难，耐心做下来受益良多。IIC 模块就不再列出，依旧使用官方提供的模版进行操作。<br />
 涉及模块：<a href="#double-dabble_1">Double Dabble 算法</a>、<a href="#_6">Key_短按</a>、<a href="#adcadc081c021">ADC081C021</a>、<a href="#_7">SEG数码管</a>、<a href="#led_1">LED</a></p>
 </blockquote>
 <h3 id="_43">第一次书写<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h3>
@@ -6984,13 +7160,13 @@ S1向地址0写入数据，S2从该地址读出数据，S3减，S4加，读数�
         
         
           
-          <a href="../../electronics/" class="md-footer__link md-footer__link--next" aria-label="下一页: 电子设计竞赛">
+          <a href="../../electronics/" class="md-footer__link md-footer__link--next" aria-label="下一页: 电子设计竞赛简介">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                电子设计竞赛
+                电子设计竞赛简介
               </div>
             </div>
             <div class="md-footer__button md-icon">
