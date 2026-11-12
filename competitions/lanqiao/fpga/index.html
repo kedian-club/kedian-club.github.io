@@ -47,7 +47,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css?v=3">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css?v=4">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -368,6 +368,7 @@
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
+  
             
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
@@ -1427,6 +1428,414 @@
               </div>
             
           
+  
+    
+    
+    
+      <button class="kd-mobile-toc-open" type="button" aria-haspopup="dialog" aria-controls="kd-mobile-toc" hidden>
+        <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 5h14v2H7zm0 8v-2h14v2zM4 4.5A1.5 1.5 0 0 1 5.5 6 1.5 1.5 0 0 1 4 7.5 1.5 1.5 0 0 1 2.5 6 1.5 1.5 0 0 1 4 4.5m0 6A1.5 1.5 0 0 1 5.5 12 1.5 1.5 0 0 1 4 13.5 1.5 1.5 0 0 1 2.5 12 1.5 1.5 0 0 1 4 10.5M7 19v-2h14v2zm-3-2.5A1.5 1.5 0 0 1 5.5 18 1.5 1.5 0 0 1 4 19.5 1.5 1.5 0 0 1 2.5 18 1.5 1.5 0 0 1 4 16.5"/></svg></span>本页目录
+      </button>
+      <dialog class="kd-mobile-toc" id="kd-mobile-toc" aria-labelledby="kd-mobile-toc-title">
+        <header class="kd-mobile-toc__header">
+          <h2 id="kd-mobile-toc-title">本页目录</h2>
+          <form method="dialog">
+            <button type="submit" autofocus>关闭</button>
+          </form>
+        </header>
+        <nav class="kd-mobile-toc__links" aria-label="文章章节">
+          <ul>
+            
+              <li>
+                <a href="#fpgaxilinx-xc7s6ftgb196-1">本文章基于 蓝桥杯 FPGA（Xilinx xc7s6ftgb196-1）书写</a>
+                <ul>
+              <li>
+                <a href="#_1">目录</a>
+                
+              </li>
+            </ul>
+              </li>
+            
+              <li>
+                <a href="#_2">第一部分 写在前面</a>
+                <ul>
+              <li>
+                <a href="#_3">介绍</a>
+                <ul>
+              <li>
+                <a href="#_4">综合模块使用实例</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_5">引脚定义</a>
+                
+              </li>
+            </ul>
+              </li>
+            </ul>
+              </li>
+            
+              <li>
+                <a href="#led">第二部分 基础外设：LED、按键、数码管</a>
+                <ul>
+              <li>
+                <a href="#led_1">LED</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_6">按键</a>
+                <ul>
+              <li>
+                <a href="#key_">基础部分：Key_短按</a>
+                
+              </li>
+            </ul>
+              </li>
+            
+              <li>
+                <a href="#_7">数码管</a>
+                <ul>
+              <li>
+                <a href="#_8">笔者自写版本</a>
+                
+              </li>
+            
+              <li>
+                <a href="#double-dabble">基于官方给定的十六进制的笔者适应版（含 Double Dabble 算法）</a>
+                
+              </li>
+            </ul>
+              </li>
+            </ul>
+              </li>
+            
+              <li>
+                <a href="#uart">第三部分 串口 UART</a>
+                <ul>
+              <li>
+                <a href="#uart_tx">UART_TX</a>
+                <ul>
+              <li>
+                <a href="#tx_string">TX_STRING（字符串发送模块）</a>
+                
+              </li>
+            </ul>
+              </li>
+            
+              <li>
+                <a href="#uart_rx">UART_RX</a>
+                
+              </li>
+            </ul>
+              </li>
+            
+              <li>
+                <a href="#iic">第四部分 IIC 协议与官方驱动</a>
+                <ul>
+              <li>
+                <a href="#iic_1">官方 IIC 驱动代码</a>
+                
+              </li>
+            
+              <li>
+                <a href="#iic_2">IIC 仲裁问题（修改版驱动）</a>
+                
+              </li>
+            </ul>
+              </li>
+            
+              <li>
+                <a href="#iic-eepromadcdac">第五部分 IIC 外设：EEPROM、ADC、DAC</a>
+                <ul>
+              <li>
+                <a href="#eepromat24c02">一、EEPROM（AT24C02）</a>
+                <ul>
+              <li>
+                <a href="#_12">关于地址部分</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_13">源码部分</a>
+                
+              </li>
+            </ul>
+              </li>
+            
+              <li>
+                <a href="#adcadc081c021">二、ADC（ADC081C021）</a>
+                <ul>
+              <li>
+                <a href="#_14">寄存器含义</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_15">源码</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_16">代码验证</a>
+                
+              </li>
+            </ul>
+              </li>
+            
+              <li>
+                <a href="#dacdac5571idbvr">三、DAC（DAC5571IDBVR）</a>
+                <ul>
+              <li>
+                <a href="#_17">地址</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_18">数据</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_19">源码</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_20">检测方式</a>
+                
+              </li>
+            </ul>
+              </li>
+            </ul>
+              </li>
+            
+              <li>
+                <a href="#spi-ds1302">第六部分 SPI 协议与 DS1302</a>
+                <ul>
+              <li>
+                <a href="#spi">官方提供的主机SPI协议</a>
+                
+              </li>
+            
+              <li>
+                <a href="#w25q128jvs">W25Q128JVS</a>
+                
+              </li>
+            
+              <li>
+                <a href="#ds1302">DS1302</a>
+                <ul>
+              <li>
+                <a href="#ds1302_1">官方提供的部分DS1302代码</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_23">使用示例代码</a>
+                
+              </li>
+            </ul>
+              </li>
+            </ul>
+              </li>
+            
+              <li>
+                <a href="#sdram">第七部分 SDRAM 与加餐知识</a>
+                <ul>
+              <li>
+                <a href="#sdram_1">SDRAM</a>
+                
+              </li>
+            
+              <li>
+                <a href="#double-dabble_1">Double Dabble 算法是什么？</a>
+                <ul>
+              <li>
+                <a href="#_26">一、问题</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_27">二、模拟十进制计算</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_28">三、算法的核心思想</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_29">四、算法的实际执行</a>
+                
+              </li>
+            
+              <li>
+                <a href="#3">五、为什么加3？</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_30">六、最简洁的解释</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_31">七、硬件实现的优势</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_32">八、总结</a>
+                
+              </li>
+            </ul>
+              </li>
+            
+              <li>
+                <a href="#double-dabble-verilog">Double Dabble 的 Verilog 实现</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_33">迟滞</a>
+                
+              </li>
+            </ul>
+              </li>
+            
+              <li>
+                <a href="#ledat24c02">第八部分 综合实例（一）：按键+数码管+串口+LED、按键+数码管+AT24C02</a>
+                <ul>
+              <li>
+                <a href="#led_2">按键+数码管+串口+LED</a>
+                <ul>
+              <li>
+                <a href="#_34">代码部分</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_35">总结</a>
+                
+              </li>
+            </ul>
+              </li>
+            
+              <li>
+                <a href="#at24c02">按键+数码管+AT24C02</a>
+                
+              </li>
+            </ul>
+              </li>
+            
+              <li>
+                <a href="#16">第九部分 综合实例（二）：16 届模拟一</a>
+                <ul>
+              <li>
+                <a href="#16_1">顶层文件（16 届模拟一）</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_36">数码管显示部分</a>
+                
+              </li>
+            
+              <li>
+                <a href="#bcd">BCD转码部分</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_37">按键部分</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_38">计数信号产生</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_39">倒计时模块</a>
+                
+              </li>
+            
+              <li>
+                <a href="#led_3">LED控制部分</a>
+                
+              </li>
+            </ul>
+              </li>
+            
+              <li>
+                <a href="#16_2">第十部分 综合实例（三）：16 届模拟二</a>
+                <ul>
+              <li>
+                <a href="#16_3">顶层文件（16 届模拟二）</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_40">数码管显示模块</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_41">时间控制模块</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_42">按键控制部分</a>
+                
+              </li>
+            
+              <li>
+                <a href="#iic_drive">iic_drive</a>
+                
+              </li>
+            </ul>
+              </li>
+            
+              <li>
+                <a href="#16-adc-dac-eeprom-ds1302">第十一部分 综合实例（四）：16 省赛与 ADC + DAC + EEPROM + DS1302</a>
+                <ul>
+              <li>
+                <a href="#16_4">16 省赛</a>
+                <ul>
+              <li>
+                <a href="#_43">第一次书写</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_44">第二次书写</a>
+                
+              </li>
+            </ul>
+              </li>
+            
+              <li>
+                <a href="#adc-dac-eeprom-ds1302">ADC + DAC + EEPROM + DS1302 综合</a>
+                
+              </li>
+            </ul>
+              </li>
+            
+              <li>
+                <a href="#_45">附录 程序固化</a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </dialog>
+    
+  
+
           
             <div class="md-content" data-md-component="content">
               
@@ -7283,7 +7692,7 @@ S1向地址0写入数据，S2从该地址读出数据，S3减，S4加，读数�
   
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
-        <script src="../../../assets/javascripts/ui.js"></script>
+        <script src="../../../assets/javascripts/ui.js?v=2"></script>
       
         <script src="../../../assets/javascripts/analytics.js"></script>
       

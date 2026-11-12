@@ -244,7 +244,81 @@
     sync();
   }
 
+  function prepareMobileToc() {
+    const button = document.querySelector(".kd-mobile-toc-open");
+    const dialog = document.querySelector(".kd-mobile-toc");
+    if (!button?.hidden || typeof dialog?.showModal !== "function") return;
+
+    const sections = [...dialog.querySelectorAll('a[href^="#"]')]
+      .map(link => ({ link, heading: document.getElementById(link.getAttribute("href").slice(1)) }))
+      .filter(section => section.heading);
+    if (!sections.length) return;
+
+    button.hidden = false;
+    button.addEventListener("click", () => {
+      const scrollPadding = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+      const readingLine = scrollPadding + 26;
+      let current;
+      for (const { link, heading } of sections) {
+        link.removeAttribute("aria-current");
+        if (heading.getBoundingClientRect().top <= readingLine) current = link;
+      }
+      current?.setAttribute("aria-current", "location");
+      dialog.showModal();
+      current?.scrollIntoView({ block: "nearest", behavior: "instant" });
+    });
+    dialog.addEventListener("click", (event) => {
+      // Closing the sheet lets the original link update the URL and scroll normally.
+      if (event.target.closest('a[href^="#"]') &&
+          !event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
+        dialog.close();
+      } else if (event.target === dialog && event.clientY < dialog.getBoundingClientRect().top) {
+        dialog.close();
+      }
+    });
+  }
+
+  function prepareContributorProfiles() {
+    if (typeof HTMLDialogElement === "undefined" || !HTMLDialogElement.prototype.showModal) return;
+    document.querySelectorAll(".kd-contributor-grid .kd-contributor-profile").forEach(details => {
+      const summary = details.querySelector("summary");
+      const content = details.querySelector(".kd-profile-content");
+      if (!summary || !content || summary.dataset.kdProfileReady) return;
+      summary.dataset.kdProfileReady = "true";
+      summary.setAttribute("aria-haspopup", "dialog");
+      summary.addEventListener("click", event => {
+        event.preventDefault();
+        const dialog = document.createElement("dialog");
+        dialog.className = "kd-contributor-dialog";
+        const body = content.cloneNode(true);
+        const title = body.querySelector(".kd-profile-name");
+        title.id = "kd-profile-dialog-title";
+        dialog.setAttribute("aria-labelledby", title.id);
+        const close = document.createElement("button");
+        close.className = "kd-profile-close";
+        close.type = "button";
+        close.setAttribute("aria-label", "关闭个人名片");
+        close.textContent = "×";
+        dialog.append(close, body);
+        dialog.addEventListener("click", e => {
+          if (e.target !== dialog) return;
+          const box = dialog.getBoundingClientRect();
+          if (e.clientX < box.left || e.clientX > box.right || e.clientY < box.top || e.clientY > box.bottom) dialog.close();
+        });
+        close.addEventListener("click", () => dialog.close());
+        dialog.addEventListener("close", () => {
+          dialog.remove();
+          if (summary.isConnected) summary.focus({preventScroll: true});
+        }, {once: true});
+        document.body.append(dialog);
+        dialog.showModal();
+      });
+    });
+  }
+
   function enhancePage() {
+    prepareContributorProfiles();
+    prepareMobileToc();
     prepareCarousel();
     prepareBackground();
     prepareFilm();
