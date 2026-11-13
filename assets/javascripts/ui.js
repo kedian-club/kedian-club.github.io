@@ -278,46 +278,8 @@
     });
   }
 
-  function prepareContributorProfiles() {
-    if (typeof HTMLDialogElement === "undefined" || !HTMLDialogElement.prototype.showModal) return;
-    document.querySelectorAll(".kd-contributor-grid .kd-contributor-profile").forEach(details => {
-      const summary = details.querySelector("summary");
-      const content = details.querySelector(".kd-profile-content");
-      if (!summary || !content || summary.dataset.kdProfileReady) return;
-      summary.dataset.kdProfileReady = "true";
-      summary.setAttribute("aria-haspopup", "dialog");
-      summary.addEventListener("click", event => {
-        event.preventDefault();
-        const dialog = document.createElement("dialog");
-        dialog.className = "kd-contributor-dialog";
-        const body = content.cloneNode(true);
-        const title = body.querySelector(".kd-profile-name");
-        title.id = "kd-profile-dialog-title";
-        dialog.setAttribute("aria-labelledby", title.id);
-        const close = document.createElement("button");
-        close.className = "kd-profile-close";
-        close.type = "button";
-        close.setAttribute("aria-label", "关闭个人名片");
-        close.textContent = "×";
-        dialog.append(close, body);
-        dialog.addEventListener("click", e => {
-          if (e.target !== dialog) return;
-          const box = dialog.getBoundingClientRect();
-          if (e.clientX < box.left || e.clientX > box.right || e.clientY < box.top || e.clientY > box.bottom) dialog.close();
-        });
-        close.addEventListener("click", () => dialog.close());
-        dialog.addEventListener("close", () => {
-          dialog.remove();
-          if (summary.isConnected) summary.focus({preventScroll: true});
-        }, {once: true});
-        document.body.append(dialog);
-        dialog.showModal();
-      });
-    });
-  }
-
   function enhancePage() {
-    prepareContributorProfiles();
+    window.kdMotion?.prepare();
     prepareMobileToc();
     prepareCarousel();
     prepareBackground();

@@ -57,6 +57,7 @@
   --md-default-fg-color--light: #c1b9b0;
   --md-default-fg-color--lighter: #b8aea4;
   --md-typeset-a-color: #e2c5a0;
+  --md-typeset-mark-color: #694d77;
   --md-accent-fg-color: #f0d7b4;
   --md-code-bg-color: #2b2826;
   --md-footer-bg-color: #1b1918;
@@ -66,6 +67,12 @@
   --kd-interactive: #39322d;
   --kd-primary: #e2c5a0;
   --kd-on-primary: #302820;
+}
+
+[data-md-color-scheme="slate"] .md-content mark {
+  padding: .12em .18em;
+  border-radius: .1em;
+  color: #fff;
 }
 
 /* Keep Material's base unit, but stop its 1600px/2000px-wide font enlargement.
@@ -748,12 +755,6 @@ body:has(.kd-mobile-toc[open]) { overflow: hidden; }
 .kd-profile-articles a { display: block; padding: .4rem .55rem; border-radius: .45rem; color: var(--md-typeset-a-color); font-size: .75rem; text-decoration: none; }
 .kd-profile-articles a:is(:hover, :focus-visible) { background: var(--kd-interactive); text-decoration: underline; }
 .kd-profile-empty { color: var(--md-default-fg-color--light); font-size: .75rem; }
-@media (prefers-reduced-motion: no-preference) {
-  .kd-contributor-dialog[open] { animation: kd-profile-in 240ms cubic-bezier(.2,.7,.2,1) both; }
-  .kd-contributor-dialog[open]::backdrop { animation: kd-profile-backdrop-in 200ms ease-out both; }
-}
-@keyframes kd-profile-in { from { opacity: 0; transform: translateY(12px) scale(.97); } to { opacity: 1; transform: none; } }
-@keyframes kd-profile-backdrop-in { from { opacity: 0; } to { opacity: 1; } }
 @media screen and (max-width: 30em) {
   .kd-contributor-dialog { inset: auto 0 0; width: 100%; max-height: 85vh; max-height: 85dvh; margin: 0; border-radius: 1.1rem 1.1rem 0 0; }
   .kd-contributor-dialog .kd-profile-content { padding: 1.5rem 1.25rem calc(1.5rem + env(safe-area-inset-bottom)); }

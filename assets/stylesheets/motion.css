@@ -1,0 +1,58 @@
+/* Original motion enhancements; MIT licensed, see ../javascripts/motion.LICENSE.txt. */
+html.kd-profile-open { overflow: hidden; scrollbar-gutter: stable; }
+.kd-profile-origin-hidden { visibility: hidden; }
+
+/* Capture the header with the page for the theme reveal, rather than separately. */
+html[data-kd-motion] .md-header { view-transition-name: none; }
+html[data-kd-motion="theme"] *,
+html[data-kd-motion="theme"] *::before,
+html[data-kd-motion="theme"] *::after { transition: none !important; }
+html[data-kd-motion="theme"]::view-transition-group(root) { animation: none; }
+html[data-kd-motion="theme"]::view-transition-old(root),
+html[data-kd-motion="theme"]::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+html[data-kd-motion="theme"]::view-transition-old(root) { z-index: 1; }
+html[data-kd-motion="theme"]::view-transition-new(root) { z-index: 2; }
+
+/* Shared avatar and name remain separate, so they don't stretch with the card. */
+html[data-kd-motion="profile"]::view-transition-group(*) {
+  animation-duration: 420ms;
+  animation-timing-function: cubic-bezier(.22,1,.36,1);
+}
+html[data-kd-motion="profile"]::view-transition-old(root),
+html[data-kd-motion="profile"]::view-transition-new(root),
+html[data-kd-motion="profile"]::view-transition-old(site-header),
+html[data-kd-motion="profile"]::view-transition-new(site-header) { animation: none; mix-blend-mode: normal; }
+html[data-kd-motion="profile"]::view-transition-group(kd-profile-card) { z-index: 1; }
+html[data-kd-motion="profile"]::view-transition-group(kd-profile-avatar),
+html[data-kd-motion="profile"]::view-transition-group(kd-profile-name),
+html[data-kd-motion="profile"]::view-transition-group(kd-profile-kicker),
+html[data-kd-motion="profile"]::view-transition-group(kd-profile-id),
+html[data-kd-motion="profile"]::view-transition-group(kd-profile-close),
+html[data-kd-motion="profile"]::view-transition-group(kd-profile-details) { z-index: 2; }
+html[data-kd-motion="profile"]::view-transition-old(kd-profile-card) { animation: none; opacity: 0; }
+html[data-kd-motion="profile"]::view-transition-new(kd-profile-card) { animation: none; height: 100%; mix-blend-mode: normal; }
+html[data-kd-motion="profile"]::view-transition-old(kd-profile-avatar) { animation: none; opacity: 0; }
+html[data-kd-motion="profile"]::view-transition-new(kd-profile-avatar) { animation: none; height: 100%; object-fit: contain; }
+html[data-kd-motion="profile"]::view-transition-new(kd-profile-kicker),
+html[data-kd-motion="profile"]::view-transition-new(kd-profile-id),
+html[data-kd-motion="profile"]::view-transition-new(kd-profile-close),
+html[data-kd-motion="profile"]::view-transition-new(kd-profile-details) { animation: kd-profile-details-in 240ms 150ms ease-out both; }
+html[data-kd-motion="profile"]::view-transition-old(kd-profile-kicker),
+html[data-kd-motion="profile"]::view-transition-old(kd-profile-id),
+html[data-kd-motion="profile"]::view-transition-old(kd-profile-close),
+html[data-kd-motion="profile"]::view-transition-old(kd-profile-details) { animation: kd-page-out 120ms ease-out both; }
+@keyframes kd-profile-details-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+/* The film stays flat during playback; only the unplayed cover follows a mouse. */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .kd-film__player { transition: transform 360ms cubic-bezier(.22,1,.36,1), box-shadow 360ms ease; }
+  .kd-film__player.kd-film--tilting {
+    transform: perspective(1100px) rotateX(var(--kd-tilt-x, 0deg)) rotateY(var(--kd-tilt-y, 0deg));
+    box-shadow: 0 .7rem 1.5rem rgb(30 22 16 / 16%);
+    transition-duration: 160ms;
+  }
+}
+@media (hover: none) and (prefers-reduced-motion: no-preference) {
+  .kd-film__play { transition: transform 100ms ease; }
+  .kd-film__play:active { transform: translate(-50%, -50%) scale(.96); }
+}
