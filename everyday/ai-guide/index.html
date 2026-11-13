@@ -1634,43 +1634,79 @@
 <p>原文链接： <a href="https://ecnlcui60w48.feishu.cn/docx/UAU8dTKpdooHyvxYJgMc1XJYn5e?from=from_copylink">https://ecnlcui60w48.feishu.cn/docx/UAU8dTKpdooHyvxYJgMc1XJYn5e?from=from_copylink</a></p>
 </blockquote>
 <h1 id="ai_1">什么是AI<a class="headerlink" href="#ai_1" title="Permanent link">&para;</a></h1>
-<p>当今AI已经被扩大化表达，包括人脸识别、语音识别（Speak to ）、物品识别等等，这里只讨论狭义的基于Transformer架构的模型<strong>LLM</strong><span class="arithmatex">\(Large Language Model\)</span></p>
+<div style="background-color:#fff5eb;color:#16181d;padding:.1rem .7rem;border-radius:.2rem">
+<p>当今AI已经被扩大化表达，包括人脸识别、语音识别（Speak to ）、物品识别等等，这里只讨论狭义的基于Transformer架构的模型<strong><span style="color:#d83931">LLM</span></strong><span class="arithmatex">\(Large Language Model\)</span></p>
+</div>
 <h3 id="1ai">1.AI是一个巨大的函数<a class="headerlink" href="#1ai" title="Permanent link">&para;</a></h3>
 <p>学过数学我们都知道一次函数：y=ax+b、二次函数：y=ax^2+bx+c. 现在的AI也是类似如此，只不过是一个更加动态的、复杂的、随机的函数，究其本质都是根据你输入的变量输出一个结果。所以这里必须要强调一个概念：<strong>就算对AI输入一模一样的内容，它的输出也不会相同。</strong><br />
 但是为了提高我们对AI的掌控力，可以再输入时添加一些参数，例如：Temperature、Ttop、Thinking_level等等。其中最常见、被接触最多的为思考等级（thinking_level），一般有：Low、Medium、high、xhigh、max等，再输入时选择<strong>越高的思考等级</strong>往往代表着模型思考时<strong>使用更多的参数，输出更改的内容，</strong>往往更加聪明，但回答<strong>不一定更好。</strong></p>
 <h3 id="2ai">2.现在有哪些AI?<a class="headerlink" href="#2ai" title="Permanent link">&para;</a></h3>
 <p>目前可以简单的分为国产开源模型（模型厂商会公开发布模型的权重，可以被其他人、公司下载和部署）和国外闭源模型（反之）。主流模型厂商如下：</p>
-<p>国产开源模型：deepseek（深度求索）、glm（质谱清言）、kimi<span class="arithmatex">\(moonshot\-月之暗面\)</span>、mimo<span class="arithmatex">\(小米\)</span>、hunyuan-hy<span class="arithmatex">\(腾讯\)</span>、qwen-千问（阿里巴巴）<br />
-国外闭源模型：chatgpt（OpenAI）、claude（Anthropic）、gemini（google）、grok（spaceX，马斯克的公司）</p>
+<p>国产开源模型：<mark style="background-color:#f76964;color:#16181d">deepseek</mark>（深度求索）、<mark style="background-color:#ffa53d;color:#16181d">glm</mark>（质谱清言）、<mark style="background-color:#ffe928;color:#16181d">kimi</mark>(moonshot-月之暗面)、mimo(小米)、<mark style="background-color:#4e83fd;color:#16181d">hunyuan-hy</mark>(腾讯)、<mark style="background-color:#62d256;color:#16181d">qwen</mark>-千问（阿里巴巴）<br />
+国外闭源模型：<mark style="background-color:#935af6;color:#16181d">chatgpt</mark>（OpenAI）、<mark style="background-color:#bbbfc4;color:#16181d">claude</mark>（Anthropic）、<mark style="background-color:#dee0e3;color:#16181d">gemini</mark>（google）、<mark style="background-color:#b7edb1;color:#16181d">grok</mark>（spaceX，马斯克的公司）</p>
 <p>本人认为的能力排行梯队，不同等级由高到低 <span class="arithmatex">\(不讨论价格\)</span></p>
 <p>这个排行只是一个非常浅显的排行、所谓术业有专攻，除了Top1的模型外，其余模型基本都对一些能力进行了特化训练，比如代码方面、多模态方面，可能不是特别适合数学、科学和论文写作。</p>
-<p>Top1<br />
-claude-fable-5.2</p>
-<p>claude-opus-5.5</p>
-<p>gpt-6-astra</p>
-<p>gemini-4-carbon</p>
-<p>gpt-6.1-sol</p>
-<p>gemini-4-Argon</p>
-<p>claude-fable-5.1</p>
-<p>claude-fable-5</p>
-<p>gpt-5.6-sol</p>
-<p>claude-opus-5</p>
-<p>Top2</p>
-<p>kimi-k3</p>
-<p>glm-5.3</p>
-<p>qwen-3.8-max</p>
-<p>grok-4.7</p>
-<p>deepseek-v4.1-flash</p>
-<p>huanyuan4</p>
-<p>gpt-5.6-terra</p>
-<p>grok-4.6</p>
-<p>gemini-3.8-flash</p>
-<p>Top3</p>
-<p>glm-5.3-flash</p>
-<p>deepseek-V4-Flash-Vision-Exp</p>
-<p>gemini-3.7-flash</p>
-<p>gpt-5.6-luna</p>
-<p>......</p>
+<table>
+<thead>
+<tr>
+<th>Top1</th>
+<th>Top2</th>
+<th>Top3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><mark style="background-color:#bbbfc4;color:#16181d">claude-fable-5.2</mark></td>
+<td><mark style="background-color:#ffe928;color:#16181d">kimi-k3</mark></td>
+<td><mark style="background-color:#ffa53d;color:#16181d">glm-5.3-flash</mark></td>
+</tr>
+<tr>
+<td><mark style="background-color:#bbbfc4;color:#16181d">claude-opus-5.5</mark></td>
+<td><mark style="background-color:#ffa53d;color:#16181d">glm-5.3</mark></td>
+<td><mark style="background-color:#f76964;color:#16181d">deepseek-V4-Flash-Vision-Exp</mark></td>
+</tr>
+<tr>
+<td><mark style="background-color:#935af6;color:#16181d">gpt-6-astra</mark></td>
+<td><mark style="background-color:#62d256;color:#16181d">qwen-3.8-max</mark></td>
+<td><mark style="background-color:#dee0e3;color:#16181d">gemini-3.7-flash</mark></td>
+</tr>
+<tr>
+<td><mark style="background-color:#dee0e3;color:#16181d">gemini-4-carbon</mark></td>
+<td><mark style="background-color:#b7edb1;color:#16181d">grok-4.7</mark></td>
+<td><mark style="background-color:#935af6;color:#16181d">gpt-5.6-luna</mark></td>
+</tr>
+<tr>
+<td><mark style="background-color:#935af6;color:#16181d">gpt-6.1-sol</mark></td>
+<td><mark style="background-color:#f76964;color:#16181d">deepseek-v4.1-flash</mark></td>
+<td>......</td>
+</tr>
+<tr>
+<td><mark style="background-color:#dee0e3;color:#16181d">gemini-4-Argon</mark></td>
+<td><mark style="background-color:#4e83fd;color:#16181d">huanyuan4</mark></td>
+<td></td>
+</tr>
+<tr>
+<td><mark style="background-color:#bbbfc4;color:#16181d">claude-fable-5.1</mark></td>
+<td><mark style="background-color:#935af6;color:#16181d">gpt-5.6-terra</mark></td>
+<td></td>
+</tr>
+<tr>
+<td><mark style="background-color:#bbbfc4;color:#16181d">claude-fable-5</mark></td>
+<td><mark style="background-color:#b7edb1;color:#16181d">grok-4.6</mark></td>
+<td></td>
+</tr>
+<tr>
+<td><mark style="background-color:#935af6;color:#16181d">gpt-5.6-sol</mark></td>
+<td><mark style="background-color:#dee0e3;color:#16181d">gemini-3.8-flash</mark></td>
+<td></td>
+</tr>
+<tr>
+<td><mark style="background-color:#bbbfc4;color:#16181d">claude-opus-5</mark></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h1 id="agent">什么是AGENT<a class="headerlink" href="#agent" title="Permanent link">&para;</a></h1>
 <h3 id="1agent">1.Agent的起源<a class="headerlink" href="#1agent" title="Permanent link">&para;</a></h3>
 <p>要从gpt刚诞生不久后说起，起初人们对于AI的认识还只是一个用于聊天的对话窗口，直到Manus（其实是中国公司做的，之前被meta收购，而后被监管要求取消）2025年3月6日时发布突然爆火，只需要你给一个任务，他就会自动帮你完成，其实前面也有很多类似的产品，但是Manus是那个将Agent带入大众视野的。其实回过头去看，Agent发展到现在也就发展一年半的时间。</p>
@@ -1711,7 +1747,7 @@ claude-fable-5.2</p>
 </blockquote>
 <p>Agent做的：</p>
 <blockquote>
-<p>好的，用户叫我去学习通交作业，系统提示词里有相关skill，让我先看看。——&gt;调用工具，读取相关skill并返回结果</p>
+<p>好的，用户叫我去学习通交作业，系统提示词里有相关skill，让我先看看。——&gt;调用工具，<mark style="background-color:#fbbfbc;color:#16181d">读取相关skill</mark>并返回结果</p>
 <p>好的，skill里有一个脚本软件，我会操作了——&gt;调用工具，并返回结果</p>
 <p>好的，我已经帮你提交好作业了，使用本项目中的文件</p>
 </blockquote>
@@ -1721,14 +1757,16 @@ claude-fable-5.2</p>
 <h1 id="api">什么是api与中转站、官方订阅<a class="headerlink" href="#api" title="Permanent link">&para;</a></h1>
 <p>经过以上内容，相信你已经对如何使用AI有了自己的理解。说了这么多，到底怎么才能用上?且听我一个一个慢慢说。</p>
 <h3 id="1api">1.什么是api<a class="headerlink" href="#1api" title="Permanent link">&para;</a></h3>
+<div style="background-color:#fff5eb;color:#16181d;padding:.1rem .7rem;border-radius:.2rem">
 <p>这里的api是AI调用领域狭义的解释，一般广义的api是指计算机网络中的各类接口</p>
-<p>一般api包括这几个部分：baseurl：一般为一个网址例如 <code>https://platform.deepseek.com/</code> ，这是你发送请求时的大门、apikey：一般由一串大小写字母和数字组成，这是你发送请求时需要携带的钥匙，只有钥匙和大门相互匹配时才能够正常返回信息。现在一般流行三种api格式，分别由两大模型公司定义和规范，response、openai兼容和message形式。</p>
+</div>
+<p>一般api包括这几个部分：<mark style="background-color:#fbbfbc;color:#16181d">base</mark><mark style="background-color:#fed4a4;color:#16181d">url</mark>：一般为一个网址例如 <code>https://platform.deepseek.com/</code> ，这是你发送请求时的大门、<mark style="background-color:#f76964;color:#16181d">api</mark><mark style="background-color:#fed4a4;color:#16181d">key</mark>：一般由一串大小写字母和数字组成，这是你发送请求时需要携带的钥匙，只有钥匙和大门相互匹配时才能够正常返回信息。现在一般流行三种api格式，分别由两大模型公司定义和规范，response、openai兼容和message形式。</p>
 <p><strong>openai兼容</strong>（<code>https://platform.deepseek.com/v1/chat/completions</code>）：由openai公司最早推出的，也是流行最广的格式，为支持流式输出（模拟人说话，一个字一个字往外蹦）所定义的格式。</p>
 <p><strong>response</strong>（<code>https://platform.deepseek.com/v1/response</code>）：也是由openai公司推出，随着Agent不断发展出新的需求，需要更加多的特性所设计推出。</p>
 <p><strong>message</strong>（<code>https://platform.deepseek.com/v1message</code>）：由对家公司Anthropic所推出，和response相同，设计之初为了Agent而生。</p>
-<p>对于当今的agent而言几乎都兼容这三种格式，所以哪种格式可用还是要看baseurl这个地址大门允许哪种格式，但是其实说白，虽然当今很多开源项目都能实现这几种格式的相互转换，所以格式支持基本取决于相应方的立场，比如chatgpt（openai）不支持message、claude code（Anthropic）不支持response。</p>
+<p>对于当今的agent而言几乎都兼容这三种格式，所以哪种格式可用还是要看baseurl这个地址大门允许哪种格式，但是其实说白，虽然当今很多开源项目都能实现这几种格式的相互转换，所以格式支持基本取决于相应方的立场，比如<mark style="background-color:#fed4a4;color:#16181d">chatgpt（openai）不支持message、claude code（Anthropic）不支持response。</mark></p>
 <h3 id="2api">2.怎么使用api<a class="headerlink" href="#2api" title="Permanent link">&para;</a></h3>
-<p>部分Agent支持自定义api，比如腾讯的workbuddy、开源的opencode等等，直接填入baseurl和apikey即可。</p>
+<p>部分Agent支持自定义api，比如腾讯的workbuddy、开源的opencode等等，<mark style="background-color:#fbbfbc;color:#16181d">直接填入baseurl和apikey</mark>即可。</p>
 <p>部分不支持的可以借助工具（如https://github.com/farion1231/cc-switch，ccswitch）修改相关配置文件，这类工具支持修改Agent的baseurl和apikey。</p>
 <h3 id="3api">3.怎么获得api<a class="headerlink" href="#3api" title="Permanent link">&para;</a></h3>
 <h4 id="1">1、官方平台<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
@@ -1739,8 +1777,8 @@ claude-fable-5.2</p>
 <p>但是其中中转站也有官方和非官方之分，只是界限略微模糊。所谓官方中转站，一般是指有明确的模型厂商授权和背书，例如opentour、硅基流动、阿里云百炼；非官方一般是说你在闲鱼、淘宝能够找到的个人、小型商家；</p>
 <h3 id="4api"><strong>4.api怎么计价</strong><a class="headerlink" href="#4api" title="Permanent link">&para;</a></h3>
 <p>首先api计价是以token为单位的（怎么这么多名词，token又是什么？这里可以先把token理解为模型处理内容时拆出来的“小块”：一个单词可能被拆成几块，一个汉字也可能对应多个token，具体怎么拆，要看模型使用的分词器（这又是什么？你先别管）。</p>
-<p>不同的token收费也不同，可以理解为：你让AI看资料、写答案：你交给它看的内容算输入；AI生成的内容算输出。如果之前看过的资料成功用上了缓存，这部分就按更便宜的“缓存读取”收费；有些模型还会单独收取保存缓存的费用，叫“缓存写入”。</p>
-<p>以最新的gpt-6-astra为例，价格分别是输入：10＄每百万token、缓存写入：12.5＄每百万token、缓存读取：1＄每百万token、模型输出：50＄每百万token。你可能说平常我和豆包聊天的时候很久也说不了多少字啊，这个价格不是很便宜吗。但是我们之前说了：<strong>Agent每次调用工具进行一次对话时，都要发送一次完整的上下文。</strong>越长的对话到后面可能是一个天文数字。好吧，那要怎么才能用更少的钱收益最大化呢？</p>
+<p>不同的token收费也不同，可以理解为：你让AI看资料、写答案：你交给它看的内容算<mark style="background-color:#fbbfbc;color:#16181d">输入</mark>；AI生成的内容算<mark style="background-color:#fbbfbc;color:#16181d">输出</mark>。如果之前看过的资料成功用上了缓存，这部分就按更便宜的“<mark style="background-color:#fbbfbc;color:#16181d">缓存读取</mark>”收费；有些模型还会单独收取保存缓存的费用，叫“<mark style="background-color:#fbbfbc;color:#16181d">缓存写入</mark>”。</p>
+<p>以最新的gpt-6-astra为例，价格分别是<mark style="background-color:#fbbfbc;color:#16181d">输入</mark>：10＄每百万token、<mark style="background-color:#fbbfbc;color:#16181d">缓存写入</mark>：12.5＄每百万token、<mark style="background-color:#fbbfbc;color:#16181d">缓存读取</mark>：1＄每百万token、<mark style="background-color:#fbbfbc;color:#16181d">模型输出</mark>：50＄每百万token。你可能说平常我和豆包聊天的时候很久也说不了多少字啊，这个价格不是很便宜吗。但是我们之前说了：<strong>Agent每次调用工具进行一次对话时，都要发送一次完整的上下文。</strong>越长的对话到后面可能是一个天文数字。好吧，那要怎么才能用更少的钱收益最大化呢？</p>
 <p>tips：</p>
 <p>1.明确本次任务的范围。如果你只需要修改一个文件，就告诉Agent文件在哪、需要改什么、什么不要动。否则模型跑去把所有文件都读一遍，不仅消耗上下文，还可能花很多时间。当然不是说问题越短越省钱，有时多写几句要求，反而能减少后面的无效探索。</p>
 <p>2.保持较高的缓存率。相信你注意到缓存读取比普通输入便宜很多，对于连续的同一项任务，尽量用追加消息的方式补充要求，不要反复改写前面的内容。再者说，不要为了提高缓存率，故意塞进一大堆没用的内容——缓存读取便宜，但不是免费。缓存率不仅取决于你，还取决于多方面，稍加注意即可，不用可以追求。<strong>一般正常使用时，缓存率均在90%以上。</strong></p>
@@ -1769,11 +1807,17 @@ claude-fable-5.2</p>
 <p><em>2、我要是买了订阅套餐A，感觉用不完额度，想给朋友用，但是官方又不允许多个人使用怎么办？</em></p>
 <p>A、把账号给朋友，他晚上用，我白天用       B、把额度浪费掉       C、通过技术手段让两个人同时用时看起来像一个人</p>
 <p>通过以上两个问题，相信你已经参透了一门生意：</p>
+<div style="background-color:#fff5eb;color:#16181d;padding:.1rem .7rem;border-radius:.2rem">
 <p>由于国内不方便使用国外模型，会有人通过一定渠道大量购买国外模型的订阅套餐，由于这些套餐一般具有高收益倍率，将其通过技术手段绕过官方限制后进行低价倒卖，从而赚取高额利润。</p>
+</div>
 <p>你可能会说，这是好事啊，用户获得了低价和便利；资本主义被薅了羊毛；也有人赚取了利润。妥妥的可循环生意啊。如果你这样想，那我要给你泼一盆冷水了。</p>
+<div style="background-color:#fff5eb;color:#16181d;padding:.1rem .7rem;border-radius:.2rem">
 <p>第一，你能确定你花低价买到的模型是正版模型吗，不怕买的gpt，实际给你用豆包吗？第二、你能确定你花高价买到的是正版模型吗？第三、你从中转站购买模型，意味着中转站能够看到你的所有记录和具体内容，你能保证不被拿来干坏事吗？第四、模型的输出会经过中转站，你能保证中转站不给你夹带点病毒，加点料吗？第五、你看得懂模型计费吗，你能保证中转站不会对你的计费动手脚吗？</p>
+</div>
 <p>最后给一点我的建议：1、如果有能力，可以用国外模型，并且买官方套餐；2、如果没能力，可以用国产模型，并且买官方套餐；3、如果没能力，又想用国外模型，一定要找绝对信任的人。</p>
+<div style="background-color:#fff5eb;color:#16181d;padding:.1rem .7rem;border-radius:.2rem">
 <p>如果你有其他问题，欢迎在下方评论，我会收录到Q\&amp;A中进行回答，文档也会不定期更新</p>
+</div>
 <h1 id="qa">Q\&amp;A<a class="headerlink" href="#qa" title="Permanent link">&para;</a></h1>
 <h4 id="1_2">1、便宜的模型一定更便宜吗？<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h4>
 <p>不一定，一般来说越贵的模型越聪明。举个例子：模型A的每token价格是10块钱；模型B的价格是每token1块钱。但是由于模型A更聪明，完成一个任务只需要10个token，但是模型B需要100个。最后他们的总价都是100块钱。古人云：越便宜越贵，越贵越便宜。最主要还是要找到适合的模型。</p>
