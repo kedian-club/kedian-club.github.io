@@ -278,7 +278,22 @@
     });
   }
 
+  function prepareProjectMedia() {
+    document.querySelectorAll('.kd-project-video').forEach(video => {
+      if (video.dataset.kdMediaReady) return;
+      const message = video.parentElement.querySelector('.kd-project-video-error');
+      if (!message) return;
+      video.dataset.kdMediaReady = 'true';
+      const sync = () => { message.hidden = !video.error; };
+      video.addEventListener('error', sync);
+      video.addEventListener('loadstart', sync);
+      video.addEventListener('playing', () => { message.hidden = true; });
+      sync();
+    });
+  }
+
   function enhancePage() {
+    prepareProjectMedia();
     window.kdMotion?.prepare();
     prepareMobileToc();
     prepareCarousel();

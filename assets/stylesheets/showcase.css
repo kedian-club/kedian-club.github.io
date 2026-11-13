@@ -42,3 +42,29 @@
 @media (max-width: 44.984375em) { .kd-showcase-grid { grid-template-columns: 1fr; } }
 @media (max-width: 30em) { .kd-project-resources, .kd-project-gallery { grid-template-columns: 1fr; } .kd-project-placeholder .kd-exhibit-art { padding-bottom: 1.5rem; } }
 @media (prefers-reduced-motion: reduce) { .kd-exhibit, .kd-exhibit-drawing { transition: none; } .kd-exhibit:is(:hover,:focus-visible), .kd-exhibit:is(:hover,:focus-visible) .kd-exhibit-drawing { transform: none; } }
+
+/* Keep cards aligned when projects have different titles or introductions. */
+.kd-exhibit { display: flex; flex-direction: column; }
+.kd-exhibit-copy { flex: 1; display: flex; flex-direction: column; }
+.kd-exhibit-enter { margin-top: auto; padding-top: .7rem; }
+.md-typeset .kd-exhibit-intro { margin: -.5rem 0 .7rem; font-size: .72rem; color: var(--md-default-fg-color--light); }
+.kd-exhibit-available { display: flex; flex-wrap: wrap; gap: .35rem; margin-bottom: .4rem; font-size: .6rem; }
+.kd-exhibit-available span { border: 1px solid var(--exhibit-rule); border-radius: 1rem; padding: .1rem .45rem; }
+.kd-exhibit:focus-visible { outline-offset: 4px; }
+.kd-project-jump { display: flex; flex-wrap: wrap; gap: .2rem .8rem; padding-block: .5rem; margin-bottom: 1rem; border-block: 1px solid var(--exhibit-rule); }
+.kd-project-jump a { display: inline-flex; align-items: center; min-height: 44px; font-size: .72rem; }
+.kd-project-jump a:hover { text-decoration: underline; }
+.kd-project-view :is(h1, h2, p, figcaption) { overflow-wrap: anywhere; }
+.kd-project-notes { scroll-margin-top: 1rem; }
+.kd-project-video { aspect-ratio: 16 / 9; object-fit: contain; }
+.kd-project-resources:has(.kd-project-video) { grid-template-columns: 1fr; }
+.md-typeset .kd-project-video-help { font-size: .68rem; color: var(--md-default-fg-color--light); }
+.kd-project-video-error:not([hidden]) { display: block; margin-bottom: .35rem; }
+.kd-project-gallery:empty { display: none; }
+.kd-project-gallery .kd-image-trigger { width: 100%; }
+@media (hover: none) { .kd-exhibit:hover, .kd-exhibit:hover .kd-exhibit-drawing { transform: none; box-shadow: none; } }
+@media print {
+  .kd-project-jump, .kd-project-back, .kd-exhibit-enter { display: none; }
+  .kd-exhibit, .kd-project-placeholder { break-inside: avoid; box-shadow: none; }
+  .kd-project-view, .kd-showcase { --exhibit-paper: #fff; --exhibit-ink: #333; --exhibit-rule: #bbb; }
+}

@@ -1,0 +1,1890 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="科电社团的学习资料、竞赛经验与共同积累。">
+      
+      
+      
+        <link rel="canonical" href="https://kedian-club.github.io/everyday/ai-guide/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../party-membership/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/branding/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>AI科普文档 - 科电俱乐部</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css?v=9">
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/motion.css?v=1">
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/showcase.css?v=2">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ai" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="科电俱乐部" class="md-header__button md-logo" aria-label="科电俱乐部" data-md-component="logo">
+      
+  <img src="../../assets/branding/club-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            科电俱乐部
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AI科普文档
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../welcome/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  给新生一封信
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../showcase/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  项目展台
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../competitions/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  竞赛经验分享
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  日常经验分享
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../resources/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  社团资源
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../contribute/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  贡献
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+  
+  
+  <div class="kd-day-background" aria-hidden="true">
+    <video muted loop playsinline preload="none" poster="../../assets/media/reading-background-light-pexels.jpg" data-light-poster="../../assets/media/reading-background-light-pexels.jpg" data-src="../../assets/media/reading-background-light-pexels.mp4" data-dark-src="../../assets/media/reading-background.mp4" tabindex="-1"></video>
+  </div>
+  
+  <button class="kd-background-toggle" type="button" hidden>暂停背景</button>
+
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+  
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="科电俱乐部" class="md-nav__button md-logo" aria-label="科电俱乐部" data-md-component="logo">
+      
+  <img src="../../assets/branding/club-logo.png" alt="logo">
+
+    </a>
+    科电俱乐部
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../welcome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    给新生一封信
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../showcase/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目展台
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    项目展台
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../showcase/2026-loongson/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026 智能车·龙芯赛道
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../showcase/2026-ball-balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026 电赛·H题钢珠平衡小车
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../competitions/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    竞赛经验分享
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    竞赛经验分享
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning/competition-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    比赛路线推荐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../competitions/lanqiao/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    蓝桥杯
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    蓝桥杯
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../competitions/lanqiao/mcu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    单片机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../competitions/lanqiao/embedded/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    嵌入式
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../competitions/lanqiao/eda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EDA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../competitions/lanqiao/fpga/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FPGA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../competitions/electronics/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    电子设计竞赛
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    电子设计竞赛
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../competitions/electronics/preparation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    电赛如何准备
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../competitions/socchina/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    嵌赛指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../competitions/smartcar/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    智能车
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    智能车
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../competitions/smartcar/basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    智能车基础篇
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日常经验分享
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    日常经验分享
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI科普文档
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../party-membership/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入党流程及注意事项
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    软件推荐
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    软件推荐
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/software/vscode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VS Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    社团资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../contribute/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    贡献
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    贡献
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribute/how-to/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    如何贡献
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+  
+    
+    
+    
+      <button class="kd-mobile-toc-open" type="button" aria-haspopup="dialog" aria-controls="kd-mobile-toc" hidden>
+        <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 5h14v2H7zm0 8v-2h14v2zM4 4.5A1.5 1.5 0 0 1 5.5 6 1.5 1.5 0 0 1 4 7.5 1.5 1.5 0 0 1 2.5 6 1.5 1.5 0 0 1 4 4.5m0 6A1.5 1.5 0 0 1 5.5 12 1.5 1.5 0 0 1 4 13.5 1.5 1.5 0 0 1 2.5 12 1.5 1.5 0 0 1 4 10.5M7 19v-2h14v2zm-3-2.5A1.5 1.5 0 0 1 5.5 18 1.5 1.5 0 0 1 4 19.5 1.5 1.5 0 0 1 2.5 18 1.5 1.5 0 0 1 4 16.5"/></svg></span>本页目录
+      </button>
+      <dialog class="kd-mobile-toc" id="kd-mobile-toc" aria-labelledby="kd-mobile-toc-title">
+        <header class="kd-mobile-toc__header">
+          <h2 id="kd-mobile-toc-title">本页目录</h2>
+          <form method="dialog">
+            <button type="submit" autofocus>关闭</button>
+          </form>
+        </header>
+        <nav class="kd-mobile-toc__links" aria-label="文章章节">
+          <ul>
+            
+            
+              <li>
+                <a href="#ai">AI科普文档</a>
+                
+              </li>
+            
+              <li>
+                <a href="#ai_1">什么是AI</a>
+                <ul>
+              <li>
+                <a href="#1ai">1.AI是一个巨大的函数</a>
+                
+              </li>
+            
+              <li>
+                <a href="#2ai">2.现在有哪些AI?</a>
+                
+              </li>
+            </ul>
+              </li>
+            
+              <li>
+                <a href="#agent">什么是AGENT</a>
+                <ul>
+              <li>
+                <a href="#1agent">1.Agent的起源</a>
+                
+              </li>
+            
+              <li>
+                <a href="#2agent">2.Agent详解</a>
+                
+              </li>
+            
+              <li>
+                <a href="#3skillmcp">3.skill与mcp</a>
+                
+              </li>
+            </ul>
+              </li>
+            
+              <li>
+                <a href="#api">什么是api与中转站、官方订阅</a>
+                <ul>
+              <li>
+                <a href="#1api">1.什么是api</a>
+                
+              </li>
+            
+              <li>
+                <a href="#2api">2.怎么使用api</a>
+                
+              </li>
+            
+              <li>
+                <a href="#3api">3.怎么获得api</a>
+                
+              </li>
+            
+              <li>
+                <a href="#4api">4.api怎么计价</a>
+                
+              </li>
+            
+              <li>
+                <a href="#5">5.什么是官方订阅</a>
+                
+              </li>
+            
+              <li>
+                <a href="#6">6、中转站的秘密</a>
+                
+              </li>
+            </ul>
+              </li>
+            
+              <li>
+                <a href="#qa">Q\&amp;A</a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </dialog>
+    
+  
+
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+  
+                  
+
+
+
+<h1 id="ai">AI科普文档<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h1>
+<p class="kd-author-byline"><a class="kd-author-tag" href="../../contribute/#author-93c4856bbb40" aria-label="查看贡献者 邓焱中">邓焱中</a></p>
+<h1 id="ai_1">什么是AI<a class="headerlink" href="#ai_1" title="Permanent link">&para;</a></h1>
+<p>当今AI已经被扩大化表达，包括人脸识别、语音识别（Speak to ）、物品识别等等，这里只讨论狭义的基于Transformer架构的模型<strong>LLM</strong><span class="arithmatex">\(Large Language Model\)</span></p>
+<h3 id="1ai">1.AI是一个巨大的函数<a class="headerlink" href="#1ai" title="Permanent link">&para;</a></h3>
+<p>学过数学我们都知道一次函数：y=ax+b、二次函数：y=ax^2+bx+c. 现在的AI也是类似如此，只不过是一个更加动态的、复杂的、随机的函数，究其本质都是根据你输入的变量输出一个结果。所以这里必须要强调一个概念：<strong>就算对AI输入一模一样的内容，它的输出也不会相同。</strong><br />
+但是为了提高我们对AI的掌控力，可以再输入时添加一些参数，例如：Temperature、Ttop、Thinking_level等等。其中最常见、被接触最多的为思考等级（thinking_level），一般有：Low、Medium、high、xhigh、max等，再输入时选择<strong>越高的思考等级</strong>往往代表着模型思考时<strong>使用更多的参数，输出更改的内容，</strong>往往更加聪明，但回答<strong>不一定更好。</strong></p>
+<h3 id="2ai">2.现在有哪些AI?<a class="headerlink" href="#2ai" title="Permanent link">&para;</a></h3>
+<p>目前可以简单的分为国产开源模型（模型厂商会公开发布模型的权重，可以被其他人、公司下载和部署）和国外闭源模型（反之）。主流模型厂商如下：</p>
+<p>国产开源模型：deepseek（深度求索）、glm（质谱清言）、kimi<span class="arithmatex">\(moonshot\-月之暗面\)</span>、mimo<span class="arithmatex">\(小米\)</span>、hunyuan-hy<span class="arithmatex">\(腾讯\)</span>、qwen-千问（阿里巴巴）<br />
+国外闭源模型：chatgpt（OpenAI）、claude（Anthropic）、gemini（google）、grok（spaceX，马斯克的公司）</p>
+<p>本人认为的能力排行梯队，不同等级由高到低 <span class="arithmatex">\(不讨论价格\)</span></p>
+<p>这个排行只是一个非常浅显的排行、所谓术业有专攻，除了Top1的模型外，其余模型基本都对一些能力进行了特化训练，比如代码方面、多模态方面，可能不是特别适合数学、科学和论文写作。</p>
+<p>Top1<br />
+claude-fable-5.2</p>
+<p>claude-opus-5.5</p>
+<p>gpt-6-astra</p>
+<p>gemini-4-carbon</p>
+<p>gpt-6.1-sol</p>
+<p>gemini-4-Argon</p>
+<p>claude-fable-5.1</p>
+<p>claude-fable-5</p>
+<p>gpt-5.6-sol</p>
+<p>claude-opus-5</p>
+<p>Top2</p>
+<p>kimi-k3</p>
+<p>glm-5.3</p>
+<p>qwen-3.8-max</p>
+<p>grok-4.7</p>
+<p>deepseek-v4.1-flash</p>
+<p>huanyuan4</p>
+<p>gpt-5.6-terra</p>
+<p>grok-4.6</p>
+<p>gemini-3.8-flash</p>
+<p>Top3</p>
+<p>glm-5.3-flash</p>
+<p>deepseek-V4-Flash-Vision-Exp</p>
+<p>gemini-3.7-flash</p>
+<p>gpt-5.6-luna</p>
+<p>......</p>
+<h1 id="agent">什么是AGENT<a class="headerlink" href="#agent" title="Permanent link">&para;</a></h1>
+<h3 id="1agent">1.Agent的起源<a class="headerlink" href="#1agent" title="Permanent link">&para;</a></h3>
+<p>要从gpt刚诞生不久后说起，起初人们对于AI的认识还只是一个用于聊天的对话窗口，直到Manus（其实是中国公司做的，之前被meta收购，而后被监管要求取消）2025年3月6日时发布突然爆火，只需要你给一个任务，他就会自动帮你完成，其实前面也有很多类似的产品，但是Manus是那个将Agent带入大众视野的。其实回过头去看，Agent发展到现在也就发展一年半的时间。</p>
+<p>后续Anthropic推出claude code在程序员群体的中不断发展，中间也有过openclaw（小龙虾），到现在百花齐放的各类Agent产品，时间太慢，发展太快。</p>
+<h3 id="2agent">2.Agent详解<a class="headerlink" href="#2agent" title="Permanent link">&para;</a></h3>
+<h4 id="1agent_1">1、Agent能做什么<a class="headerlink" href="#1agent_1" title="Permanent link">&para;</a></h4>
+<p>得益于AI能力提升和Agent功能完善，现在顶尖的AI（gpt-6-astra）已经能够完成精美的3D建模（下图为blender中的3D模型）、PPT制作、代码编写和科研协作。</p>
+<p><img alt="image.png" src="../../assets/images/%E6%97%A5%E5%B8%B8%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/AI%E7%A7%91%E6%99%AE%E6%96%87%E6%A1%A3/%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6/image%201.png" /></p>
+<p>以chatgpt桌面端（以前叫codex，OpenAI的Agent产品）为例，现在已经能够通过computer use功能完成十分复杂的电脑操作和浏览器操作。下面以chatgpt为例进行讲解。</p>
+<p>一般来说Agent产品的工作区域是以电脑文件夹为边界，我们可以选择一个电脑文件夹，并将相应的项目资料放入文件夹中，以便我们在进行对话时AI能够看到相应的资料，并做出针对性的回答、编辑和整理。</p>
+<p><img alt="image.png" src="../../assets/images/%E6%97%A5%E5%B8%B8%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/AI%E7%A7%91%E6%99%AE%E6%96%87%E6%A1%A3/%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6/image.png" /></p>
+<h4 id="2agent_1">2、Agent工作原理<a class="headerlink" href="#2agent_1" title="Permanent link">&para;</a></h4>
+<p>Agent就是如图中所示，不断循环、调用工具、进行思考来完成任务的。</p>
+<p>其中每一轮工具调用或思考都将全量回传整个上下文，前面提到AI是一个巨大的函数，我们每次都需要向函数中输入变量才能输出结果，一般来说AI模型的使用计费是按照上下文进行计费的，越长的上下文，每一次请求所耗费的金额越多。</p>
+<h3 id="3skillmcp">3.skill与mcp<a class="headerlink" href="#3skillmcp" title="Permanent link">&para;</a></h3>
+<p>随着Agent的不断发展，人们发现假设AI的能力提升到达一定瓶颈，对于一些不常见的问题往往Agent的工作效果一般，那么要怎么提升效果呢？于是就有了skill和mcp，这是两个截然不同的拓展Agent能力的道路。</p>
+<h4 id="mcp">mcp<a class="headerlink" href="#mcp" title="Permanent link">&para;</a></h4>
+<p>mcp是最先被发明应用的，mcp是一种协议，利用这个协议可以在Agent塞入更多的工具，干不同的事情有不同的专用工具。比如人们发现AI没有最新的互联网知识，于是给Agent接入了联网搜索的mcp，诸如此类。但是也带来了一些问题：1.每接入一个mcp都会增加上下文长度，上下文越长，模型越会丢失前文的内容，表现为幻觉和低智商；2.mcp基本都需要外部服务器提供能力知识，如果外部服务出现中毒或入侵，可能会影响到我们自身的安全。</p>
+<h4 id="skill">skill<a class="headerlink" href="#skill" title="Permanent link">&para;</a></h4>
+<p>对于上下文太长会导致模型变笨的情况，人们发明了skill在一定程度上缓解这个问题。我们说，对于一些没有规定范式的工作，AI往往要进行大量探索其实现路径，这个探索的过程往往会消耗大量的上下文和时间，skill的作用就是通过渐进式披露上下文，尽量只加载当前工作需要的知识。举个例子：</p>
+<p><strong>没有skill的情况：</strong></p>
+<p>我说：</p>
+<blockquote>
+<p>帮我去学习通交一下我的作业</p>
+</blockquote>
+<p>Agent做的：</p>
+<blockquote>
+<p>好的，先让我找找学习通在电脑的哪个位置。——&gt;调用工具，并返回结果</p>
+<p>原来在D盘，好的，让我打开学习通，然后看看哪里有作业提交的选项——&gt;调用工具，并返回结果</p>
+<p>没有作业提交选项，页面只有课程、学习、我的、设置，那我猜是在课程页面中——&gt;调用工具，并返回结果</p>
+<p>.......</p>
+<p>好的，我已经帮你提交好作业了，使用本项目中的文件</p>
+</blockquote>
+<p><strong>有skill的情况：</strong></p>
+<p>我说：</p>
+<blockquote>
+<p>帮我去学习通交一下我的作业{系统提示词：（如果用户让你去学习通交作业，请加载这个skill）、（如果用户让你去Mooc交作业，请加载这个skill）等等skill}</p>
+</blockquote>
+<p>Agent做的：</p>
+<blockquote>
+<p>好的，用户叫我去学习通交作业，系统提示词里有相关skill，让我先看看。——&gt;调用工具，读取相关skill并返回结果</p>
+<p>好的，skill里有一个脚本软件，我会操作了——&gt;调用工具，并返回结果</p>
+<p>好的，我已经帮你提交好作业了，使用本项目中的文件</p>
+</blockquote>
+<p>通过以上对比，相信你已经能够发现相应的区别。</p>
+<h4 id="_1">总结：<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<p>mcp能够直接在上下文中加入更多工具来帮助模型，但是越多的工具会带来越长的上下文；skill能够通过渐进式披露的方式向模型传递知识经验，让Agent拓展能力广度的同时不至于模型因为过长的、非必要的上下文变笨。目前来说，skill有逐渐取代mcp的趋势。再者说通过上面的例子，假如模型足够聪明，其实可以直接找到作业提交的位置，这也是目前的发展现状，随着模型能力不断增强，一些skill会被模型能力不断覆盖，可能还会成为模型的累赘，但是对于自己私人工作流程的skill，我认为还是非常有必要的。skill可以自己创建，一般来说你可以直接使用自然语言让Agent创建一个属于你自己的skill，快去试试吧。</p>
+<h1 id="api">什么是api与中转站、官方订阅<a class="headerlink" href="#api" title="Permanent link">&para;</a></h1>
+<p>经过以上内容，相信你已经对如何使用AI有了自己的理解。说了这么多，到底怎么才能用上?且听我一个一个慢慢说。</p>
+<h3 id="1api">1.什么是api<a class="headerlink" href="#1api" title="Permanent link">&para;</a></h3>
+<p>这里的api是AI调用领域狭义的解释，一般广义的api是指计算机网络中的各类接口</p>
+<p>一般api包括这几个部分：baseurl：一般为一个网址例如 <code>https://platform.deepseek.com/</code> ，这是你发送请求时的大门、apikey：一般由一串大小写字母和数字组成，这是你发送请求时需要携带的钥匙，只有钥匙和大门相互匹配时才能够正常返回信息。现在一般流行三种api格式，分别由两大模型公司定义和规范，response、openai兼容和message形式。</p>
+<p><strong>openai兼容</strong>（<code>https://platform.deepseek.com/v1/chat/completions</code>）：由openai公司最早推出的，也是流行最广的格式，为支持流式输出（模拟人说话，一个字一个字往外蹦）所定义的格式。</p>
+<p><strong>response</strong>（<code>https://platform.deepseek.com/v1/response</code>）：也是由openai公司推出，随着Agent不断发展出新的需求，需要更加多的特性所设计推出。</p>
+<p><strong>message</strong>（<code>https://platform.deepseek.com/v1message</code>）：由对家公司Anthropic所推出，和response相同，设计之初为了Agent而生。</p>
+<p>对于当今的agent而言几乎都兼容这三种格式，所以哪种格式可用还是要看baseurl这个地址大门允许哪种格式，但是其实说白，虽然当今很多开源项目都能实现这几种格式的相互转换，所以格式支持基本取决于相应方的立场，比如chatgpt（openai）不支持message、claude code（Anthropic）不支持response。</p>
+<h3 id="2api">2.怎么使用api<a class="headerlink" href="#2api" title="Permanent link">&para;</a></h3>
+<p>部分Agent支持自定义api，比如腾讯的workbuddy、开源的opencode等等，直接填入baseurl和apikey即可。</p>
+<p>部分不支持的可以借助工具（如https://github.com/farion1231/cc-switch，ccswitch）修改相关配置文件，这类工具支持修改Agent的baseurl和apikey。</p>
+<h3 id="3api">3.怎么获得api<a class="headerlink" href="#3api" title="Permanent link">&para;</a></h3>
+<h4 id="1">1、官方平台<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
+<p>国内厂商：<a href="https://platform.deepseek.com">deepseek</a>、<a href="https://bailian.console.aliyun.com">阿里云</a>、<a href="https://console.volcengine.com/ark">火山方舟（字节豆包）</a>、<a href="https://console.cloud.tencent.com/hunyuan">腾讯混元</a>、<a href="https://platform.moonshot.cn">月之暗面</a>、<a href="https://open.bigmodel.cn">智谱glm</a></p>
+<p>国外厂商：<a href="https://platform.openai.com">openai</a>、<a href="https://platform.claude.com">Anthropic</a>、<a href="https://aistudio.google.com">Google</a>、<a href="https://console.x.ai/">grok</a></p>
+<h4 id="2">2、非官方平台（中转站）<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
+<p>中转站，顾名思义，就是在你和模型厂商之间加了一站。原本是你直接向官方发送请求，现在变成了你先向中转站发送请求，再由中转站向上游发送请求，最后把结果返回给你。你拿到的baseurl和apikey也就变成了中转站提供的，而不是官方平台提供的。</p>
+<p>但是其中中转站也有官方和非官方之分，只是界限略微模糊。所谓官方中转站，一般是指有明确的模型厂商授权和背书，例如opentour、硅基流动、阿里云百炼；非官方一般是说你在闲鱼、淘宝能够找到的个人、小型商家；</p>
+<h3 id="4api"><strong>4.api怎么计价</strong><a class="headerlink" href="#4api" title="Permanent link">&para;</a></h3>
+<p>首先api计价是以token为单位的（怎么这么多名词，token又是什么？这里可以先把token理解为模型处理内容时拆出来的“小块”：一个单词可能被拆成几块，一个汉字也可能对应多个token，具体怎么拆，要看模型使用的分词器（这又是什么？你先别管）。</p>
+<p>不同的token收费也不同，可以理解为：你让AI看资料、写答案：你交给它看的内容算输入；AI生成的内容算输出。如果之前看过的资料成功用上了缓存，这部分就按更便宜的“缓存读取”收费；有些模型还会单独收取保存缓存的费用，叫“缓存写入”。</p>
+<p>以最新的gpt-6-astra为例，价格分别是输入：10＄每百万token、缓存写入：12.5＄每百万token、缓存读取：1＄每百万token、模型输出：50＄每百万token。你可能说平常我和豆包聊天的时候很久也说不了多少字啊，这个价格不是很便宜吗。但是我们之前说了：<strong>Agent每次调用工具进行一次对话时，都要发送一次完整的上下文。</strong>越长的对话到后面可能是一个天文数字。好吧，那要怎么才能用更少的钱收益最大化呢？</p>
+<p>tips：</p>
+<p>1.明确本次任务的范围。如果你只需要修改一个文件，就告诉Agent文件在哪、需要改什么、什么不要动。否则模型跑去把所有文件都读一遍，不仅消耗上下文，还可能花很多时间。当然不是说问题越短越省钱，有时多写几句要求，反而能减少后面的无效探索。</p>
+<p>2.保持较高的缓存率。相信你注意到缓存读取比普通输入便宜很多，对于连续的同一项任务，尽量用追加消息的方式补充要求，不要反复改写前面的内容。再者说，不要为了提高缓存率，故意塞进一大堆没用的内容——缓存读取便宜，但不是免费。缓存率不仅取决于你，还取决于多方面，稍加注意即可，不用可以追求。<strong>一般正常使用时，缓存率均在90%以上。</strong></p>
+<p>3.完成任务后新开对话进行下一个任务。如果两次任务毫无关联，第一次的任务内容会白白占用上下文长度。</p>
+<p>4.开一个官方订阅。下文介绍。</p>
+<p>5.用的便宜模型。一切尽在不言中。</p>
+<h3 id="5">5.什么是官方订阅<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>除deepseek外，模型厂商都会提供自家的官方订阅。在购买不同等级的官方订阅以后可以获得不同的模型用量额度。</p>
+<h4 id="1_1"><strong>1、怎么使用购买的官方订阅呢？</strong><a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h4>
+<p>第一种：购买后你会获得apikey，可以参考上文的apikey使用方法进行使用。</p>
+<p>第二种：直接使用购买官方订阅的账号，再指定的Agent平台（一般都是自家的）进行登录。</p>
+<p>对于第一种方法，有的支持有的不支持，但是第二种肯定都是支持的。</p>
+<h4 id="2apikey">2、购买官方apikey和购买官方的订阅有什么区别呢？<a class="headerlink" href="#2apikey" title="Permanent link">&para;</a></h4>
+<p><strong><span class="arithmatex">\(1\)</span>、使用限制：</strong>apikey你想用多少就用多少，想在哪用就在哪用，想什么时候用就什么时候用，总结为没有限制。官方订阅一般会有5hour用量限制、7day用量限制，就是说，这个时间段内你最多用多少，还会有使用地方限制，也就说必须在指定的Agent平台使用。</p>
+<p><strong><span class="arithmatex">\(2\)</span>、额度比较：</strong>假设你每个月使用AI工具的预算为XXXX元。如果全部用来购买api那么你将获得XXXX元的使用额度。但是如果你购买一个XXXX元的订阅，那么一般你将获得5-100倍XXXX元的额度，没错就是5-100倍这么夸张的跨度。想要获得这夸张的<strong><em>“收益”</em></strong>有以下前提：1、你能把每个月的订阅额度用完，订阅额度如果当月没有用完，次月会被清零，但是apikey不会；2、一般这里的<strong><em>“收益”</em></strong>倍率还取决于是什么模型厂商、实际使用的是什么模型、你购买的什么挡位的套餐这些都会影响。</p>
+<blockquote>
+<p>注意：这里的额度比较一般是民间算法，官方不会直接说你能用多少钱的额度</p>
+</blockquote>
+<h3 id="6">6、中转站的秘密<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>这里指的是非官方的、小作坊中转站</p>
+</blockquote>
+<p>看了这么多，有聪明的同学就要问了：</p>
+<p><em>1、我要是买了订阅套餐A，但想用套餐A不允许的Agent-B怎么办</em>？</p>
+<p>A、再去买api            B、不用Agent-B了，改用允许的          C、通过技术办法悄悄用</p>
+<p><em>2、我要是买了订阅套餐A，感觉用不完额度，想给朋友用，但是官方又不允许多个人使用怎么办？</em></p>
+<p>A、把账号给朋友，他晚上用，我白天用       B、把额度浪费掉       C、通过技术手段让两个人同时用时看起来像一个人</p>
+<p>通过以上两个问题，相信你已经参透了一门生意：</p>
+<p>由于国内不方便使用国外模型，会有人通过一定渠道大量购买国外模型的订阅套餐，由于这些套餐一般具有高收益倍率，将其通过技术手段绕过官方限制后进行低价倒卖，从而赚取高额利润。</p>
+<p>你可能会说，这是好事啊，用户获得了低价和便利；资本主义被薅了羊毛；也有人赚取了利润。妥妥的可循环生意啊。如果你这样想，那我要给你泼一盆冷水了。</p>
+<p>第一，你能确定你花低价买到的模型是正版模型吗，不怕买的gpt，实际给你用豆包吗？第二、你能确定你花高价买到的是正版模型吗？第三、你从中转站购买模型，意味着中转站能够看到你的所有记录和具体内容，你能保证不被拿来干坏事吗？第四、模型的输出会经过中转站，你能保证中转站不给你夹带点病毒，加点料吗？第五、你看得懂模型计费吗，你能保证中转站不会对你的计费动手脚吗？</p>
+<p>最后给一点我的建议：1、如果有能力，可以用国外模型，并且买官方套餐；2、如果没能力，可以用国产模型，并且买官方套餐；3、如果没能力，又想用国外模型，一定要找绝对信任的人。</p>
+<p>如果你有其他问题，欢迎在下方评论，我会收录到Q\&amp;A中进行回答，文档也会不定期更新</p>
+<h1 id="qa">Q\&amp;A<a class="headerlink" href="#qa" title="Permanent link">&para;</a></h1>
+<h4 id="1_2">1、便宜的模型一定更便宜吗？<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h4>
+<p>不一定，一般来说越贵的模型越聪明。举个例子：模型A的每token价格是10块钱；模型B的价格是每token1块钱。但是由于模型A更聪明，完成一个任务只需要10个token，但是模型B需要100个。最后他们的总价都是100块钱。古人云：越便宜越贵，越贵越便宜。最主要还是要找到适合的模型。</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="上一页: 日常经验分享">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                日常经验分享
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../party-membership/" class="md-footer__link md-footer__link--next" aria-label="下一页: 入党流程及注意事项">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                入党流程及注意事项
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+  
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../assets/javascripts/motion.js?v=1"></script>
+      
+        <script src="../../assets/javascripts/ui.js?v=4"></script>
+      
+        <script src="../../assets/javascripts/analytics.js"></script>
+      
+    
+  
+    <script src="../../assets/javascripts/math.js" defer></script>
+    <script src="../../assets/vendor/mathjax/tex-chtml.js" defer></script>
+  
+
+  </body>
+</html>
