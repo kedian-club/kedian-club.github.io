@@ -1,0 +1,2389 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="科电社团的学习资料、竞赛经验与共同积累。">
+      
+      
+      
+        <link rel="canonical" href="https://kedian-club.github.io/competitions/smartcar/hardware/">
+      
+      
+        <link rel="prev" href="../basics/">
+      
+      
+        <link rel="next" href="../../../everyday/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/branding/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>智能车硬件 - 科电俱乐部</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/community.css?v=3">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css?v=15">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/motion.css?v=3">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/showcase.css?v=3">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="科电俱乐部" class="md-header__button md-logo" aria-label="科电俱乐部" data-md-component="logo">
+      
+  <img src="../../../assets/branding/club-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            科电俱乐部
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              智能车硬件
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../welcome/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  给新生一封信
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../showcase/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  项目展台
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  竞赛经验分享
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../everyday/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  日常经验分享
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../community/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  交流区
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../resources/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  社团资源
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../contribute/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  贡献
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+  
+  
+  <div class="kd-day-background" aria-hidden="true">
+    <video muted loop playsinline preload="none" poster="../../../assets/media/reading-background-light-pexels.jpg" data-light-poster="../../../assets/media/reading-background-light-pexels.jpg" data-src="../../../assets/media/reading-background-light-pexels.mp4" data-dark-src="../../../assets/media/reading-background.mp4" tabindex="-1"></video>
+  </div>
+  
+  <button class="kd-background-toggle" type="button" hidden>暂停背景</button>
+
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+  
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="科电俱乐部" class="md-nav__button md-logo" aria-label="科电俱乐部" data-md-component="logo">
+      
+  <img src="../../../assets/branding/club-logo.png" alt="logo">
+
+    </a>
+    科电俱乐部
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../welcome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    给新生一封信
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../showcase/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目展台
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    项目展台
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../showcase/2026-loongson/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026智能车走马观碑赛道
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../showcase/2026-ball-balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026电赛H题-车载平衡滚球运动控制系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    竞赛经验分享
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    竞赛经验分享
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learning/competition-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    比赛路线推荐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../lanqiao/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    蓝桥杯
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    蓝桥杯
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lanqiao/mcu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    单片机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lanqiao/embedded/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    嵌入式
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lanqiao/eda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EDA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lanqiao/fpga/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FPGA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../electronics/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    电子设计竞赛
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    电子设计竞赛
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../electronics/preparation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    电赛如何准备
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../socchina/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    嵌赛指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    智能车
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    智能车
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    智能车基础篇
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    智能车硬件
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    智能车硬件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        快速入门
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        进阶学习
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        正式备赛
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="正式备赛">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        硬件盲盒
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        制板、焊接与调试
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="制板、焊接与调试">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        导出 BOM 与采购元器件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gerber" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        导出 Gerber 与下单
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        焊接工具（按需选择）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        首次上电与故障排查
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一些注意事项
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../everyday/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日常经验分享
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    日常经验分享
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../everyday/ai-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI科普文档
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../everyday/party-membership/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入党流程及注意事项
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../everyday/language-learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    语言学习经验分享
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    软件推荐
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    软件推荐
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/software/vscode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VS Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/software/obsidian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Obsidian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/software/office/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Office
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/software/wechat-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    微信输入法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../community/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    交流区
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    交流区
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../community/guestbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    留言板
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    社团资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../contribute/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    贡献
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    贡献
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contribute/how-to/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    如何贡献
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        快速入门
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        进阶学习
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        正式备赛
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="正式备赛">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        硬件盲盒
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        制板、焊接与调试
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="制板、焊接与调试">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        导出 BOM 与采购元器件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gerber" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        导出 Gerber 与下单
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        焊接工具（按需选择）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        首次上电与故障排查
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一些注意事项
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+  
+    
+    
+      
+    
+    
+      <button class="kd-mobile-toc-open" type="button" aria-haspopup="dialog" aria-controls="kd-mobile-toc" hidden>
+        <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 5h14v2H7zm0 8v-2h14v2zM4 4.5A1.5 1.5 0 0 1 5.5 6 1.5 1.5 0 0 1 4 7.5 1.5 1.5 0 0 1 2.5 6 1.5 1.5 0 0 1 4 4.5m0 6A1.5 1.5 0 0 1 5.5 12 1.5 1.5 0 0 1 4 13.5 1.5 1.5 0 0 1 2.5 12 1.5 1.5 0 0 1 4 10.5M7 19v-2h14v2zm-3-2.5A1.5 1.5 0 0 1 5.5 18 1.5 1.5 0 0 1 4 19.5 1.5 1.5 0 0 1 2.5 18 1.5 1.5 0 0 1 4 16.5"/></svg></span>本页目录
+      </button>
+      <dialog class="kd-mobile-toc" id="kd-mobile-toc" aria-labelledby="kd-mobile-toc-title">
+        <header class="kd-mobile-toc__header">
+          <h2 id="kd-mobile-toc-title">本页目录</h2>
+          <form method="dialog">
+            <button type="submit" autofocus>关闭</button>
+          </form>
+        </header>
+        <nav class="kd-mobile-toc__links" aria-label="文章章节">
+          <ul>
+            
+            
+              <li>
+                <a href="#_2">快速入门</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_3">进阶学习</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_4">正式备赛</a>
+                <ul>
+              <li>
+                <a href="#_5">硬件盲盒</a>
+                
+              </li>
+            </ul>
+              </li>
+            
+              <li>
+                <a href="#_6">制板、焊接与调试</a>
+                <ul>
+              <li>
+                <a href="#bom">导出 BOM 与采购元器件</a>
+                
+              </li>
+            
+              <li>
+                <a href="#gerber">导出 Gerber 与下单</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_7">焊接工具（按需选择）</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_11">首次上电与故障排查</a>
+                
+              </li>
+            </ul>
+              </li>
+            
+              <li>
+                <a href="#_12">一些注意事项</a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </dialog>
+    
+  
+
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+  
+                  
+
+
+
+<h1 id="_1">智能车硬件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p class="kd-author-byline"><a class="kd-author-tag" href="../../../contribute/#author-57bd074ca300" aria-label="查看贡献者 刘昊洋">刘昊洋</a></p>
+<h2 id="_2">快速入门<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>第一次接触硬件的同学我推荐看B 站博主 <mark><strong>Expert 电子实验室</strong></mark> 的 <a href="https://www.bilibili.com/video/BV1At421h7Ui/">【教程】零基础入门PCB设计-国一学长带你学嘉立创EDA专业版 全程保姆级教学</a>，先看入门篇和强化篇，跟着up主画完51核心板就可以了。</p>
+<h2 id="_3">进阶学习<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>这时候你对画PCB已经有了一个初步的了解。但是会有只敢跟着别人布局、布线的感受。此时就需要你自己独立去做一个小项目，校内选拔赛期间可以根据自己智能车队伍所选MCU平台去<a href="https://gitee.com/seekfree">逐飞科技 Gitee</a>拉取相应的电路原理图，并根据官方给出的 PDF 绘制原理图（相当于将其抄写一遍）</p>
+<p><strong>绘制原理图时要注意</strong></p>
+<ol>
+<li>相应的网络标签不要写错</li>
+<li>元器件的放置选型（大部分元器件都可以在嘉立创EDA上直接搜索到）可以对照自己队伍购买的学习板上的元器件进行选取</li>
+<li>注意电容电阻封装大小（一般是0603封装，这样大小正好，方便后期自己焊接）</li>
+<li>MCU平台所对应的主板看各队伍选择会有不同，驱动板可参考 DRV8701 方案，具体以队伍用板为准</li>
+<li>对照原理图，线不要连错！</li>
+</ol>
+<p>接下来就到了布局布线的环节，这里强烈推荐一位UP主：<mark><strong>JHP硬件工作室</strong></mark>，根据自己的基础和需求观看他的零基础课程<a href="https://www.bilibili.com/video/BV1fM411Z7cW/"> 嘉立创EDA-PCB设计零基础入门课程（54集全）</a>。（另B站上<mark><strong>嘉立创官方</strong></mark>的视频也是非常推荐，包含了很多布局布线的技巧和注意事项）</p>
+<p>如果一开始选择画主板的同学可以再把<a href="https://www.bilibili.com/video/BV1f8FvzUEDN/">PCB模块化设计要点解析</a>看一下，这里你可以系统学习如何画电源模块（比如“一”字型布局“L”型布局）我认为这是能够画好一块主板电源模块必须观看的一个章节。学有余力的同学可以再看一下时钟电路和射频与无线电路模块，up主也讲了不少布局布线的技巧。</p>
+<p>无论一开始选择画主板或是驱动板，都希望大家可以自己主动去思考如何进行布局布线，不用害怕哪里布的不好或走线错误，pcb板容错空间没那么小。因为后期大家需要根据自己的赛道进行针对性布局，这里希望可以培养一下大家自主布局布线的思维。如果自己一开始布局实在没有思路，可以参考学习板的布局，毕竟已经通过官方认证，基本上没问题。</p>
+<h2 id="_4">正式备赛<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>这里大家应该都或多或少接触了主板和驱动板的画法，开始正式绘制自己智能车队伍的主板和驱动板。一直到正式比赛之前应该都是一个更新迭代的过程，要记得及时进行队内沟通以，也可以在卓大发的 CSDN 智能车提问入口里查找当届的硬件要求，弄清楚自己赛题需要什么。总之，一回生二回熟，后面会越来越得心应手。</p>
+<p>大家如果想精进自己的画板技术，可以在当年4月份打蓝桥杯EDA赛道，也可以试着冲击国奖，同样也是推荐<mark><strong>JHP硬件工作室</strong></mark>的蓝桥杯备赛视频。（可惜26年这一届原理图突然增加到 5 张，本人线都没有连完，遗憾省二°(৹˃̵﹏˂̵৹)°·，所以大家如果参加的话一定要保证在画正确的前提下加快速度。）</p>
+<h3 id="_5">硬件盲盒<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>这是第二十一届新出的比赛模式，分为硬件盲盒和软件盲盒，这里着重介绍硬件盲盒。</p>
+<p>硬件盲盒是实操类赛题，以随机赛题、限定物料、自主实操为核心规则，考验参赛选手的电子电路基础、元器件识别、电路搭建调试及动手实操能力。选手需依托赛事统一提供的硬件盲盒物料，结合对应赛题要求，独立完成电路搭建、功能实现，并录制成果现象视频提交参赛。</p>
+<p>第二十一届的硬件盲盒并没有过多为难我们，只需要根据他给出的题目（8个电路图选一个），进行面包板搭建电路或进行答辩，并且现场可以使用手机。所以大家只需要在比赛之前对赛题进行复刻并理解其电路原理即可。由于是第一次创新，后续的硬件盲盒难度可能会变化。以下是官方介绍：<a href="https://zhuoqing.blog.csdn.net/article/details/162809887?spm=1001.2014.3001.5502">硬件盲盒任务示例以及硬件盲盒物料_csdn硬件盲盒任务示例-CSDN博客</a></p>
+<h2 id="_6">制板、焊接与调试<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="bom">导出 BOM 与采购元器件<a class="headerlink" href="#bom" title="Permanent link">&para;</a></h3>
+<p>BOM 表是电路板的物料清单，通常包括位号、元器件名称、型号、参数、封装、数量和备注等信息。<br />
+大家画完PCB板之后就要进行元器件的实际选择类型，导出BOM表后可选择在立创商城或者是淘宝上下单。立创上建议批量购买电容电阻，且需要自己去选型，但相对来说便宜点。由于立创上很多芯片都是非常贵的，为节约成本大家可以去淘宝上购买。淘宝上可直接搜索BOM表，会有相关的商家，优先选择销量高，评价良好的商家进行购买，一般是5份起购，好处是不用自己去一个个选型，但自己要确认好正确的型号。</p>
+<p><img alt="嘉立创 EDA 中导出物料清单的菜单" src="../../../assets/images/%E7%AB%9E%E8%B5%9B%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/%E6%99%BA%E8%83%BD%E8%BD%A6/%E6%99%BA%E8%83%BD%E8%BD%A6%E7%A1%AC%E4%BB%B6/Pasted%20image%2020261112233832.png" width="360" /></p>
+<p><img alt="从嘉立创 EDA 导出的 BOM 表示例" src="../../../assets/images/%E7%AB%9E%E8%B5%9B%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/%E6%99%BA%E8%83%BD%E8%BD%A6/%E6%99%BA%E8%83%BD%E8%BD%A6%E7%A1%AC%E4%BB%B6/Pasted%20image%2020261112234054.png" /></p>
+<h3 id="gerber">导出 Gerber 与下单<a class="headerlink" href="#gerber" title="Permanent link">&para;</a></h3>
+<p><img alt="嘉立创下单助手桌面图标" src="../../../assets/images/%E7%AB%9E%E8%B5%9B%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/%E6%99%BA%E8%83%BD%E8%BD%A6/%E6%99%BA%E8%83%BD%E8%BD%A6%E7%A1%AC%E4%BB%B6/Pasted%20image%2020261114145546.png" width="68" /></p>
+<p>嘉立创下单助手可以帮助检查 PCB 文件、生成生产订单，并查看板材、颜色、层数、工艺和数量等信息。<br />
+在嘉立创 EDA 的「导出」菜单里选择「PCB 制板文件（Gerber）」。</p>
+<p><img alt="嘉立创 EDA 中导出 PCB 制板文件的菜单" src="../../../assets/images/%E7%AB%9E%E8%B5%9B%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/%E6%99%BA%E8%83%BD%E8%BD%A6/%E6%99%BA%E8%83%BD%E8%BD%A6%E7%A1%AC%E4%BB%B6/Pasted%20image%2020261114144535.png" width="580" /></p>
+<p>B站上有很多的UP主都有相关的下单介绍，任选其一观看即可<br />
+我备赛时，嘉立创每月可领两次免费打样券（10 cm × 10 cm 以内），通过考试也可以领沉金券，具体活动以平台当期规则为准。沉金面积有限制，可以用来做校园卡等文创，还是非常好看的ദ്ദി˶&gt;𖥦&lt;)✧</p>
+<p>如果选择 SMT 贴片，可以参考下单助手里的流程，B 站上也有教程。</p>
+<h3 id="_7">焊接工具（按需选择）<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h4 id="_8">电烙铁<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p>使用时应选择合适的烙铁头。焊接贴片元件、接插件和大面积焊盘可以使用较大的烙铁头（刀头）。具体要根据焊锡类型、焊盘大小和元器件耐热能力调整温度。</p>
+<p><strong>使用注意事项</strong></p>
+<ol>
+<li>不使用时应放回烙铁架，不要随意放置烙铁头。</li>
+<li>焊接完成后及时关闭电源。</li>
+<li>小心烫伤，避免接触烙铁头和高温金属部分。</li>
+</ol>
+<h4 id="_9">热风枪<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<p>热风枪通过喷出高温气流，使焊锡整体熔化，主要用于拆卸和焊接贴片芯片、排阻、连接器以及其他多引脚元器件。</p>
+<p>使用热风枪时，需要根据元器件大小调节温度和风量。一般先预热电路板，再逐渐提高温度，使焊锡均匀熔化。操作时应保持风嘴移动，避免长时间对准同一个位置，否则可能吹跑周围元件、损坏芯片或使 PCB 分层。参考视频如下：<a href="https://www.bilibili.com/video/BV11A411N741/">用热风枪焊接贴片元器件_哔哩哔哩_bilibili</a>，大家也可以找找B站上其他的元器件热风枪焊接教程，基本所有的元件都包含。</p>
+<p><strong>使用注意事项</strong></p>
+<ol>
+<li>热风温度较高，必须远离塑料件、排线和易燃物。</li>
+<li>使用镊子固定或夹取元器件时，要确认焊锡已经完全熔化，不要硬拔，不然很容易把焊盘或者铜线拔出来，到时候就白干了。</li>
+<li>拆卸芯片前应做好周围元器件的保护，比如电机接口等有类似塑料的外壳很容易烫坏。</li>
+<li>使用结束后不要立即收纳，应等待设备充分冷却。</li>
+</ol>
+<h4 id="_10">加热台<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<p>加热台是一种用于预热电路板和辅助焊接的设备，通常通过加热平台使 PCB 整体均匀升温。<br />
+使用时，应根据 PCB 材料、焊锡类型和元器件耐热能力设置温度。一般先进行低温预热，再配合热风枪完成局部加热，避免一次性使用过高温度。加热过程中要观察元器件是否移位、PCB 是否变色或出现异常气味。参考视频如下：<a href="https://www.bilibili.com/video/BV1ET4y1U7oV/">《最适合新手的焊接方法-锡膏+加热台》_哔哩哔哩_bilibili</a><br />
+<strong>使用注意事项</strong></p>
+<ol>
+<li>加热台表面温度较高，操作时要防止烫伤。</li>
+<li>不要将塑料件、排线或其他不耐高温的部件直接放在加热台上。</li>
+<li>拆卸芯片前，应确认焊锡已经充分熔化，避免硬拉造成焊盘脱落。</li>
+<li>使用结束后关闭电源，并等待设备完全冷却后再收纳。</li>
+</ol>
+<h3 id="_11">首次上电与故障排查<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>第一次给板子上电，先用可限流的实验电源进行检测。</p>
+<ol>
+<li><strong>断电查通断。</strong> 对照 PCB 图找到要检查的网络，用万用表蜂鸣档测同一路上可接触的焊盘或测试点，排查虚焊、断路和短路。</li>
+<li><strong>限流上电。</strong> 如果供电不正常，先断电检查焊接，再排查电源模块的降压芯片等器件是否损坏。</li>
+<li><strong>回看设计。</strong> 如果焊接和器件都没发现问题，再对照原理图和 PCB 排查设计。</li>
+</ol>
+<h2 id="_12">一些注意事项<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<ol>
+<li>驱动板上 QFN 封装的芯片非常难焊，个人认为是最难焊也最折磨人的一个芯片，引脚和焊盘都很小，而且是不外露的。参考视频如下：<a href="https://www.bilibili.com/video/BV1tR4y1g7Qx/">技能分享&gt;从此不再畏惧QFN_哔哩哔哩_bilibili</a>，所以这块比较推荐大家使用SMT 贴片，如果你自己手动焊接成功的话那么你的焊接水平在学校绝对是属于第一梯队的啦٩(◦`꒳´◦)۶</li>
+<li>用万用表测通断前记得断电。上电后如果要测电压，切换到电压档，注意别让表笔碰到相邻焊盘。</li>
+<li>放置队伍信息时要按当年度要求，我参加的 2026 年比赛要求在电路板<strong>正面覆铜层</strong>标注学校名称、队伍名称和制作日期，并在丝印层放置制作文件链接的二维码。</li>
+<li>画编码器等一些器件的接线时，可能需要绕很远去接线，我备赛时常用 15 mil 走这类较长的信号线，电源和地线用 20 mil 及以上，其他信号线多用 10 mil。实际线宽还要结合电流、板厂工艺和布线空间决定。</li>
+<li>一定要注意一些电容正负极问题，比如电解电容，<mark>钽电容</mark>，焊错了很容易出事故的，所以一定要排查仔细了，千万不要点亮一颗电容。</li>
+</ol>
+<p>以上内容仅是个人的一些浅见，非常欢迎大家批评指正，也期待将来的智能车队伍硬件手将这篇文章进行精进补充。最后祝愿大家早日拿到国奖！！！</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  <section class="kd-comments" id="comments" aria-label="文章评论"
+    data-kd-comments data-repo="kedian-club/kedian-club.github.io" data-repo-id="R_kgDOVi46TA"
+    data-category="文章评论" data-category-id="DIC_kwDOVi46TM4DLGR3"
+    data-mapping="specific" data-term="kd-3fe454143ef084895a61"
+    data-backlink="https://kedian-club.github.io/competitions/smartcar/hardware/">
+    
+      <p class="kd-comments__notice" data-kd-comment-status role="status" hidden></p>
+      <a data-kd-discussion-link href="https://github.com/kedian-club/kedian-club.github.io/discussions?discussions_q=%22kd-3fe454143ef084895a61%22" hidden>在 GitHub 查看讨论 ↗</a>
+      <div class="giscus" id="kd-comments-thread"></div>
+      <noscript><p><a href="https://github.com/kedian-club/kedian-club.github.io/discussions?discussions_q=%22kd-3fe454143ef084895a61%22">在 GitHub 查看讨论 ↗</a></p></noscript>
+    
+  </section>
+
+                
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../basics/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 智能车基础篇">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                智能车基础篇
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../../everyday/" class="md-footer__link md-footer__link--next" aria-label="下一页: 日常经验分享">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                日常经验分享
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../assets/javascripts/motion.js?v=3"></script>
+      
+        <script src="../../../assets/javascripts/ui.js?v=4"></script>
+      
+        <script src="../../../assets/javascripts/analytics.js"></script>
+      
+        <script src="../../../assets/javascripts/comments.js?v=2"></script>
+      
+    
+  
+
+  </body>
+</html>

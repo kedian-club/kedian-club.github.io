@@ -693,6 +693,16 @@ body:has(.kd-mobile-toc[open]) { overflow: hidden; }
 }
 
 
+/* Contributor directory: keep the group labels quieter than the names. */
+.kd-contributor-group { margin-block-start: 1.35rem; }
+.md-typeset .kd-contributor-group-label {
+  margin: 0 .95rem .2rem;
+  color: var(--md-default-fg-color--light);
+  font-size: .7rem;
+  font-weight: 500;
+}
+.kd-contributor-group > .kd-contributor-grid { margin: 0; }
+
 /* Contributor directory: a lighter, more spacious presentation. */
 .md-typeset:has(.kd-contributor-grid) > h1 {
   font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;

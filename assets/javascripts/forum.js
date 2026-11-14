@@ -118,11 +118,15 @@
   function postRow(post) {
     const row = element("a", "", "kd-forum-row");
     row.href = post.number === guestbook ? forum.dataset.guestbook : postPath(post.number);
-    row.append(element("strong", post.title));
+    const body = element("div", "", "kd-forum-row-body");
+    const labels = element("div", "", "kd-forum-row-labels");
+    labels.append(element("span", post.category.name, "kd-forum-category"));
+    if (post.isAnswered) labels.append(element("span", "已解决", "kd-forum-resolved"));
+    body.append(labels, element("strong", post.title, "kd-forum-row-title"));
     const summary = post.bodyText.replace(/\s+/g, " ").trim();
-    if (summary) row.append(element("span", summary.slice(0, 100) + (summary.length > 100 ? "…" : "")));
-    row.append(meta([post.category.name, post.author?.login, date(post.createdAt),
-      post.replyCount.totalCount + " 条回复", post.isAnswered && "已解决"]));
+    if (summary) body.append(element("p", summary.slice(0, 100) + (summary.length > 100 ? "…" : ""), "kd-forum-row-summary"));
+    body.append(meta([post.author?.login, date(post.createdAt)]));
+    row.append(body, element("span", post.replyCount.totalCount + " 条回复", "kd-forum-row-count"));
     return row;
   }
 

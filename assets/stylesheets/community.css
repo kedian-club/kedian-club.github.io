@@ -3,13 +3,39 @@
   --kd-discussion-surface: #f8eee4;
   --kd-discussion-panel: #fffbf6;
   --kd-discussion-border: #dfd1c4;
+  --kd-discussion-accent: #86471f;
+  --kd-discussion-action: #75401f;
+  --kd-discussion-on-action: #fff9f2;
 }
 [data-md-color-scheme="slate"] :is(.kd-community, .kd-comments) {
   --kd-discussion-surface: #302923;
   --kd-discussion-panel: #242221;
   --kd-discussion-border: var(--kd-border);
+  --kd-discussion-accent: #eac49d;
+  --kd-discussion-action: #e2bb93;
+  --kd-discussion-on-action: #30241c;
 }
 .kd-community [hidden] { display: none !important; }
+
+.kd-forum-hero {
+  border: 1px solid var(--kd-discussion-border);
+  border-block-start: 3px solid var(--kd-discussion-accent);
+  border-radius: .6rem;
+  background: var(--kd-discussion-surface);
+  padding: clamp(.85rem, 3vw, 1.45rem);
+}
+
+.md-typeset .kd-forum-hero h1 {
+  margin: 0 0 .55rem;
+  font-size: clamp(1.4rem, 3vw, 1.95rem);
+}
+
+.md-typeset .kd-forum-intro p { margin: .45rem 0; }
+.md-typeset .kd-forum-intro p + p {
+  color: var(--md-default-fg-color--light);
+  font-size: .72rem;
+}
+
 .md-typeset .kd-forum-toolbar,
 .md-typeset .kd-forum-filters,
 .md-typeset .kd-forum-dialog-heading,
@@ -19,12 +45,22 @@
   align-items: center;
   gap: .35rem .8rem;
 }
-.md-typeset .kd-forum-toolbar { margin-block: 1.1rem; }
+.md-typeset .kd-forum-toolbar { margin-top: .95rem; gap: .4rem; }
 .kd-forum-toolbar [data-compose] { margin-inline-start: auto; }
+.kd-forum-toolbar .kd-forum-guestbook {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  text-decoration: none;
+}
+
+.kd-forum-board, .kd-forum-thread { margin-top: 1.1rem; }
 .md-typeset .kd-forum-filters {
-  border-bottom: 1px solid var(--kd-discussion-border);
   gap: .15rem .3rem;
-  margin-top: 1.2rem;
+  padding: .24rem;
+  border: 1px solid var(--kd-discussion-border);
+  border-radius: .45rem;
+  background: var(--kd-discussion-panel);
 }
 .md-typeset .kd-forum-filters a {
   padding: .45rem .65rem;
@@ -33,11 +69,13 @@
   place-items: center;
   color: var(--md-default-fg-color);
   text-decoration: none;
-  border-bottom: 2px solid transparent;
+  border-radius: .28rem;
 }
+.md-typeset .kd-forum-filters a:hover { background: var(--kd-discussion-surface); }
 .md-typeset .kd-forum-filters a[aria-current] {
-  color: var(--md-typeset-a-color);
-  border-color: currentColor;
+  color: var(--kd-discussion-accent);
+  background: var(--kd-discussion-surface);
+  box-shadow: inset 0 -2px currentColor;
   font-weight: bold;
 }
 .md-typeset :is(.kd-forum-description, .kd-forum-meta, .kd-forum-source) {
@@ -45,23 +83,51 @@
   font-size: .75rem;
 }
 .md-typeset .kd-forum-source { margin: 2rem 0 .5rem; }
+.kd-forum-list {
+  overflow: clip;
+  border: 1px solid var(--kd-discussion-border);
+  border-radius: .55rem;
+  background: var(--kd-discussion-panel);
+}
+.kd-forum-list:empty { display: none; }
 .md-typeset .kd-forum-row {
-  display: block;
-  border-bottom: 1px solid var(--kd-discussion-border);
-  padding: .7rem .55rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: .45rem .85rem;
+  padding: .75rem .85rem;
   color: var(--md-default-fg-color);
   text-decoration: none;
   overflow-wrap: anywhere;
 }
-.md-typeset .kd-forum-row:hover { background: var(--kd-discussion-surface); }
-.kd-forum-row strong { display: block; color: var(--md-typeset-a-color); }
+.kd-forum-row + .kd-forum-row { border-top: 1px solid var(--kd-discussion-border); }
+.md-typeset .kd-forum-row:is(:hover, :focus-visible) { background: var(--kd-discussion-surface); }
+.md-typeset .kd-forum-row:focus-visible { outline-offset: -3px; }
+.kd-forum-row-labels { display: flex; flex-wrap: wrap; gap: .25rem; }
+.kd-forum-category,
+.kd-forum-resolved {
+  border-radius: .25rem;
+  padding-inline: .33rem;
+  font-size: .66rem;
+  color: var(--kd-discussion-accent);
+}
+.kd-forum-category { background: var(--kd-discussion-surface); }
+.kd-forum-resolved { border: 1px solid var(--kd-discussion-border); }
+.kd-forum-row-title { display: block; margin-top: .28rem; color: var(--md-default-fg-color); }
+.md-typeset .kd-forum-row-summary { margin: .2rem 0 .34rem; color: var(--md-default-fg-color--light); font-size: .77rem; }
 .kd-forum-meta { display: flex; flex-wrap: wrap; gap: .1rem .65rem; }
+.kd-forum-row-count {
+  border-inline-start: 1px solid var(--kd-discussion-border);
+  padding-inline-start: .65rem;
+  color: var(--md-default-fg-color--light);
+  white-space: nowrap;
+  font-size: .7rem;
+}
 .md-typeset .kd-forum-empty {
   padding: 1rem;
-  border: 1px dashed var(--kd-discussion-border);
-  border-radius: .4rem;
-  margin-block: .7rem;
 }
+.kd-forum-empty > p:first-child { margin-top: 0; }
+.kd-community [data-more], .kd-community [data-more-replies] { margin-top: .65rem; }
 .md-typeset :is(.kd-forum-button, .kd-forum-link) {
   cursor: pointer;
   font: inherit;
@@ -73,10 +139,13 @@
   background: var(--kd-discussion-panel);
 }
 .md-typeset .kd-forum-button {
-  color: var(--md-primary-bg-color);
-  background: var(--md-primary-fg-color);
+  color: var(--kd-discussion-on-action);
+  background: var(--kd-discussion-action);
   border-color: transparent;
+  font-weight: 600;
 }
+.md-typeset .kd-forum-button:hover:not(:disabled) { filter: brightness(.93); }
+.md-typeset .kd-forum-link:hover { background: var(--kd-discussion-surface); }
 .md-typeset .kd-forum-button:disabled { opacity: .7; cursor: wait; }
 .kd-community :is(a, button, input, select, textarea):focus-visible {
   outline: 2px solid var(--md-typeset-a-color);
@@ -95,13 +164,17 @@
   max-height: calc(100dvh - 1.4rem);
   overflow: auto;
   border: 1px solid var(--kd-discussion-border);
-  border-radius: .55rem;
+  border-radius: .65rem;
   background: var(--kd-discussion-panel);
   color: var(--md-default-fg-color);
-  padding: 1rem;
+  padding: clamp(.85rem, 3vw, 1.35rem);
 }
 .kd-forum-dialog::backdrop { background: rgb(0 0 0 / .55); }
-.kd-forum-dialog-heading { justify-content: space-between; }
+.kd-forum-dialog-heading {
+  justify-content: space-between;
+  padding-bottom: .65rem;
+  border-bottom: 1px solid var(--kd-discussion-border);
+}
 .md-typeset .kd-forum-dialog-heading h2 { margin: 0; }
 .kd-community form label { display: block; font-weight: bold; margin-top: .6rem; }
 .kd-community form :is(input, textarea, select) {
@@ -117,6 +190,15 @@
 }
 .kd-community textarea { resize: vertical; }
 .kd-community form button[type=submit] { margin-top: .65rem; }
+.kd-forum-back { display: inline-flex; align-items: center; gap: .3rem; min-height: 44px; }
+.kd-forum-thread-body {
+  padding: clamp(.8rem, 3vw, 1.15rem);
+  border: 1px solid var(--kd-discussion-border);
+  border-radius: .55rem;
+  background: var(--kd-discussion-panel);
+}
+.md-typeset .kd-forum-thread-body h2 { margin: 0 0 .3rem; overflow-wrap: anywhere; }
+.kd-forum-thread form:not([hidden]) { margin-top: .85rem; padding-top: .4rem; border-top: 1px solid var(--kd-discussion-border); }
 .kd-forum-content { overflow-wrap: anywhere; }
 .kd-forum-content pre { overflow: auto; }
 .kd-forum-content img { max-width: 100%; height: auto; }
@@ -139,6 +221,9 @@
 .kd-comments iframe.giscus-frame { border: 0; }
 
 @media (max-width: 34em) {
-  .md-typeset .kd-forum-filters a { padding-inline: .4rem; }
+  .md-typeset .kd-forum-filters { gap: .1rem; }
+  .md-typeset .kd-forum-filters a { padding-inline: .4rem; font-size: .72rem; }
+  .md-typeset .kd-forum-row { grid-template-columns: minmax(0, 1fr); gap: .25rem; padding-inline: .65rem; }
+  .kd-forum-row-count { border-inline-start: 0; padding-inline-start: 0; }
   .md-typeset .kd-comments__links { align-items: flex-start; flex-direction: column; gap: 0; }
 }
