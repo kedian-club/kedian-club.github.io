@@ -212,13 +212,18 @@
     sync();
   }
 
+  let carouselRoot;
   let carouselCleanup;
   function prepareCarousel() {
-    if (carouselCleanup) carouselCleanup();
     const root = document.querySelector('.kd-vela');
+    if (root === carouselRoot) return;
+    carouselCleanup?.();
     if (!root) return;
+    carouselRoot = root;
     const phrases = [...root.querySelectorAll('.kd-vela__phrase')];
     const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+    const hero = root.querySelector('.kd-vela__hero');
+    let inView = true;
     let index = 0, timer;
     const show = value => {
       index = value;
@@ -227,18 +232,30 @@
     };
     const sync = () => {
       clearInterval(timer);
-      root.dataset.photoPaused = String(document.hidden || reduced.matches);
-      if (reduced.matches) show(1);
-      else if (!document.hidden) timer = setInterval(() => {
-        show((index + 1) % phrases.length);
-      }, 3500);
+      const paused = document.hidden || !inView || reduced.matches;
+      root.dataset.photoPaused = String(paused);
+      if (!paused && phrases.length > 1) {
+        timer = setInterval(() => show((index + 1) % phrases.length), 4000);
+      }
     };
+    const observer = typeof IntersectionObserver === 'function' && hero
+      ? new IntersectionObserver(([entry]) => {
+          const visible = entry.isIntersecting;
+          if (inView !== visible) {
+            inView = visible;
+            sync();
+          }
+        })
+      : null;
+    observer?.observe(hero);
     reduced.addEventListener('change', sync);
     document.addEventListener('visibilitychange', sync);
     carouselCleanup = () => {
       clearInterval(timer);
       reduced.removeEventListener('change', sync);
       document.removeEventListener('visibilitychange', sync);
+      observer?.disconnect();
+      carouselRoot = null;
       carouselCleanup = null;
     };
     sync();
