@@ -10,7 +10,7 @@
     setStatus('本地预览不计入访问统计。');
     return;
   }
-  if (document.querySelector('.kd-error-page')) return;
+  if (document.querySelector('.kd-error-page, [data-forum]')) return;
 
   const values = ['site_pv', 'site_uv'].map(name =>
     document.getElementById(`busuanzi_${name}`));

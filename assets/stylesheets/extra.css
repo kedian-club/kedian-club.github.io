@@ -351,6 +351,41 @@ body:has(.kd-vela) .md-content__inner::before, body:has(.kd-vela) .md-content__i
 .kd-home .kd-home-story__text p + p { margin-top: .85rem; }
 .kd-home-story__link { display: inline-flex; align-items: center; gap: .6rem; min-height: 44px; margin: 1rem 1.5rem 0 0; font-size: 15px; }
 .kd-home-story__draft { display: block; margin-top: .35rem; color: var(--md-default-fg-color--light); font-size: 12px; }
+
+/* Desktop introduction: film on the left, letter and club details on the right. */
+@media screen and (min-width: 64em) {
+  .kd-home-story {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    column-gap: clamp(32px, 4vw, 64px);
+    row-gap: 1.5rem;
+    padding: 2rem max(7.8vw, calc((100% - 1280px) / 2)) 4rem;
+    align-items: start;
+  }
+  .kd-home-story > section { min-width: 0; max-width: none; width: 100%; margin-inline: 0; }
+  .kd-home-story__film { grid-column: 1; grid-row: 1 / 3; }
+  .kd-home-story__film > :is(.kd-film__player, .kd-film__caption, .kd-film__error) {
+    width: 115%;
+    max-width: none;
+    /* Break the text alignment while keeping the full player inside the viewport. */
+    translate: max(-12%, calc(20px - max(7.8vw, (100vw - 1280px) / 2))) 0;
+  }
+  .kd-home .kd-home-story__text {
+    display: block;
+    grid-column: 2;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+  .kd-home .kd-home-story__text + .kd-home-story__text {
+    border-top: 1px solid #8884;
+    padding-top: 1.5rem;
+  }
+  .kd-home .kd-home-story h2 { font-size: clamp(24px, 1.8vw, 28px); }
+  .kd-home-story__heading { margin-bottom: 1rem; translate: -20px 0; }
+  .kd-home-story__text p:first-child { margin-top: .75rem; }
+  .kd-home-story__text .kd-home-story__link { margin-top: .4rem; }
+}
 @media screen and (max-width: 44.984375em) {
   .kd-home-story { padding: 1rem 1.1rem 3rem; }
   .kd-home .kd-home-story__text { grid-template-columns: 1fr; gap: .6rem; margin-top: 2rem; padding-top: 1.5rem; }

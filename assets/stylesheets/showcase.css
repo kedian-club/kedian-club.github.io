@@ -5,21 +5,61 @@
 .kd-showcase-heading { margin-bottom: 1.6rem; }
 .kd-showcase-heading p { color: var(--md-default-fg-color--light); }
 .kd-showcase-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.2rem; }
-.kd-exhibit { display: block; min-width: 0; overflow: hidden; border-radius: .75rem; border: 1px solid var(--exhibit-rule); color: inherit; background: var(--exhibit-paper); transition: transform 220ms ease, box-shadow 220ms ease; }
-.kd-exhibit-cover { position: relative; overflow: hidden; border-bottom: 1px solid var(--exhibit-rule); }
+.md-typeset .kd-exhibit {
+  display: flex;
+  min-width: 0;
+  border-radius: .75rem;
+  color: inherit;
+}
+.kd-exhibit-surface {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  position: relative;
+  isolation: isolate;
+  border: 1px solid var(--exhibit-rule);
+  border-radius: inherit;
+  background: var(--exhibit-paper);
+  /* Keep the link's hover area in place when its visual surface moves. */
+  pointer-events: none;
+}
+.kd-exhibit-cover {
+  position: relative;
+  overflow: hidden;
+  border-radius: calc(.75rem - 1px) calc(.75rem - 1px) 0 0;
+  border-bottom: 1px solid var(--exhibit-rule);
+}
 .kd-exhibit-cover > img { display: block; width: 100%; aspect-ratio: 5/3; object-fit: cover; }
 .kd-exhibit-art { position: relative; color: var(--exhibit-ink); }
 .kd-exhibit-art svg { display: block; width: 100%; height: auto; }
 .kd-exhibit-grid { opacity: .08; }
-.kd-exhibit-drawing { transform-origin: center; transition: transform 350ms ease; }
 .kd-exhibit-year { position: absolute; top: .8rem; left: 1rem; font: 600 .7rem var(--md-code-font); opacity: .6; }
 .kd-exhibit-status { position: absolute; bottom: .55rem; left: 1rem; font-size: .58rem; color: var(--exhibit-ink); }
 .kd-exhibit-copy { padding: 1rem 1.1rem 1.15rem; }
 .kd-exhibit-category { color: var(--md-default-fg-color--light); font-size: .65rem; }
 .md-typeset .kd-exhibit h2 { margin: .4rem 0 1.2rem; font-size: 1rem; line-height: 1.5; }
 .kd-exhibit-enter { display: flex; justify-content: space-between; align-items: center; color: var(--md-typeset-a-color); font-size: .72rem; }
-.kd-exhibit:is(:hover,:focus-visible) { color: inherit; transform: translateY(-4px); box-shadow: 0 .6rem 1.2rem rgb(35 25 15 / 10%); }
-.kd-exhibit:is(:hover,:focus-visible) .kd-exhibit-drawing { transform: translateY(-3px) rotate(-2deg); }
+.md-typeset .kd-exhibit:is(:hover, :focus-visible) { color: inherit; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .kd-exhibit-surface {
+    transition: transform 340ms cubic-bezier(.22, .68, .28, 1);
+  }
+  .kd-exhibit-surface::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    box-shadow: 0 .6rem 1.25rem rgb(25 17 12 / 22%);
+    opacity: 0;
+    transition: opacity 340ms ease-out;
+  }
+  .kd-exhibit:hover .kd-exhibit-surface {
+    transform: translateY(-3px) scale(1.012);
+  }
+  .kd-exhibit:hover .kd-exhibit-surface::before { opacity: 1; }
+}
 .kd-showcase-footnote { padding-top: 1rem; color: var(--md-default-fg-color--light); font-size: .68rem; }
 .kd-project-back { display: inline-block; margin-bottom: .65rem; font-size: .72rem; }
 .kd-project-placeholder { position: relative; overflow: hidden; border-radius: .7rem; border: 1px solid var(--exhibit-rule); background: var(--exhibit-paper); }
@@ -41,10 +81,8 @@
 .kd-project-related span { color: var(--md-default-fg-color--light); }
 @media (max-width: 44.984375em) { .kd-showcase-grid { grid-template-columns: 1fr; } }
 @media (max-width: 30em) { .kd-project-resources, .kd-project-gallery { grid-template-columns: 1fr; } .kd-project-placeholder .kd-exhibit-art { padding-bottom: 1.5rem; } }
-@media (prefers-reduced-motion: reduce) { .kd-exhibit, .kd-exhibit-drawing { transition: none; } .kd-exhibit:is(:hover,:focus-visible), .kd-exhibit:is(:hover,:focus-visible) .kd-exhibit-drawing { transform: none; } }
 
 /* Keep cards aligned when projects have different titles or introductions. */
-.kd-exhibit { display: flex; flex-direction: column; }
 .kd-exhibit-copy { flex: 1; display: flex; flex-direction: column; }
 .kd-exhibit-enter { margin-top: auto; padding-top: .7rem; }
 .md-typeset .kd-exhibit-intro { margin: -.5rem 0 .7rem; font-size: .72rem; color: var(--md-default-fg-color--light); }
@@ -62,7 +100,6 @@
 .kd-project-video-error:not([hidden]) { display: block; margin-bottom: .35rem; }
 .kd-project-gallery:empty { display: none; }
 .kd-project-gallery .kd-image-trigger { width: 100%; }
-@media (hover: none) { .kd-exhibit:hover, .kd-exhibit:hover .kd-exhibit-drawing { transform: none; box-shadow: none; } }
 @media print {
   .kd-project-jump, .kd-project-back, .kd-exhibit-enter { display: none; }
   .kd-exhibit, .kd-project-placeholder { break-inside: avoid; box-shadow: none; }
