@@ -27,7 +27,11 @@
 
 .md-typeset .kd-forum-hero h1 {
   margin: 0 0 .55rem;
-  font-size: clamp(1.4rem, 3vw, 1.95rem);
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+  font-size: clamp(1.65rem, 4vw, 2.55rem);
+  font-weight: 700;
+  letter-spacing: -.035em;
+  line-height: 1.2;
 }
 
 .md-typeset .kd-forum-intro p { margin: .45rem 0; }
