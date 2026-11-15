@@ -867,10 +867,20 @@ body:has(.kd-mobile-toc[open]) { overflow: hidden; }
   margin-block: 1.15em;
   overflow-wrap: anywhere;
 }
-.kd-letter__body > .kd-author-byline + p,
-.kd-letter__body > p:not(.kd-author-byline):has(img) { text-indent: 0; }
-.kd-letter__body > p:not(.kd-author-byline):has(img) { text-align: center; margin-block: 1.8rem; }
-.kd-letter__body > p:not(.kd-author-byline) img { display: inline-block; max-width: 100%; height: auto; border-radius: .15rem; }
+.kd-letter__body > p:is(.kd-letter__salutation, .kd-letter__photo-note, :has(img)):not(.kd-author-byline) {
+  text-indent: 0;
+}
+.kd-letter__body > p:not(.kd-author-byline):has(img) {
+  text-align: center;
+  margin-block: 1.5rem .65rem;
+}
+.kd-letter__body > p.kd-letter__photo-note { margin-top: .65rem; }
+.kd-letter__body .kd-image-trigger { margin: 0 auto; }
+.kd-letter__body > p:not(.kd-author-byline) img {
+  max-width: 100%;
+  height: auto;
+  border-radius: .15rem;
+}
 .md-typeset blockquote.kd-home-letter-excerpt {
   border: 0;
   margin: .75rem 0 0;
