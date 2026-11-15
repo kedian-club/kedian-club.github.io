@@ -305,13 +305,13 @@ body:has(.kd-vela) .md-content__inner::before, body:has(.kd-vela) .md-content__i
   [data-md-color-scheme="slate"] .kd-vela__photos { opacity: .18; }
 }
 .kd-vela__rotator { position: relative; height: 3.8rem; margin-bottom: 1rem; }
-.kd-vela__phrase { position: absolute; inset: 0; display: flex; align-items: center; gap: .6rem; font-family: "JetBrains Mono", "Cascadia Code", "Microsoft YaHei", monospace; font-size: clamp(20px, 3.4vw, 49px); font-weight: 700; letter-spacing: .01em; color: #707070; opacity: 0; transform: translateY(.12em); transition: opacity 380ms ease, transform 460ms cubic-bezier(.2,.65,.35,1); pointer-events: none; }
+.kd-vela__phrase { position: absolute; inset: 0; display: flex; align-items: center; gap: .6rem; font-family: "JetBrains Mono", "Cascadia Code", "Microsoft YaHei", monospace; font-size: clamp(20px, 3vw, 43px); font-weight: 700; letter-spacing: .01em; color: #707070; opacity: 0; transform: translateY(.12em); transition: opacity 380ms ease, transform 460ms cubic-bezier(.2,.65,.35,1); pointer-events: none; }
 .kd-vela__phrase.is-current { opacity: 1; transform: none; }
 .kd-vela__phrase span { display: grid; place-items: center; flex-shrink: 0; width: 1.45em; height: 1.45em; border-radius: 35%; color: #a87808; background: linear-gradient(145deg,#fff8cd,#e9c22e); box-shadow: inset 2px 3px 4px #ffffffb3, inset -3px -4px 6px #00000012; transform: rotate(-8deg); }
 .kd-vela__phrase:nth-child(2) span { color: #a94a16; background: linear-gradient(145deg,#ffe6d5,#f2772f); }
 .kd-vela__phrase:nth-child(3) span { color: #216b40; background: linear-gradient(145deg,#d9f7e5,#64c58b); }
 .kd-vela__phrase svg { width: .8em; height: .8em; fill: currentColor; }
-.kd-home.kd-vela h1 { font-family: "JetBrains Mono", "Cascadia Code", "Microsoft YaHei", monospace; font-size: clamp(40px, 4.8vw, 72px); font-weight: 700; letter-spacing: .01em; line-height: 1.19; margin: 0; color: #51483f; }
+.kd-home.kd-vela h1 { font-family: "JetBrains Mono", "Cascadia Code", "Microsoft YaHei", monospace; font-size: clamp(38px, 4.6vw, 68px); font-weight: 700; letter-spacing: .01em; line-height: 1.19; margin: 0; color: #51483f; }
 .kd-vela__welcome-lead, .kd-vela__welcome-end { white-space: nowrap; }
 .kd-vela__name {
   font-size: 1.28em;
@@ -319,6 +319,15 @@ body:has(.kd-vela) .md-content__inner::before, body:has(.kd-vela) .md-content__i
   line-height: 1.15;
   letter-spacing: 0;
   color: #24201c;
+}
+/* A handwritten club name softens the warm homepage's technical lettering. */
+[data-md-color-scheme="default"] .kd-vela__name {
+  font-family: var(--md-text-font);
+  font-size: 1.2em;
+  font-weight: 400;
+  font-synthesis: none;
+  letter-spacing: .02em;
+  color: #4b382c;
 }
 [data-md-color-scheme="slate"] .kd-vela__name { color: #fff5e8; }
 .kd-home .kd-vela__identity { display: flex; flex-wrap: wrap; gap: .2rem 0; max-width: 100%; margin-top: .6rem; color: #666; font-size: 15px; line-height: 1.8; }
@@ -435,6 +444,7 @@ body:has(.kd-vela) .md-content__inner::before, body:has(.kd-vela) .md-content__i
 @media screen and (max-width: 30em) {
   .kd-vela__welcome-lead { display: block; margin-bottom: .14em; }
   .kd-vela__name { font-size: 1.4em; }
+  [data-md-color-scheme="default"] .kd-vela__name { font-size: 1.3em; }
 }
 
 /* Progressive enhancement: native dialog keeps keyboard focus inside the viewer. */
@@ -721,14 +731,17 @@ body:has(.kd-mobile-toc[open]) { overflow: hidden; }
 .kd-contributor-group > .kd-contributor-grid { margin: 0; }
 
 /* Contributor directory: a lighter, more spacious presentation. */
+.md-typeset h1.kd-section-title,
+.md-typeset .kd-showcase-heading h1.kd-section-title,
 .md-typeset:has(.kd-contributor-grid) > h1 {
   font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
-  font-size: clamp(2rem, 4vw, 2.55rem);
+  font-size: clamp(1.65rem, 4vw, 2.55rem);
   font-weight: 700;
   letter-spacing: -.035em;
   line-height: 1.2;
-  margin-bottom: .85em;
+  overflow-wrap: anywhere;
 }
+.md-typeset:has(.kd-contributor-grid) > h1 { margin-bottom: .85em; }
 .kd-contributor-grid {
   gap: 1rem 1.25rem;
   margin-top: 2rem;
@@ -808,8 +821,18 @@ body:has(.kd-mobile-toc[open]) { overflow: hidden; }
 .kd-profile-kicker { margin: 0 0 .2rem; color: var(--md-default-fg-color--light); font: 600 .58rem/1.4 ui-monospace, monospace; letter-spacing: .14em; }
 .kd-profile-name, .md-typeset .kd-profile-name { margin: 0; color: inherit; font-size: 1.15rem; font-weight: 700; line-height: 1.35; }
 .kd-profile-id { margin: .25rem 0 0; color: var(--md-default-fg-color--light); font-size: .7rem; overflow-wrap: anywhere; }
-.kd-profile-github { display: inline-flex; margin-top: 1.1rem; padding: .35rem .7rem; border-radius: 2rem; color: var(--md-typeset-a-color); background: var(--kd-interactive); text-decoration: none; font-size: .72rem; font-weight: 600; }
-.kd-profile-github:is(:hover, :focus-visible) { text-decoration: underline; }
+/* Contact icons share one column; long addresses wrap beside the icon. */
+.kd-profile-contacts, .md-typeset .kd-profile-contacts {
+  display: grid; gap: .15rem; margin: 1rem 0 0;
+  font: .75rem/1.6 "Segoe UI", "Microsoft YaHei", sans-serif;
+}
+.kd-profile-contacts > div { display: grid; grid-template-columns: 1rem minmax(0, 1fr); align-items: baseline; column-gap: .65rem; min-height: 2.2rem; }
+.kd-profile-contacts dt, .md-typeset .kd-profile-contacts dt { position: relative; margin: 0; color: var(--md-default-fg-color--light); }
+.kd-profile-contacts svg { display: block; width: 1rem; height: 1rem; fill: currentColor; transform: translateY(.15rem); }
+.kd-profile-contacts dd, .md-typeset .kd-profile-contacts dd { min-width: 0; margin: 0; overflow-wrap: anywhere; user-select: text; }
+.kd-profile-contacts a { display: block; padding-block: .3rem; color: var(--md-typeset-a-color); text-decoration: none; text-underline-offset: .2em; }
+.kd-profile-contacts a:is(:hover, :focus-visible) { text-decoration: underline; }
+.kd-profile-contact-label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .kd-profile-divider { height: 1px; margin: 1.25rem 0; background: var(--kd-border); }
 .kd-profile-article-title, .md-typeset .kd-profile-article-title { margin: 0 0 .65rem; color: inherit; font-size: .85rem; font-weight: 700; }
 .kd-profile-articles, .md-typeset .kd-profile-articles { display: grid; gap: .15rem; padding: 0; margin: 0; list-style: none; }
