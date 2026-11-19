@@ -1,0 +1,2597 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="科电社团的学习资料、竞赛经验与共同积累。">
+      
+      
+      
+        <link rel="canonical" href="https://kedian-club.github.io/everyday/pid/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../ai-guide/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/branding/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>如何优雅地使用PID2.0 - 科电俱乐部</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/community.css?v=4">
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css?v=22">
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/motion.css?v=3">
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/showcase.css?v=3">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pid20" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="科电俱乐部" class="md-header__button md-logo" aria-label="科电俱乐部" data-md-component="logo">
+      
+  <img src="../../assets/branding/club-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            科电俱乐部
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              如何优雅地使用PID2.0
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../welcome/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  给新生一封信
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../showcase/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  项目展台
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../competitions/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  竞赛经验分享
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  日常经验分享
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../community/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  交流区
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../resources/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  社团资源
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../contribute/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  贡献
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+  
+  
+  <div class="kd-day-background" aria-hidden="true">
+    <video muted loop playsinline preload="none" poster="../../assets/media/reading-background-light-pexels.jpg" data-light-poster="../../assets/media/reading-background-light-pexels.jpg" data-src="../../assets/media/reading-background-light-pexels.mp4" data-dark-src="../../assets/media/reading-background.mp4" tabindex="-1"></video>
+  </div>
+  
+  <button class="kd-background-toggle" type="button" hidden>暂停背景</button>
+
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+  
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="科电俱乐部" class="md-nav__button md-logo" aria-label="科电俱乐部" data-md-component="logo">
+      
+  <img src="../../assets/branding/club-logo.png" alt="logo">
+
+    </a>
+    科电俱乐部
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../welcome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    给新生一封信
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../showcase/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目展台
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    项目展台
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../showcase/2026-loongson/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026智能车走马观碑赛道
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../showcase/2026-ball-balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026电赛H题-车载平衡滚球运动控制系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../competitions/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    竞赛经验分享
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    竞赛经验分享
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning/competition-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    比赛路线推荐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../competitions/lanqiao/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    蓝桥杯
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    蓝桥杯
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../competitions/lanqiao/mcu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    单片机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../competitions/lanqiao/embedded/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    嵌入式
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../competitions/lanqiao/eda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EDA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../competitions/lanqiao/fpga/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FPGA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../competitions/electronics/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    电子设计竞赛
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    电子设计竞赛
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../competitions/electronics/preparation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    电赛如何准备
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../competitions/socchina/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    嵌赛指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../competitions/smartcar/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    智能车
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    智能车
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../competitions/smartcar/basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    智能车基础篇
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../competitions/smartcar/hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    智能车硬件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日常经验分享
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    日常经验分享
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    如何优雅地使用PID2.0
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    如何优雅地使用PID2.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        引言
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PID原理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PID原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        零：我们到底想控制什么？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pid_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一：PID 的三个字母，分别在做什么？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二：公式很好看简洁，但是单片机要怎么计算？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pid_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三：位置式 PID——直接算出这次要输出多少
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pid_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四：增量式 PID——先算这次应该增加或减少多少
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        结束语
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI科普文档
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../party-membership/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入党流程及注意事项
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language-learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    语言学习经验分享
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    软件推荐
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    软件推荐
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/software/vscode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VS Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/software/obsidian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Obsidian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/software/office/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Office
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/software/wechat-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    微信输入法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../community/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    交流区
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    交流区
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/guestbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    留言板
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    社团资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../contribute/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    贡献
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    贡献
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribute/how-to/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    如何贡献
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        引言
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PID原理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PID原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        零：我们到底想控制什么？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pid_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一：PID 的三个字母，分别在做什么？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二：公式很好看简洁，但是单片机要怎么计算？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pid_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三：位置式 PID——直接算出这次要输出多少
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pid_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四：增量式 PID——先算这次应该增加或减少多少
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        结束语
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+  
+    
+    
+      
+    
+    
+      <button class="kd-mobile-toc-open" type="button" aria-haspopup="dialog" aria-controls="kd-mobile-toc" hidden>
+        <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 5h14v2H7zm0 8v-2h14v2zM4 4.5A1.5 1.5 0 0 1 5.5 6 1.5 1.5 0 0 1 4 7.5 1.5 1.5 0 0 1 2.5 6 1.5 1.5 0 0 1 4 4.5m0 6A1.5 1.5 0 0 1 5.5 12 1.5 1.5 0 0 1 4 13.5 1.5 1.5 0 0 1 2.5 12 1.5 1.5 0 0 1 4 10.5M7 19v-2h14v2zm-3-2.5A1.5 1.5 0 0 1 5.5 18 1.5 1.5 0 0 1 4 19.5 1.5 1.5 0 0 1 2.5 18 1.5 1.5 0 0 1 4 16.5"/></svg></span>本页目录
+      </button>
+      <dialog class="kd-mobile-toc" id="kd-mobile-toc" aria-labelledby="kd-mobile-toc-title">
+        <header class="kd-mobile-toc__header">
+          <h2 id="kd-mobile-toc-title">本页目录</h2>
+          <form method="dialog">
+            <button type="submit" autofocus>关闭</button>
+          </form>
+        </header>
+        <nav class="kd-mobile-toc__links" aria-label="文章章节">
+          <ul>
+            
+            
+              <li>
+                <a href="#_1">引言</a>
+                
+              </li>
+            
+              <li>
+                <a href="#pid">PID原理</a>
+                <ul>
+              <li>
+                <a href="#_2">零：我们到底想控制什么？</a>
+                
+              </li>
+            
+              <li>
+                <a href="#pid_1">一：PID 的三个字母，分别在做什么？</a>
+                
+              </li>
+            
+              <li>
+                <a href="#_3">二：公式很好看简洁，但是单片机要怎么计算？</a>
+                
+              </li>
+            
+              <li>
+                <a href="#pid_2">三：位置式 PID——直接算出这次要输出多少</a>
+                
+              </li>
+            
+              <li>
+                <a href="#pid_3">四：增量式 PID——先算这次应该增加或减少多少</a>
+                
+              </li>
+            </ul>
+              </li>
+            
+              <li>
+                <a href="#_4">结束语</a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </dialog>
+    
+  
+
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+  
+                  
+
+
+
+<h1 id="pid20">如何优雅地使用PID2.0<a class="headerlink" href="#pid20" title="Permanent link">&para;</a></h1>
+<p class="kd-author-byline"><a class="kd-author-tag" href="../../contribute/#author-f8865c8308eb" aria-label="查看贡献者 智官超（Loren-zzi）"><img class="kd-author-avatar" src="../../assets/images/authors/author-f8865c8308eb.png" alt="" width="24" height="24" decoding="async" data-no-zoom>智官超（Loren-zzi）</a></p>
+<p>相信大家对于PID有过一点点的了解，关于如何使用简单使用PID可以看我大一电赛结束后的文章： 如何优雅地使用PID1.0<br />
+<a href="https://zhuanlan.zhihu.com/p/1950269144340623656">https://zhuanlan.zhihu.com/p/1950269144340623656</a></p>
+<h2 id="_1">引言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>写本文的原因之一 是因为在询问给大二第一次智能车培训时有什么需要重点讲的地方，他们很多人说是控制PID<br />
+另外一个原因：在去年笔者备赛时阅读了很多大佬、强校的文章，发现他们和我们这样弱校最大区别的点在于 <mark>理论与科学</mark>：对于一个算法而言我们更多的是在乎它的可用性、效果，他们更加追求算法本身。随着AI越来越普及，我发现科电的新同学们越来越不在乎算法原理，只是一味的让AI去改现象，这是一件多么悲伤的事情，对于我们本科尤其是低年级阶段，我认为是要打基础的阶段，这个时候的AI我希望你们能把它当做搜索、查询的工具，绝不是直接和他说你想要的现象这样的许愿式编程</p>
+<p>遂写下此篇，更加近乎控制算法原理的PID文章，也希望科电的小朋友们能够拿出纸笔，跟着文章慢慢推演下去，你一定会有很大很大的收获！</p>
+</blockquote>
+<h2 id="pid">PID原理<a class="headerlink" href="#pid" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>让我们的小车按照自己想要的速度动起来吧！٩(ˊᗜˋ_)و</p>
+<p>在智能车基础篇里面，我们已经简单介绍过 PID，也放了可以参考的代码。这次我们把它拆开讲一讲：<strong>它到底在算什么？为什么这样算？位置式、增量式又有什么区别？</strong></p>
+</blockquote>
+<h3 id="_2">零：我们到底想控制什么？<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>先想一个很简单的问题：<strong>我给左右电机相同的 PWM，小车就一定能走直线吗？</strong><br />
+不一定。PWM给的是力气，两边电机、轮胎、机械阻力都有差异，而且电池电压、地面情况也会变化。pwm本身是考虑不到他们的<br />
+所以我们希望做到的是：<br />
+<mark>我告诉小车一个目标速度，它自己去看现在跑得多快，再调整 PWM，尽量保持在我想要的速度附近。</mark><br />
+这就是我们要做的<strong>速度闭环</strong>。</p>
+<p>这里先统一几个字母，下面会一直用到：</p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>意义</th>
+<th>对应到我们的小车</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(r(t)\)</span></td>
+<td>目标值</td>
+<td>想让轮子达到的速度</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(y(t)\)</span></td>
+<td>实际值，也叫反馈值</td>
+<td>编码器测得的速度</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(e(t)\)</span></td>
+<td>误差</td>
+<td>目标速度减去实际速度</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(u(t)\)</span></td>
+<td>控制输出</td>
+<td>带正负号的 PWM 控制量</td>
+</tr>
+</tbody>
+</table>
+<div class="arithmatex">\[
+e(t)=r(t)-y(t)
+\]</div>
+<p>比如目标速度是 50，现在只有 40，那么误差就是 10。我们需要让电机再用力一点；如果已经跑到了 60，误差就是 −10，需要减小驱动输出。<br />
+{这里默认电机指令和编码器反馈的正方向已经统一。一定要先检查方向！！！不然本来应该纠偏，结果越调越偏。}：<mark>很多同学加上PID会疯转：百分之九十的原因就是线接错了</mark>  你自己想：比如你的编码器左右的线接反了，你想让左轮子以10的速度转，但是他实际测得到是右边的轮子（假设当前静止），你的系统就认为左轮子还是0就会一直加PWM给左边轮子，左边轮子实际上已经非常非常快了但是他依然读的的右边静止的轮子然后PID计算还是会加左边的pwm。。。巴拉巴拉<br />
+<strong>注意：速度环PID 输入的是误差，输出的是控制量，不是“计算出来的实际速度”！</strong> 实际速度要靠编码器测量。</p>
+<hr />
+<h3 id="pid_1">一：PID 的三个字母，分别在做什么？<a class="headerlink" href="#pid_1" title="Permanent link">&para;</a></h3>
+<p>PID 的连续时间公式是：</p>
+<div class="arithmatex">\[
+\boxed{u(t)=K_p e(t)+K_i\int_0^t e(\tau)\,d\tau+K_d\frac{de(t)}{dt}}
+\]</div>
+<p>PID公式很简洁，一个比例项、一个积分项、一个微分项：<br />
+- <strong>P（比例）</strong>：看现在差多少。<br />
+- <strong>I（积分）</strong>：看过去一直差了多少。<br />
+- <strong>D（微分）</strong>：看误差正在怎么变化</p>
+<h4 id="1p">1、P：比例项<a class="headerlink" href="#1p" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[
+u_P(t)=K_p e(t)
+\]</div>
+<p>假设 <span class="arithmatex">\(K_p=100\)</span>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">当前误差</th>
+<th style="text-align: right;">P 项输出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">1000</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">500</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p>很简单，就是把误差乘上一个系数。误差越大，输出越大；误差变小，输出也跟着变小。<br />
+<strong>那么只用 P 不就好了吗？</strong><br />
+问题在于：电机维持转动也需要一定的驱动力，要克服摩擦和负载。如果只有 P，当误差变成 0 时，P 项也变成 0，原本维持转动的输出就没有了。<br />
+于是就可能出现这样一种状态：轮子还比目标慢一点，但这“一点误差”产生的输出，刚好够维持目前的转速，它就不再继续加速了。<br />
+这个最后一直留着的误差，就叫<strong>稳态误差</strong>。</p>
+<p><strong>下面用一点点数学，把这件事情说清楚。</strong><br />
+先用一个很简化的电机稳态模型：</p>
+<div class="arithmatex">\[
+y=Ku
+\]</div>
+<p>其中 <span class="arithmatex">\(K&gt;0\)</span> 表示电机与驱动整体的稳态增益。注意这里的 <span class="arithmatex">\(K\)</span> 和 PID 里的 <span class="arithmatex">\(K_p\)</span> 不是一个东西。<br />
+{这是方便入门的简化模型，只讨论稳态关系，没有把惯性、延迟、死区等全部放进来。实际电机当然要更复杂一些。}<br />
+只使用 P 控制时：</p>
+<div class="arithmatex">\[
+u=K_p(r-y)
+\]</div>
+<p>代入电机模型：</p>
+<div class="arithmatex">\[
+y=KK_p(r-y)
+\]</div>
+<p>把含有 <span class="arithmatex">\(y\)</span> 的项放在一起：</p>
+<div class="arithmatex">\[
+y(1+KK_p)=KK_p r
+\]</div>
+<p>所以：</p>
+<div class="arithmatex">\[
+y=\frac{KK_p}{1+KK_p}r
+\]</div>
+<p>那么稳态误差就是：</p>
+<div class="arithmatex">\[
+\boxed{e_{ss}=r-y=\frac{r}{1+KK_p}}
+\]</div>
+<p>通过这个函数我们可以得知，在这个Kp有限的模型里，一定会存在稳态误差<br />
+我们直接画出来看看！下面取<strong>示例目标速度 <span class="arithmatex">\(r=50\)</span>、示例稳态增益 <span class="arithmatex">\(K=0.02\)</span></strong>，所以函数变成：</p>
+<div class="arithmatex">\[
+e_{ss}(K_p)=\frac{50}{1+0.02K_p}
+\]</div>
+<p><img alt="Pasted image 20261119135948.png" src="../../assets/images/%E6%97%A5%E5%B8%B8%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8PID2.0/%E9%99%84%E4%BB%B6/Pasted%20image%2020261119135948.png" /></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"><span class="arithmatex">\(K_p\)</span></th>
+<th style="text-align: right;">稳态误差 <span class="arithmatex">\(e_{ss}\)</span></th>
+<th style="text-align: right;">实际稳态速度 <span class="arithmatex">\(y=50-e_{ss}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">50.00</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">25.00</td>
+<td style="text-align: right;">25.00</td>
+</tr>
+<tr>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">16.67</td>
+<td style="text-align: right;">33.33</td>
+</tr>
+<tr>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">10.00</td>
+<td style="text-align: right;">40.00</td>
+</tr>
+<tr>
+<td style="text-align: right;">300</td>
+<td style="text-align: right;">7.14</td>
+<td style="text-align: right;">42.86</td>
+</tr>
+</tbody>
+</table>
+<p>这样就很明显了：<strong><span class="arithmatex">\(K_p\)</span> 增大，稳态误差确实会变小，但是在这个模型里，只要目标不是零，有限的 <span class="arithmatex">\(K_p\)</span> 就不能让误差严格等于零。</strong></p>
+<p>如果还想从数学上看一眼，在 <span class="arithmatex">\(r&gt;0\)</span>、<span class="arithmatex">\(K&gt;0\)</span>、<span class="arithmatex">\(K_p\geq0\)</span> 时：</p>
+<div class="arithmatex">\[
+\frac{d e_{ss}}{dK_p}=-\frac{rK}{(1+KK_p)^2}&lt;0
+\]</div>
+<p>所以这条曲线一直在往下走；同时：</p>
+<div class="arithmatex">\[
+\lim_{K_p\to+\infty}e_{ss}=0
+\]</div>
+<p><strong>但是不能看着这张图，就觉得 <span class="arithmatex">\(K_p\)</span> 越大越好！！！</strong><br />
+这只是稳态关系图，没有告诉我们“轮子到达这个状态的过程稳不稳定”。真实系统有惯性、采样和延迟，P 过大可能导致振荡，PWM 也有最大值，不能无限增加。</p>
+<h4 id="2i">2、I：积分项<a class="headerlink" href="#2i" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[
+u_I(t)=K_i\int_0^t e(\tau)\,d\tau
+\]</div>
+<p>积分可以先理解成：<strong>把误差沿着时间不断累积起来。</strong></p>
+<p>比如目标是 50，现在一直只有 48，每次都差 2。虽然这次的误差不大，但是一直差、一直差，积分项就会慢慢增加输出，推动电机继续接近目标。</p>
+<p>那么到达目标以后呢？</p>
+<div class="arithmatex">\[
+e=0
+\]</div>
+<p>这时候积分项<strong>停止增加，但已经积累的值不会因为误差为零就自动消失</strong>。它可以继续提供维持转动所需要的输出。<br />
+<mark>误差为零，不代表电机不需要 PWM；积分项可以保留维持运行所需要的输出。</mark><br />
+从数学上看，如果系统已经稳定在一个恒定状态，那么积分输出也应该保持不变：</p>
+<div class="arithmatex">\[
+\frac{du_I}{dt}=K_i e=0
+\]</div>
+<p 前提是闭环稳定、目标可以达到、没有长期顶在输出上限，而且积分没有被一直禁用。不能让一个根本跑不到的目标速度，靠积分硬凑出来。="前提是闭环稳定、目标可以达到、没有长期顶在输出上限，而且积分没有被一直禁用。不能让一个根本跑不到的目标速度，靠积分硬凑出来。">当 <span class="arithmatex">\(K_i\neq0\)</span> 时，就要求 <span class="arithmatex">\(e=0\)</span>。<br />
+这也是为什么我们说：<strong>积分作用可以消除恒定的稳态误差。</strong><br /></p>
+<h4 id="3d">3、D： 微分<a class="headerlink" href="#3d" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[
+u_D(t)=K_d\frac{de(t)}{dt}
+\]</div>
+<p>假设目标速度不变，现在误差从 20 很快变成了 8。说明电机正在快速接近目标，如果还一直保持很大的驱动力，就有可能冲过头，也就是<strong>超调</strong>。<br />
+这时候误差正在减小，导数为负，D 项就会减少总输出，帮助抑制超调。<br />
+可以先把它理解成：<em>看着现在的变化趋势，提前收一点力。</em><br />
+但是 D 也不是永远在“刹车”，误差怎么变化，它的方向就怎么变化。</p>
+<p>还有一个很关键的问题：<strong>D 会放大测量噪声。</strong> 编码器反馈如果一会儿大、一会儿小，微分以后可能变成很明显的 PWM 抖动。<br />
+所以对于我们第一次做电机速度环，<strong>先把 PI 调好就可以，不是 PID 三个字母都必须用满！！！</strong> 后面确实有需要，再考虑加入 D 和微分滤波</p>
+<h3 id="_3">二：公式很好看简洁，但是单片机要怎么计算？<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>上面讲的是连续时间，而我们的单片机是一段时间执行一次程序，所以要把公式变成<strong>离散形式</strong>。<br />
+{后面会广泛运用到你的<mark>数字信号处理</mark>这门课当中}<br />
+智能车工程里，电机控制放在 5 ms 的定时中断中，所以采样周期为：</p>
+<div class="arithmatex">\[
+T_s=0.005\ \mathrm{s}
+\]</div>
+<p>用 <span class="arithmatex">\(k\)</span> 表示第几次计算，那么：</p>
+<div class="arithmatex">\[
+e[k]=r[k]-y[k]
+\]</div>
+<ul>
+<li><span class="arithmatex">\(e[k]\)</span>：这一次误差。</li>
+<li><span class="arithmatex">\(e[k-1]\)</span>：上一次误差。</li>
+<li><span class="arithmatex">\(e[k-2]\)</span>：上上次误差。<br />
+先选一种简单、常见的离散方法：积分用当前误差进行矩形累加，微分用相邻误差之差来近似。</li>
+</ul>
+<div class="arithmatex">\[
+\int e(t)\,dt\approx T_s\sum_{j=0}^{k}e[j]
+\]</div>
+<div class="arithmatex">\[
+\frac{de(t)}{dt}\approx\frac{e[k]-e[k-1]}{T_s}
+\]</div>
+<p>代回去：</p>
+<div class="arithmatex">\[
+u[k]=K_p e[k]+K_iT_s\sum_{j=0}^{k}e[j]+\frac{K_d}{T_s}(e[k]-e[k-1])
+\]</div>
+<p>为了让代码写起来更方便，我们把采样周期包含进参数里面：</p>
+<div class="arithmatex">\[
+k_p=K_p,\qquad k_i=K_iT_s,\qquad k_d=\frac{K_d}{T_s}
+\]</div>
+<p>于是得到：</p>
+<div class="arithmatex">\[
+\boxed{u[k]=k_p e[k]+k_i\sum_{j=0}^{k}e[j]+k_d(e[k]-e[k-1])}
+\]</div>
+<p PID="PID" 代码，就会发现参数完全对不上。不是你的数学突然失效了，是参数定义可能变了。="代码，就会发现参数完全对不上。不是你的数学突然失效了，是参数定义可能变了。" 这一步一定要分清楚，不然换一个采样周期、看另一份="这一步一定要分清楚，不然换一个采样周期、看另一份"><strong>从这里开始，小写 <span class="arithmatex">\(k_p\)</span>、<span class="arithmatex">\(k_i\)</span>、<span class="arithmatex">\(k_d\)</span> 都表示离散系数。后面的 C 代码虽然仍然命名为 <code>Kp</code>、<code>Ki</code>、<code>Kd</code>，但它们的含义就是这三个离散系数。</strong><br /></p>
+<hr />
+<h3 id="pid_2">三：位置式 PID——直接算出这次要输出多少<a class="headerlink" href="#pid_2" title="Permanent link">&para;</a></h3>
+<p>刚才这个公式，就是一种常见的位置式 PID：</p>
+<div class="arithmatex">\[
+\boxed{u[k]=k_p e[k]+k_i\sum_{j=0}^{k}e[j]+k_d(e[k]-e[k-1])}
+\]</div>
+<p><strong>位置式的“位置”，不代表它只能用来控制位置！！！</strong> 我们现在拿它来控制电机速度，同样完全可以。<br />
+它的特点是：<strong>直接给出这次应该输出的总量。</strong><br />
+最核心的思路就是下面几行伪代码：</p>
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>误差 = 目标速度 − 实际速度
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>积分输出 += ki × 误差
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>P = kp × 误差
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>D = kd ×（这次误差 − 上次误差）
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>总输出 = P + 积分输出 + D
+</code></pre></div>
+<p>这里不用把每一次误差全部存下来，只要保存一个积分状态就够了。比如 <code>Integral += Ki * Error</code>，就已经把历史的积分作用保留下来了。</p>
+<p>所以：<em>位置式不需要保存一大串历史误差，计算量也不会随着时间越来越大。</em></p>
+<hr />
+<h3 id="pid_3">四：增量式 PID——先算这次应该增加或减少多少<a class="headerlink" href="#pid_3" title="Permanent link">&para;</a></h3>
+<p>增量式不是凭空冒出来的一套新算法，它可以由刚才的位置式推出来。<br />
+我们先写出上一次的输出：</p>
+<div class="arithmatex">\[
+u[k-1]=k_p e[k-1]+k_i\sum_{j=0}^{k-1}e[j]+k_d(e[k-1]-e[k-2])
+\]</div>
+<p>这次减去上次，定义输出增量：</p>
+<div class="arithmatex">\[
+\Delta u[k]=u[k]-u[k-1]
+\]</div>
+<p>我们把三项分别相减。</p>
+<p><strong>比例项：</strong></p>
+<div class="arithmatex">\[
+\Delta u_P[k]=k_p(e[k]-e[k-1])
+\]</div>
+<p><strong>积分项：</strong> 累加到这次，比累加到上次，正好多了本次误差。</p>
+<div class="arithmatex">\[
+\Delta u_I[k]=k_i e[k]
+\]</div>
+<p><strong>微分项：</strong></p>
+<div class="arithmatex">\[
+\begin{aligned}
+\Delta u_D[k]
+&amp;=k_d\big[(e[k]-e[k-1])-(e[k-1]-e[k-2])\big]\\
+&amp;=k_d(e[k]-2e[k-1]+e[k-2])
+\end{aligned}
+\]</div>
+<p>三项加起来，就得到我们代码里正在用的增量式公式：</p>
+<div class="arithmatex">\[
+\boxed{\Delta u[k]=k_p(e[k]-e[k-1])+k_i e[k]+k_d(e[k]-2e[k-1]+e[k-2])}
+\]</div>
+<p>最后记得更新总输出：</p>
+<div class="arithmatex">\[
+\boxed{u[k]=u[k-1]+\Delta u[k]}
+\]</div>
+<p>也就是：<br />
+<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">Output</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">Increment</span><span class="p">;</span>
+</code></pre></div></p>
+<p><strong>这一句非常关键！！！</strong> PWM 最终需要的是总输出，不能把算出来的 <code>Increment</code> 直接当成总 PWM 发出去。</p>
+<h4 id="1">1、增量式没有误差累加，那积分去哪儿了？<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
+<p>Q：<em>公式里只有 <code>Ki * Error</code>，这不就是一个乘法吗，怎么还叫积分？</em></p>
+<p>A：因为每一次算出的增量，最后都加回了 <code>Output</code>，历史作用保存在总输出里面。<br />
+举个例子，假设连续几次误差都为 10，<span class="arithmatex">\(k_i=0.5\)</span>。当误差不变化时：</p>
+<div class="arithmatex">\[
+e[k]-e[k-1]=0
+\]</div>
+<div class="arithmatex">\[
+e[k]-2e[k-1]+e[k-2]=0
+\]</div>
+<p>但是积分带来的增量仍然是：</p>
+<div class="arithmatex">\[
+\Delta u_I=0.5\times10=5
+\]</div>
+<p>于是总输出会一次增加 5、再增加 5……直到误差减小，或者达到了输出限幅。<br />
+<mark>增量式没有显式地写出误差累加和，不代表它没有积分作用。</mark></p>
+<h2 id="_4">结束语<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>好了，写了那么多无非是想让你们在日后调PID参数的时候，不会束手无策<br />
+在做项目和打比赛的过程中，一定要对自己系统内的物理变量的单位了如指掌才可以！（调PID一定要知道你的输入输出的实际物理单位！，然后根据单位算出大概的p、i的数值范围）</p>
+<p>同样，也希望科电的同学们能够戒骄戒躁「心浮气躁是大忌」，感受算法本身的魅力。</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  <section class="kd-comments" id="comments" aria-label="文章评论"
+    data-kd-comments data-repo="kedian-club/kedian-club.github.io" data-repo-id="R_kgDOVi46TA"
+    data-category="文章评论" data-category-id="DIC_kwDOVi46TM4DLGR3"
+    data-mapping="specific" data-term="kd-e6fea855c23d27bbc5bd"
+    data-backlink="https://kedian-club.github.io/everyday/pid/">
+    
+      <p class="kd-comments__notice" data-kd-comment-status role="status" hidden></p>
+      <a data-kd-discussion-link href="https://github.com/kedian-club/kedian-club.github.io/discussions?discussions_q=%22kd-e6fea855c23d27bbc5bd%22" hidden>在 GitHub 查看讨论 ↗</a>
+      <div class="giscus" id="kd-comments-thread"></div>
+      <noscript><p><a href="https://github.com/kedian-club/kedian-club.github.io/discussions?discussions_q=%22kd-e6fea855c23d27bbc5bd%22">在 GitHub 查看讨论 ↗</a></p></noscript>
+    
+  </section>
+
+                
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="上一页: 日常经验分享">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                日常经验分享
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../ai-guide/" class="md-footer__link md-footer__link--next" aria-label="下一页: AI科普文档">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                AI科普文档
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+  
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../assets/javascripts/motion.js?v=3"></script>
+      
+        <script src="../../assets/javascripts/ui.js?v=5"></script>
+      
+        <script src="../../assets/javascripts/analytics.js"></script>
+      
+        <script src="../../assets/javascripts/comments.js?v=2"></script>
+      
+    
+  
+    <script src="../../assets/javascripts/math.js" defer></script>
+    <script src="../../assets/vendor/mathjax/tex-chtml.js" defer></script>
+  
+
+  </body>
+</html>
